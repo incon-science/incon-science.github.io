@@ -1,0 +1,33 @@
+
+<html>
+<head>
+    <title>Mais il n’y a jamais eu rien à comprendre. Tout est à expérimenter</title>
+</head>
+<body>
+$ecret Code ?
+<br><br>
+<input type="text" id="word1" name="word1">
+<input type="text" id="word2" name="word2">
+<input type="text" id="word3" name="word3">
+
+<button onclick="checkCode()">Submit</button>
+</body>
+<script>
+function checkCode() {
+    var word1 = document.getElementById("word1").value;
+    var word2 = document.getElementById("word2").value;
+    var word3 = document.getElementById("word3").value;
+
+    if (word1 === "serpent" && word2 === "source" && word3 === "simulation") {
+        alert("Correct! https://afafv772.tumblr.com/");
+    } else {
+        alert("Incorrect code. Please try again.");
+    }
+}
+</script>
+</html>
+
+
+
+
+

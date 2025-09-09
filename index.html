@@ -1,33 +1,61 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <title>Mais il n’y a jamais eu rien à comprendre. Tout est à expérimenter</title>
+    <meta charset="UTF-8">
+    <title>Inconscience - Cube Zero</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center; /* centre verticalement */
+            justify-content: center; /* centre horizontalement */
+            background: #000000; /* optionnel : changez si besoin */
+            color : white;
+        }
+
+        .gif-container {
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .gif-img {
+            max-width: 90vw; /* reste responsive sur petits écrans */
+            width: 300px; /* Ajustez la taille si besoin */
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-$ecret Code ?
-<br><br>
-<input type="text" id="word1" name="word1">
-<input type="text" id="word2" name="word2">
-<input type="text" id="word3" name="word3">
+    
+        <h3>Mais il n’y a jamais eu rien à comprendre. Tout est à expérimenter</h3>
+    <div class="gif-container">
+        <a href="code.html"><img
+            src="thecube.gif"
+            data-static="thecube.png"
+            data-animated="thecube.gif"
+            class="gif-img"
+            alt="GIF animé au survol"
+        ></a>
+    </div>
+    
 
-<button onclick="checkCode()">Submit</button>
+    <script>
+        const img = document.querySelector('.gif-img');
+        img.addEventListener('mouseenter', () => {
+            img.src = img.dataset.animated;
+        });
+        img.addEventListener('mouseleave', () => {
+            img.src = img.dataset.static;
+        });
+        // Afficher l'image statique par défaut
+        img.src = img.dataset.static;
+    </script>
 </body>
-<script>
-function checkCode() {
-    var word1 = document.getElementById("word1").value;
-    var word2 = document.getElementById("word2").value;
-    var word3 = document.getElementById("word3").value;
-
-    if (word1 === "serpent" && word2 === "source" && word3 === "simulation") {
-        alert("Correct! https://afafv772.tumblr.com/");
-    } else {
-        alert("Incorrect code. Please try again.");
-    }
-}
-</script>
 </html>
-
-
-
-
-
