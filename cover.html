@@ -29,26 +29,30 @@
             width: 500px; /* Ajustez la taille si besoin */
             height: auto;
             display: block;
-            /* Prepare for glow animation */
-            transition: transform 200ms ease, box-shadow 300ms ease, filter 300ms ease;
-            will-change: transform, box-shadow, filter;
+            /* Prepare for glow animation - use drop-shadow so glow follows PNG shape */
+            transition: filter 300ms ease;
+            will-change: filter;
+            /* ensure image itself has no default box shadow */
+            box-shadow: none;
+            -webkit-filter: none;
+            filter: none;
         }
 
         /* Animated external glow on hover */
         .gif-container:hover .gif-img {
-            transform: translateY(-6px);
-            /* Start a pulsing glow animation */
+            /* Start a pulsing glow animation using drop-shadow only (follows image alpha) */
             animation: img-glow 1.6s infinite alternate ease-in-out;
         }
 
         @keyframes img-glow {
             from {
-                box-shadow: 0 0 10px 2px rgba(0,160,255,0.55), 0 0 22px 6px rgba(0,160,255,0.25);
-                filter: drop-shadow(0 0 6px rgba(0,160,255,0.35));
+                /* subtle inner drop + outer glow in warm gold */
+                filter: drop-shadow(0 0 6px rgba(255,200,80,0.35)) drop-shadow(0 0 18px rgba(255,200,80,0.18));
+                -webkit-filter: drop-shadow(0 0 6px rgba(255,200,80,0.35)) drop-shadow(0 0 18px rgba(255,200,80,0.18));
             }
             to {
-                box-shadow: 0 0 26px 8px rgba(0,220,255,0.95), 0 0 46px 18px rgba(0,220,255,0.45);
-                filter: drop-shadow(0 0 14px rgba(0,220,255,0.55));
+                filter: drop-shadow(0 0 14px rgba(255,215,70,0.65)) drop-shadow(0 0 36px rgba(255,215,70,0.32));
+                -webkit-filter: drop-shadow(0 0 14px rgba(255,215,70,0.65)) drop-shadow(0 0 36px rgba(255,215,70,0.32));
             }
         }
 
@@ -58,8 +62,11 @@
                 transition: none;
                 animation: none !important;
             }
-            .gif-container:hover .gif-img { transform: none; box-shadow: none; filter: none; }
+            .gif-container:hover .gif-img { transform: none; filter: none; -webkit-filter: none; }
         }
+
+        /* Ensure container/anchor don't add a rectangular shadow or outline */
+        .gif-container, .gif-container a { box-shadow: none; }
     </style>
 </head>
 <body>
