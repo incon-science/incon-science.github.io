@@ -1,0 +1,96 @@
+/* theme_generic.css */
+
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+a,
+a:hover {
+    transition: color 0.2s linear;
+    -webkit-transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+}
+
+.posts .photo img.image,
+.posts .audio img.artwork,
+.posts .html_photoset {
+    display: block;
+    width: 100%;
+}
+
+.posts .with_caption {
+    margin-bottom: 1em;
+}
+
+.posts .photoset,
+.posts .audio .audio_player embed {
+    display: block;
+}
+
+.posts p:empty,
+.posts div:empty,
+.posts h2:empty,
+body.permalink_page .posts .controls,
+.hide_if_last:last-child {
+    display: none;
+}
+
+h2.has_body {
+    margin: 0 0 0.5em 0;
+}
+
+h2 { 
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+
+.chat ul, .chat ol {
+    padding: 0;
+    list-style: none;
+}
+
+.content p,
+blockquote,
+ul,
+ol  {
+    margin: 0 0 0.8em 0;
+}
+
+.meta div {
+    margin: 0 0 0.4em 0 !important;
+}
+
+.meta div a {
+	text-decoration: none;
+}
+
+.content p:last-child,
+.content blockquote:last-child,
+.meta div:last-child {
+    margin-bottom: 0 !important;
+}
+
+blockquote {
+    padding-left: 10px;
+    border-left: 2px solid #ABABAB;
+    border-left: 2px solid rgba(0,0,0,0.33);
+}
+
+.content p > img {
+    max-width: 100%;
+    border-radius: 0;
+}
+
+ul, ol {
+    padding: 0 0 0 18px;
+}
+
+a img {
+    border: 0;    
+}
+
+/* micro-clearfix.css */
+
+.cf:before,.cf:after{content:" ";display:table}.cf:after{clear:both}.cf{*zoom:1}

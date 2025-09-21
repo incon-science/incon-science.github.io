@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)../tumblr/Inc%20on%20Science2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="./Inc on Science2_files/pre_tumblelog.js.download"></script><!-- // [Thm]
+   
+ 100% Milk
+ 
+by egg.design  //
+ 
+    + basic html and css knowledge is required if you want to customize this theme's code
+    + do not redistribute or claim as your own
+    + do not remove credit
+   
+Version 1.0 - 9/24/2023
+
+-->
+
+
+   
+      <style>figure{margin:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-iframe--amp-cta-button{visibility:hidden;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:100}.tmblr-iframe--amp-cta-button.tmblr-iframe--loaded{visibility:visible;animation:iframe-app-cta-transition .2s ease-out}</style><link rel="stylesheet" media="screen" href="./Inc on Science2_files/index.build.css"><link rel="preconnect" href="https://fonts.gstatic.com/">
+      <link href="./Inc on Science2_files/css2" rel="stylesheet">
+    <script src="./Inc on Science2_files/5476402350.js.download" crossorigin="anonymous"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <link rel="stylesheet" href="./Inc on Science2_files/se-styles.css">
+    <link rel="shortcut icon" href="./Inc on Science2_files/tumblr_edce45fa1bf98132f17f243ac9f7733e_cbfe00c8_128.png">
+     <!-- rss -->
+     <link rel="alternate" type="application/rss+xml" href="../tumblr/Inc%20on%20Science.htmlrss">
+     <!-- title and description -->
+    <title>Inc on Science</title>
+    
+    <meta name="description" content="">
+    
+    <meta name="image:background" content="">
+      <meta name="color:background" content="#FEF4F8">
+      <meta name="color:posts" content="#fff">
+      <meta name="color:text" content="#222">
+      <meta name="color:links" content="red">
+      <meta name="color:sidebar" content="#fff">
+      <meta name="color:sidebar text" content="#222">
+      <meta name="color:borders" content="#b3c3f3">
+      <meta name="color:ask bubble" content="#ED8976">
+      <meta name="color:ask text" content="#fff">
+      <meta name="color:post info" content="#222">
+      <meta name="color:post info text" content="#222">
+      <meta name="color:milk" content="#fff">
+      <meta name="color:milk accent" content="#ffe8e8">
+
+      <meta name="if: Archive Enabled" content="">
+      <meta name="if: full background" content="">
+      <meta name="text:reblog icon" content="fa fa-sync">
+    
+      <style>
+         * {
+         outline:none;
+         }
+         :root {
+         --background-color: #FEF4F8;
+         --posts: #fff;
+         --sidebar: #fff;
+         --post-text: #222;
+         --links: red;
+         --border: #b3c3f3;
+         --paper: ;
+         --tape: ;
+         --ask-bubble: #ED8976;
+         --ask-text: #fff;
+         --milk: #fff;
+         --milk-accent: #ffe8e8;
+         --accent-rgb: 255,232,232;
+         --spacing: 1rem;
+         }
+         
+ body {
+  font-family: Poppins;
+  background: var(--background-color) url(https://assets.tumblr.com/images/x.gif?v=1);
+  background-attachment: fixed;
+  margin: 0;
+  word-wrap: break-word;
+  line-height: 20px;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+img {
+  max-width: 100%;
+}
+
+article img {
+  display: block;
+  margin: auto;
+}
+
+article a {
+  text-decoration: none;
+  color: var(--links);
+  z-index: 1;
+  position: relative;
+}
+
+
+.align-items-center {
+    align-items:center;
+}
+.full-background {
+    background-size:cover;
+}
+.menu a {
+  position: relative;
+  z-index: 0;
+}
+
+.reblog-header a:before,
+.post_media_photo_anchor:before,
+.likey a:before,
+.post-info a:before {
+  display: none;
+}
+
+.likey .like {
+  position: relative;
+  display: inline-block;
+  max-height: 30px;
+  top:2px;
+  max-width: 30px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.like_button {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 20px;
+  transform: translateY(-4px);
+  height: 20px;
+  z-index: 10;
+  transition: 0.12s ease-in-out;
+}
+
+.like_button iframe {
+  width: 100% !important;
+  opacity: 1 !important;
+  height: 20px !important;
+}
+.custom_like {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(2px, -2px);
+  right: 0;
+  transition: 0.4s;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+}
+.like_button.liked {
+  animation: beat 0.2s ease-in-out 1;
+  opacity: 1;
+  animation-delay: 0.12s;
+}
+
+.like_button.liked + .fa {
+  opacity: 0;
+}
+
+.custom_like i {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 0;
+  width: 3px;
+  height: 5px;
+  background: red;
+  opacity: 0;
+}
+
+.like_button.liked + .custom_like i {
+  animation-delay: 0.12s;
+}
+
+.like_button.liked + .custom_like span {
+  opacity: 0;
+}
+@keyframes bang {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes beat {
+  0% {
+  }
+
+  50% {
+    transform: scale(1.02);
+  }
+}
+.tags {
+  padding: 0.6rem 0;
+  font-size: 0.92rem;
+}
+
+article div:last-of-type {
+    padding-bottom: 0;
+}
+
+.tags a {
+  margin-right: 0.6rem;
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  background: var(--posts);
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  border: 2px dashed var(--border);
+}
+
+.tags a:before {
+  display: none;
+}
+
+.post-info {
+  padding: 1.4rem 0;
+}
+
+@media only screen and (max-width: 840px) {
+  aside,
+  section {
+    position: relative !important;
+    width: 100% !important;
+  }
+  article {
+    margin: 100px auto !important;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+  align-content: center;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.rounded-corners {
+  border-radius: 0.4rem;
+}
+
+.padding-sm {
+  padding: 0.6rem;
+}
+
+.padding-md {
+  padding: 1rem;
+}
+
+aside {
+  top: 0px;
+  width: 25%;
+}
+
+.sidebar-container {
+  max-width: 100%;
+}
+.sidebar h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+.menu ul {
+  padding: 0;
+}
+
+.milk-sidebar {
+  transform: skew(0deg, -7deg);
+  background: var(--milk);
+  position: relative;
+  width: 240px;
+  z-index: 1;
+  filter: drop-shadow(-1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(-1px 1px 0px rgba(0, 0, 0, 0.06));
+  margin-top: 120px;
+  margin-left: 0px;
+  height: 320px;
+  background: linear-gradient(
+    to bottom,
+    var(--milk) 0%,
+    var(--milk) 25%,
+    var(--milk-accent) 25%,
+    var(--milk-accent) 78%,
+    var(--milk) 78%
+  );
+}
+
+.milk-sidebar:before,
+.milk-sidebar:after {
+  width: 240px;
+  height: 80px;
+  background: blue;
+  content: "";
+  position: absolute;
+}
+
+.milk-sidebar:before {
+  height: 315px;
+  width: 70px;
+  background: var(--milk);
+  margin-top: -22px;
+  z-index: 1;
+  filter: brightness(96%);
+  margin-left: -69px;
+  transform: skew(0deg, 38deg);
+  background: linear-gradient(
+    to bottom,
+    var(--milk) 0%,
+    var(--milk) 24%,
+    var(--milk-accent) 24%,
+    var(--milk-accent) 78%,
+    var(--milk) 78%
+  );
+}
+
+.milk-sidebar:after {
+  background: var(--milk);
+  filter:brightness(96%);
+  transform: skew(19.4deg);
+  margin-top: -75px;
+  margin-left: -12.8px;
+}
+
+.milktop {
+  background: transparent;
+  width: 240px;
+  position: absolute;
+  transform: skew(0deg, 2deg);
+  margin-top: -140px;
+  margin-left: -30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  height: 100px;
+}
+
+.milktop:before {
+  background: var(--milk);
+  width: 239.2px;
+  position: absolute;
+  margin-top: 17px;
+  content: "";
+  margin-left: 2px;
+  transform: skew(0deg, -2deg);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 50px;
+}
+
+.milktop:after {
+  background: var(--milk);
+  filter:brightness(90%);
+  content: "";
+  position: absolute;
+  width: 70px;
+  z-index: -7;
+  height: 60px;
+  margin-top: 70px;
+  margin-left: -12px;
+  transform: skew(-45deg, 35deg) rotate(10deg);
+}
+
+.sidebar {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+}
+main {
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+section {
+  width: 70%;
+}
+
+ol.notes {
+  list-style-type: none;
+  margin-left: 0;
+}
+ol.notes img {
+  display: none;
+}
+
+ol.notes li {
+  margin-top: 1rem;
+}
+
+.question .reblog-content {
+  background: var(--ask-bubble);
+  color: var(--ask-text);
+  padding:var(--spacing);
+  border-radius:.4rem;
+  border:2px dashed var(--border);
+}
+
+.reblog-content * {
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.post-content .crt-video + div.npf_row,
+.post-content div.npf_row + .crt-video,
+.post-content div.npf_row + p,
+.post-content p + div.npf_row,
+.post .crt-video + div.npf_row,
+.post div.npf_row + .crt-video,
+.post div.npf_row + p,
+.post p + div.npf_row,
+body .crt-video + div.npf_row,
+body div.npf_row + .crt-video,
+body div.npf_row + p,
+body p + div.npf_row,
+.post-content div.npf_row + div.npf_row,
+.post-content div.npf_row + figure.tmblr-full,
+.post div.npf_row + div.npf_row,
+.post div.npf_row + figure.tmblr-full,
+body div.npf_row + div.npf_row,
+body div.npf_row + figure.tmblr-full {
+  margin: 32px 0 0 0;
+  padding: 0px;
+}
+
+.post-content .crt-video + div.npf_row,
+.post-content div.npf_row + .crt-video,
+.post-content div.npf_row + p,
+.post-content p + div.npf_row,
+.post .crt-video + div.npf_row,
+.post div.npf_row + .crt-video,
+.post div.npf_row + p,
+.post p + div.npf_row,
+body .crt-video + div.npf_row,
+body div.npf_row + .crt-video,
+body div.npf_row + p,
+body p + div.npf_row {
+  margin-top: 0;
+}
+.reblog-header {
+  padding: 1rem 0;
+}
+
+.reblog-header img {
+  width: 30px;
+  margin-right: 0.6rem;
+}
+
+.reblogs:not(:first-of-type) {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0 2rem;
+  margin-left: -2rem;
+  border-top: 1px solid var(--border);
+}
+
+article {
+  width: 98%;
+  max-width: 540px;
+  margin: 6rem auto;
+  padding: 2rem;
+  background: var(--posts);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  filter: drop-shadow(-1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(-1px 1px 0px rgba(0, 0, 0, 0.06));
+}
+
+article:last-of-type {
+  margin-bottom: 5rem;
+}
+
+.description {
+  margin-top: 4%;
+  padding: 0.6rem;
+  font-size: 0.92rem;
+  border-radius: 0.2rem;
+  position: relative;
+  height: 50%;
+  background: var(--posts);
+  box-sizing: border-box;
+  word-wrap:break-word;
+  border: 2px dashed var(--border);
+  overflow: auto;
+}
+.desc {
+  height: 5rem;
+  overflow: auto;
+}
+.menu {
+  max-height: 10rem;
+  overflow: auto;
+}
+.description:not(:first-of-type) {
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+.post_media_photo {
+  margin: 0px;
+  background: var(--posts);
+}
+
+.post_media_photo_anchor {
+  display: block;
+  position: relative;
+}
+
+.post-content .crt-video + div.npf_row, .post-content div.npf_row + .crt-video, .post-content div.npf_row + p, .post-content p + div.npf_row, .post .crt-video + div.npf_row, .post div.npf_row + .crt-video, .post div.npf_row + p, .post p + div.npf_row, body .crt-video + div.npf_row, body div.npf_row + .crt-video, body div.npf_row + p, body p + div.npf_row, .post-content div.npf_row + div.npf_row, .post-content div.npf_row + figure.tmblr-full, .post div.npf_row + div.npf_row, .post div.npf_row + figure.tmblr-full, body div.npf_row + div.npf_row, body div.npf_row + figure.tmblr-full {
+    margin: 6px 0;
+    
+}
+
+.username,
+.post-info a,
+.asker,
+.answerer {
+  position: relative;
+}
+
+.likey a:before {
+  opacity: 0 !important;
+}
+.post_media_photo_anchor:before {
+  width: 200px;
+  margin-left: -150px;
+}
+
+.post-link {
+  display: block;
+  background: var(--posts);
+  padding: 1rem;
+  margin: 1rem 0;
+  transition: 0.6s;
+  position: relative;
+  border: 2px dashed var(--border);
+}
+
+.fa-paperclip {
+  position: absolute;
+  font-size: 2rem;
+  right: 1rem;
+  margin-top: -2rem;
+}
+
+.post-link:hover {
+  border: 2px solid var(--border);
+}
+
+.post-link:before {
+  display: none;
+}
+
+.description .avatar {
+  background: white;
+  position: absolute;
+  font-size: 1.6rem !important;
+  margin-top: -35px;
+  text-decoration: none;
+  color: black;
+  top: 0px;
+  transform: rotateZ(-6deg);
+  left: 0px;
+  font-family: "Font Awesome 5 Free";
+  margin-left: -25px;
+}
+
+.avatar img {
+  max-width: 70px;
+}
+
+.credit {
+    width:250px;
+    display:block;
+    margin:auto;
+    text-align:center;
+    height:auto;
+    margin-bottom:4rem;
+    background:var(--milk-accent);
+}
+
+.title {
+  font-family: 'Gibson', sans-serif;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.date,
+article h2 {
+  padding: 1rem 0;
+  margin: 0;
+  font-weight: bold;
+  border-radius: 4px;
+  position: relative;
+  border-bottom: 0;
+  background: var(--posts);
+}
+article .date {
+  display: inline-block;
+  padding-top:0;
+}
+.username,
+.asker,
+.answerer {
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  z-index: 1;
+  position: relative;
+}
+
+.reply p,
+.question p {
+  color: var(--post-text);
+}
+.answerer:before,
+.asker:before {
+  display: none;
+}
+
+.reblog-header a {
+  text-decoration: none;
+}
+.post-info .likey a {
+  border: none !important;
+  background: transparent;
+}
+.likey span {
+  font-size: 1.12em;
+}
+
+.like_button.liked + .custom_like i:nth-of-type(1) {
+  transform: translate3d(24px, -13px, 0) rotate(79deg);
+  background: cornflowerblue;
+  animation: bang 0.6s ease-out forwards;
+  opacity: 0;
+}
+.like_button.liked + .custom_like i:nth-of-type(2) {
+  transform: translate3d(17px, -14px, 0) rotate(58deg);
+  background: tomato;
+  animation: bang 0.46s ease-out forwards;
+  opacity: 0;
+}
+.like_button.liked + .custom_like i:nth-of-type(3) {
+  transform: translate3d(-10px, -13px, 0) rotate(329deg);
+  background: orange;
+  animation: bang 0.6s ease-out forwards;
+  opacity: 0;
+}
+.like_button.liked + .custom_like i:nth-of-type(4) {
+  transform: translate3d(-16px, -15px, 0) rotate(345deg);
+  background: mediumslateblue;
+  animation: bang 0.6s ease-out forwards;
+  opacity: 0;
+}
+.like_button.liked + .custom_like i:nth-of-type(5) {
+  transform: translate3d(-26px, -9px, 0) rotate(329deg);
+  background: mediumseagreen;
+  animation: bang 0.6s ease-out forwards;
+  opacity: 0;
+}
+.like_button.liked + .custom_like i:nth-of-type(6) {
+  transform: translate3d(0px, -17px, 0) rotate(345deg);
+  background: {
+    color: accent;
+  }
+  animation: bang 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/*Audio posts */
+
+#albumart img {
+  width: calc(100% - 20%);
+  padding: 10%;
+  border-width: 0px;
+  transition: 0.6s;
+}
+
+.infobox {
+  width: calc(100% - 150px);
+}
+
+.audio-styling,
+.photos {
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.artist,
+.album,
+.trackname,
+.playcount {
+  width: 90%;
+  margin: auto;
+}
+
+.soundcloud_audio_player,
+.spotify_audio_player {
+  height: 250px;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+
+.tumblr_video_container,
+.tumblr_video_container iframe {
+  width: 100% !important;
+}
+
+.infobox,
+.audiop img {
+  z-index: 2;
+}
+
+.audiop img {
+  width: 150px !important;
+}
+
+.audiotext {
+  padding: 0 2rem;
+}
+
+.audiop {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+
+  position: relative;
+}
+.audiop:before {
+  width: 110%;
+  height: 110%;
+  z-index: 0;
+  position: absolute;
+  content: "";
+  filter: blur(10px);
+  opacity: 0.98;
+  background: inherit;
+}
+
+.audiop:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: black;
+  z-index: 1;
+  opacity: 0.14;
+}
+
+.audio_player iframe {
+  width: calc(100% - 20px);
+  background: #f2f2f2;
+  padding: 10px;
+  margin: 0 auto -10px;
+}
+
+.player span {
+  width: 100%;
+}
+
+.pagination {
+  max-width: 500px;
+  margin: 4rem auto;
+  justify-content: center;
+}
+
+.pagination > * {
+  background: var(--posts);
+  color: var(--link);
+  margin-right:1rem;
+  text-decoration: none;
+  border: 1px solid var(--border);
+filter: drop-shadow(-1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(-1px 1px 0px rgba(0, 0, 0, 0.06));
+}
+
+
+.menu-links a {
+    display:inline-block;
+    padding:calc(var(--spacing) / 2);
+    border-radius:1rem;
+    margin-right:1rem;
+    margin-bottom:var(--spacing);
+    border:2px dashed var(--border);
+    background:var(--milk-accent);
+}
+
+.link-pages {
+    padding:calc(var(--spacing) /4) calc(var(--spacing) / 2);
+}
+
+summary, slot[name="internal-main-summary"]::slotted(summary) {
+    list-style:none!important;
+}
+
+
+.pages-menu {
+      padding:var(--spacing);
+}
+details {
+    transition:.6s ease-in-out;
+    overflow:hidden;
+    border-radius:var(--spacing);
+    background:rgba(var(--accent-rgb), 0);
+    border:2px solid rgba(var(--accent-rgb), 1);
+}
+details[open] {
+   background:rgba(var(--accent-rgb), .6);
+   border:2px dashed rgba(var(--accent-rgb), .8);
+}
+
+summary {
+    background:var(--posts);
+    cursor:pointer;
+    border-bottom:2px solid transparent;
+  
+}
+
+summary:before {
+    content:"\f067";
+    font-weight:bold;
+    display:inline-block;
+    margin:0 var(--spacing);
+    transition:.6s ease-in-out;
+    font-family:"Font Awesome 6 Free";
+}
+
+details[open] summary {
+    border-bottom-color:rgba(var(--accent-rgb), .8);
+}
+
+summary b {
+      padding:var(--spacing) 0!important;
+      display:inline-block;
+}
+
+details[open] summary:before {
+   transform:rotate(-135deg);
+}
+
+.searching {
+    display:flex;
+    width:100%;
+    position:absolute;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
+    top:0;
+    left:0;
+    transform:translate(0, -40px);
+     filter: drop-shadow(-1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px -1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.06))
+    drop-shadow(-1px 1px 0px rgba(0, 0, 0, 0.06));
+}
+
+.searching img {
+    background:rgba(var(--accent-rgb), .2);
+    border:2px solid rgba(var(--accent-rgb), 1);
+    border-radius:50%;
+    width:48px;
+    margin-right:0;
+    
+}
+
+.searching form {
+    width:calc(100% - 80px);
+}
+.searching input {
+    display:block;
+    border-radius:1rem;
+    padding:var(--spacing);
+    width:calc(90% - (var(--spacing) * 2));
+    margin:var(--spacing) auto;
+    background:var(--posts);
+    border:2px solid rgba(var(--accent-rgb), 1);
+}
+
+
+
+
+</style>
+   <link rel="alternate" href="android-app://com.tumblr/tumblr/x-callback-url/blog?blogName=inc-on-science"><link rel="alternate" href="ios-app://305343404/tumblr/x-callback-url/blog?blogName=inc-on-science"><script defer="" type="application/javascript" id="bilmur" data-provider="tumblr.com" data-service="blognetwork" data-customproperties="{&quot;theme&quot;: &quot;&quot;}" nonce="" src="./Inc on Science2_files/bilmur.min.js.download"></script><script src="./Inc on Science2_files/tumblelog_post_message_queue.js.download"></script><link rel="stylesheet" type="text/css" href="./Inc on Science2_files/stylesheet.css"><meta name="keywords" content="dxm,milky way,delirious,incon.science,jeux d&#39;enfants"><!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. --><!-- Read more: http://ogp.me/ --><meta property="fb:app_id" content="48119224995"><meta property="og:site_name" content="Tumblr"><meta property="og:title" content="Inc on Science"><meta property="og:url" content="../tumblr/Inc%20on%20Science.html?og=1"><meta property="og:description" content="Les laboratoires de recherche d’Inc on Science sont 🙂 de vous accueillir dans leurs locaux"><meta property="og:type" content="profile"><meta property="og:image" content="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj"><meta property="al:ios:url" content="tumblr://x-callback-url/blog?blogName=inc-on-science"><meta property="al:ios:app_name" content="Tumblr"><meta property="al:ios:app_store_id" content="305343404"><meta property="al:android:url" content="tumblr://x-callback-url/blog?blogName=inc-on-science"><meta property="al:android:app_name" content="Tumblr"><meta property="al:android:package" content="com.tumblr"><!-- END TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- TWITTER TAGS --><meta name="twitter:site" content="tumblr"><meta name="twitter:card" content="summary"><meta name="twitter:description" content="Les laboratoires de recherche d’Inc on Science sont 🙂 de vous accueillir dans leurs locaux"><meta name="twitter:title" content="Inc on Science"><meta name="twitter:app:name:iphone" content="Tumblr"><meta name="twitter:app:name:ipad" content="Tumblr"><meta name="twitter:app:name:googleplay" content="Tumblr"><meta name="twitter:app:id:iphone" content="305343404"><meta name="twitter:app:id:ipad" content="305343404"><meta name="twitter:app:id:googleplay" content="com.tumblr"><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=inc-on-science&amp;referrer=twitter-cards"><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=inc-on-science&amp;referrer=twitter-cards"><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=inc-on-science&amp;referrer=twitter-cards"><!-- GOOGLE CAROUSEL --><script type="application/ld+json">
+	{"@type":"ItemList","url":"https:\/\/inc-on-science.tumblr.com\/page\/2","itemListElement":[{"@type":"ListItem","position":1,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739611333098635264\/je-me-demande-si-go%C3%BBtez-%C3%A0-la-saveur-de-la"},{"@type":"ListItem","position":2,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739585975106273280\/cherchez-l%C3%A9lu"},{"@type":"ListItem","position":3,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739585825961033728\/dans-la-salle-dattente-il-y-a"},{"@type":"ListItem","position":4,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739585300626636800\/la-rat-de-laboratoire"},{"@type":"ListItem","position":5,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739584212506673152"},{"@type":"ListItem","position":6,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739583251979632640\/bonjour-je-suis-le-dr-h-directeur-des"},{"@type":"ListItem","position":7,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739581267091341312\/la-rat-de-laboratoire"},{"@type":"ListItem","position":8,"url":"https:\/\/inc-on-science.tumblr.com\/post\/739578717560520704"}],"@context":"http:\/\/schema.org"}</script><link rel="canonical" href="https://www.tumblr.com/inc-on-science"><script async="" src="./Inc on Science2_files/showads.js.download"></script><style type="text/css">.info_popover .popover_inner ul li.toggle-subscription .help-slidedown:before{font-family:tumblr-icons,Blank;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-smoothing:antialiased;text-rendering:optimizeLegibility;font-style:normal;font-variant:normal;font-weight:400;text-decoration:none;text-transform:none}.knight-rider-loader{line-height:0;white-space:nowrap;width:78px}.knight-rider-loader.small{width:39px}.knight-rider-loader.centered{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.knight-rider-loader.h-centered{position:absolute;top:0;left:50%;transform:translateX(-50%)}.knight-rider-bar{display:none;width:20px;height:20px;margin:0 3px;border-radius:5px;opacity:.5;background-color:#d0d0d0}.small>.knight-rider-bar{width:10px;height:10px;margin-left:2px;margin-right:1px;border-radius:2px}.animate>.knight-rider-bar{display:inline-block;animation:knight-rider-oscillate ease-in-out .3s infinite alternate}.knight-rider-bar:first-child{animation-delay:-.2s}.knight-rider-bar:nth-child(2){animation-delay:-.1s}@keyframes knight-rider-oscillate{0%{opacity:.5;transform:scaleY(1)}to{opacity:1;transform:scaleY(1.4)}}.popover--base{z-index:80;position:absolute}.popover--base ol,.popover--base ul{list-style-type:none}.popover--base-overlay{position:fixed;top:0;left:0;width:100%;height:100%;transition:opacity .25s ease-in-out;background:#001935;opacity:0;z-index:90}.popover--base-overlay.active{opacity:.95}.popover_button{position:relative}.popover,.popover_button.popover_active{z-index:2147483646}.popover{position:absolute;border-radius:3px;background:rgba(0,0,0,.1);font:normal 14px/1.4 Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;box-shadow:0 5px 10px 0 rgba(0,0,0,.1);cursor:default}.popover_header{background:#f2f2f2;border-bottom:1px solid #e7e7e7;position:relative;z-index:10;text-transform:uppercase;font-size:11px;font-weight:700;color:#8f8f8f;color:rgba(0,0,0,.65);height:24px;padding:0 12px;margin:0;line-height:23px}.popover_header:first-child{border-radius:3px 3px 0 0}.popover_header.no_nipple:after,.popover_header.no_nipple:before{border:0}.popover_header .popover_item_suffix{text-transform:none}.popover_gradient{padding:1px}.popover_gradient>.popover_inner{background:#f2f2f2;padding:10px;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.75)}.popover_gradient>.popover_inner:first-child{border-top-right-radius:3px;border-top-left-radius:3px}.popover_gradient>.popover_inner:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}.ie9 .popover_gradient{background-color:#d0d0d0}.popover_gradient.no_nipple:after,.popover_gradient.no_nipple:before{content:"";border:0}.popover_menu .popover_menu_item:first-child:before{top:-12px;z-index:-1}.popover_menu .popover_menu_item:first-child:after{top:-11px}.popover_menu .popover_menu_item:first-child:hover:after{border-bottom-color:#e7e7e7}.popover_menu .popover_menu_item.no_hover:first-child:hover:after,.popover_menu .popover_menu_item.no_hover:last-child:hover:after{border-bottom-color:#fff;border-top-color:#f2f2f2}.popover_menu .popover_menu_item:last-child:hover:after{border-top-color:#e7e7e7}#popover_tracked_tags .popover_menu_item:first-child:before{margin-left:-13px;left:50%}.popover_menu.nipple_on_bottom .popover_menu_item:first-child:hover:after{border-bottom-color:#000;border-top-color:#e7e7e7}.popover_menu.nipple_on_left .popover_menu_item:first-child:hover:after{border-bottom-color:#000;border-right-color:#e7e7e7}.popover_menu:after,.popover_menu:before{display:none}.popover_bottom:after{border-top:7px solid #f2f2f2;border-left:7px solid transparent;border-right:7px solid transparent;margin:0 auto;bottom:-6px;margin-left:-6px}.popover_bottom:after,.popover_bottom:before{content:"";position:absolute;border-bottom:0;font-size:0;height:0;top:auto;width:0;left:50%}.popover_bottom:before{border-top:8px solid rgba(0,0,0,.294118);border-left:8px solid transparent;border-right:8px solid transparent;margin:0 auto;bottom:-7px;margin-left:-7px}.popover_menu ul{margin:0;padding:0;list-style:none}.popover_menu>.popover_inner{padding:0}.popover_menu>.popover_inner .popover_item_suffix{color:#8f8f8f;display:inline-block;float:right;font-weight:400;position:relative;z-index:1}.popover_menu>.popover_inner .popover_item_suffix a{color:inherit;font-size:12px}.popover_menu_item{display:block;border-bottom:1px solid #e7e7e7;box-shadow:inset 0 1px 0 hsla(0,0%,100%,.6);padding:10px 15px;font-size:14px;font-weight:400;color:#444;text-overflow:ellipsis;white-space:nowrap}.popover_menu_item.disabled{pointer-events:none;color:rgba(0,0,0,.439216)}.popover_menu_item a{text-decoration:none}.popover_menu_item.disabled a{color:rgba(0,0,0,.439216)}.popover_menu_item small{font-weight:400;font-size:11px;color:#8f8f8f;color:rgba(0,0,0,.65);vertical-align:3px}.popover_menu_item .hide_overflow{overflow:hidden;text-overflow:ellipsis}.popover_menu_item.keyboard_focus,.popover_menu_item:hover{background-color:rgba(0,0,0,.0509804);cursor:pointer}.popover_menu_item.no_hover:hover{background-color:rgba(0,0,0,.0509804);cursor:default}.popover_menu_item:first-child{box-shadow:none}.popover_menu_item:last-child{border-bottom-color:#000}.popover_menu_item.ender{height:auto!important;padding:11px 7px;text-align:center;font-size:12px}.popover_menu_item.ender,.popover_menu_item.ender a{color:rgba(0,0,0,.439216)}.popover_menu_item.sortable-dragging{background:#fff!important;border-radius:6px!important}.popover_menu_item .thumb{position:absolute;display:block;top:4px;right:12px;height:37px;width:37px;margin:0;background-size:cover;background-color:rgba(0,0,0,.184314);background-position:50% 50%;background-clip:content-box;border-radius:3px}.popover_menu_item .thumb:after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;border-radius:3px}a.popover_menu_item{text-decoration:none}body.popover_alert_active{background-attachment:fixed}.popover_post_control{z-index:80}.popover_gradient>.popover_inner:last-child{border-top-right-radius:3px;border-top-left-radius:3px;border-radius:3px}.popover_menu_item a{color:#444}.popover_gradient:not(.tumblelog_popover):not(.notes_outer_container):after,.popover_menu:not(.tumblelog_popover):not(.notes_outer_container) .popover_menu_item:first-child:after{border-bottom:13px solid #fff}.popover_gradient:not(.tumblelog_popover):not(.notes_outer_container).nipple_on_bottom:after,.popover_menu:not(.tumblelog_popover):not(.notes_outer_container).nipple_on_bottom .popover_menu_item:last-child:after{border-top:12px solid #fff;border-bottom:12px solid transparent}.popover.popover_gradient.popover_form>.popover_inner{padding:10px}.popover_gradient>.popover_inner{padding:4px 0;background:#fff}.popover_menu_item.keyboard_focus,.popover_menu_item:hover{background:#e6eff7}.popover_menu_item.keyboard_focus a,.popover_menu_item:hover a,.share_options .popover_menu_item.keyboard_focus a.external:after,.share_options .popover_menu_item:hover a.external:after{color:#3f5265}.popover_menu .popover_menu_item:last-child:hover:after{border-top-color:#fff}.popover_menu .popover_menu_item:first-child:hover:after{border-bottom-color:#fff}.popover_menu_item{border-bottom:0;box-shadow:none}.linkthrough_popover.popover.popover_gradient>div.popover_inner{padding:10px}.post_full .post_control_menu .popover .post_control:after,.share_options a:before{display:none}.post_full .post_control_menu .popover_menu_item{padding:0}.post_full .post_control_menu .popover_menu_item .post_control{height:auto;padding:5px 25px 5px 14px;font-size:15px}#posts .post .post_control_menu .popover_menu_item a,.popover_menu_item a{padding-left:14px;line-height:21px}.popover.popover_form form button.chrome{text-shadow:none;box-shadow:none;border-color:#9da6af;background:#9da6af}.popover.popover_form form button.chrome.disabled,.popover.popover_form form button.chrome.disabled:active,.popover.popover_form form button.chrome[disabled],.popover.popover_form form button.chrome[disabled]:active{background:#9da6af;border:1px solid #9da6af;color:hsla(0,0%,100%,.6)}.search_popover{position:relative;max-width:480px;min-width:300px;width:80%;box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;background-color:#fff}.search_popover .popover_inner,.search_popover .popover_menu_item{padding:0}.search_popover .search_results_section{position:relative}.search_popover .search_results_section .search_subheading{position:relative;height:24px;padding:0 12px;margin:0;background:#e7e7e7;color:#8f8f8f;color:rgba(0,0,0,.65);font-weight:700;font-size:11px;line-height:23px;text-shadow:0 1px 0 hsla(0,0%,100%,.6);text-transform:uppercase;z-index:2}.search_popover .search_results_section .search_subheading:first-child{border:0}.search_popover .result{display:-ms-flexbox;display:flex;height:45px;width:100%;-ms-flex-align:center;align-items:center}.search_popover .result.has_thumb .hide_overflow{max-width:470px}.search_popover .result .result_link{display:-ms-flexbox;display:flex;padding:0 12px;width:100%;box-sizing:border-box;-ms-flex-pack:justify;justify-content:space-between}.search_popover .result .result_link .go-to-blog{font-weight:800}.search_popover .result .result_link .result-left{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-positive:1;flex-grow:1}.search_popover .result .result_link .result-right{justify-self:flex-end;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}.search_popover .result .result_link .result-right .thumb{position:relative;top:0;right:0}.search_popover .result .result_link:focus:before,.search_popover .result .result_link:hover:before{content:"";position:absolute}.search_popover .result .result_link .result_content{width:100%;display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center}.search_popover .result .result_link .result_content .result_title{display:-ms-flexbox;display:flex;width:100%;-ms-flex-pack:justify;justify-content:space-between}.search_popover .result .result_link .result_content .result_title:before{background:none}.search_popover .explore_topics{margin:0 0 8px}.search_popover .explore_topics.no_topics{margin-bottom:0}.search_popover .explore_topics .explore_topics_link{position:relative;display:block;height:30px;padding:0 24px 0 12px;line-height:30px;font-size:12px;font-weight:400;text-decoration:none;box-sizing:border-box}#popover_legal{position:relative}#popover_legal .popover{display:none;min-width:116px;bottom:28px;left:50%;margin-left:-58px}#popover_legal.show .popover{display:block}#popover_legal .popover_menu_item{padding:0}#popover_legal .popover_menu_item a{position:relative;display:block;color:#444;text-align:left;padding:7px 14px}.popover_share_social{top:100%;left:50%;margin:5px 0 0 -93px;z-index:80;opacity:1;display:none;width:187px}.popover_share_social.up{top:auto;bottom:100%;margin:0 0 5px -93px}.popover_share_social .form_wrapper{padding:10px}.popover_share_social .input_group{border:0;background:#fff;border-radius:0;box-shadow:none}.popover_share_social .input_group li{position:relative}.popover_share_social .share_options{display:none;list-style:none}.popover_share_social .share_options.active{display:block}.popover_share_social .share_options .popover_menu_item{padding:0}.popover_share_social .share_form{display:none}.popover_share_social .share_form input,.popover_share_social .share_form textarea{margin:0;border:0;background:transparent;font-family:inherit;font-size:12px;color:#444;width:128px;padding:11px 0 10px 8px}.popover_share_social .share_form textarea{width:100%;box-sizing:border-box;box-shadow:none;resize:none;padding:10px 8px;height:75px;overflow:auto}.popover_share_social .share_form.active{display:inline}.popover_share_social .share_form.embed .share_label,.popover_share_social .share_form.facebook .share_label,.popover_share_social .share_form.twitter .share_label{display:block;height:29px;background:#f2f2f2;border-bottom:1px solid #d0d0d0;color:#8f8f8f;color:rgba(0,0,0,.65);font-size:11px;font-weight:700;line-height:29px;text-overflow:ellipsis;text-transform:uppercase;margin-bottom:0;overflow:hidden;padding:0 0 0 26px;white-space:nowrap;border-radius:6px 6px 0 0}.popover_share_social .share_form.twitter .character_count{display:block;position:absolute;right:8px;bottom:-15px;width:24px;height:10px;line-height:normal;color:#b4b4b4;font-size:12px;font-weight:400;text-align:center}.popover_share_social .share_form.twitter .character_count.character-limit{color:#ff492f}.popover_share_social .share_form.twitter textarea{height:125px}.popover_share_social .share_form.embed .email_submit,.popover_share_social .share_form.embed .input_group{display:none}.popover_share_social .share_form.embed .embed_code_wrapper{display:block}.popover_share_social .share_form.embed .embed_code_text{height:125px}.popover_share_social .share_form .character_count,.popover_share_social .share_form .embed_code_wrapper,.popover_share_social .share_form .share_label{display:none}.popover_share_social .share_form .reply_to{color:#8f8f8f;color:rgba(0,0,0,.65);font-size:12px;line-height:14px;padding:10px;overflow:hidden;display:none;white-space:nowrap}.popover_share_social .share_form .reply_to.active{display:block}.popover_share_social .share_form .reply_to_email{display:inline-block;white-space:nowrap;word-break:normal;-ms-word-wrap:break-word;word-wrap:break-word;text-overflow:ellipsis;overflow:hidden;max-width:130px;font-weight:400}.popover_share_social .share_form .reply_to_input{width:15px;float:left}.popover_share_social .share_form .reply_to_label{width:145px;float:right;white-space:normal;word-break:break-all}.popover_share_social .popover_menu_item{padding:10px}.popover_share_social .popover_menu_item .popover_menu_item_anchor{position:relative;overflow:hidden;display:block;padding:5px 25px 5px 14px;font-size:14px;font-weight:400;line-height:25px;min-height:25px;text-transform:none;text-overflow:ellipsis}.popover_share_social .popover_menu_item .popover_menu_item_anchor .icon{font-size:12px;margin-top:-8px;position:absolute;right:10px;top:50%}.popover--post-share-popover .popover_share_social{display:block;left:auto;margin:0;position:relative;top:auto}.popover--post-share-popover .popover_share_social .popover_menu_item:first-child:after,.popover--post-share-popover .popover_share_social .popover_menu_item:first-child:before{display:none!important}.popover_share_social .share_form ::-ms-clear{display:none}.popover_share_social .share_form ::-webkit-input-placeholder{font-size:12px;font-weight:400;color:rgba(0,0,0,.439216)!important}.popover_share_social .share_form :-moz-placeholder,.popover_share_social .share_form ::-moz-placeholder{font-size:12px;font-weight:400;color:rgba(0,0,0,.439216)!important}.popover_share_social .share_form :-ms-input-placeholder{font-size:12px;font-weight:400;color:rgba(0,0,0,.439216)!important}.popover_share_social .share_form .placeholder{font-size:12px;font-weight:400;color:#b4b4b4}.popover_share_social .share_form button{display:block;width:100%;margin-bottom:-1px}.popover_share_social .share_form .cancel{background:none;color:#444;cursor:pointer;display:block;padding:0;position:absolute;top:9px;right:8px;font-size:16px}.popover_share_social .share_form .cancel:hover{color:rgba(0,0,0,.439216)}.popover_share_social .share_form .cancel.service,.popover_share_social .share_form.embed .cancel,.popover_share_social .share_form.embed .email_address,.popover_share_social .share_form.facebook .cancel,.popover_share_social .share_form.facebook .email_address,.popover_share_social .share_form.twitter .cancel,.popover_share_social .share_form.twitter .email_address{display:none}.popover_share_social .share_form.embed .cancel.service,.popover_share_social .share_form.facebook .cancel.service,.popover_share_social .share_form.twitter .cancel.service{display:block}.popover_share_social .status{padding:1px;text-align:center;display:none}.popover_share_social .status .status_message{display:block;margin:10px 0;font-size:15px;text-transform:none;color:#8f8f8f;color:rgba(0,0,0,.65);padding:0;font-weight:700;line-height:1}.popover_share_social .form_wrapper{padding:0}.popover_share_social .share_form textarea{height:90px}.popover_share_social.popover_gradient>.popover_inner .email_form .form_wrapper{margin-top:-4px;border-radius:6px;overflow:hidden}.popover_share_social .input_group li{border-bottom:1px solid #e7e7e7}.popover_share_social .share_form button{width:calc(100% - 20px);margin:0 10px 7px}.popover_share_social .share_form.twitter button{width:calc(100% - 50px)}.popover_share_social .share_form .menu_item_option{display:inline-block;vertical-align:middle}.popover_share_social .share_form label.menu_item_label{display:inline-block;padding-left:5px;white-space:normal;vertical-align:middle;color:rgba(0,0,0,.439216);font-weight:400}.popover.popover_share_social .share_form.facebook .form_wrapper:after,.popover.popover_share_social .share_form.facebook .status .status_message:after,.popover.popover_share_social .share_form.twitter .form_wrapper:after,.popover.popover_share_social .share_form.twitter .status .status_message:after{border-bottom-color:#f2f2f2}.popover_share_social.nipple_on_bottom .share_form.facebook .form_wrapper:after,.popover_share_social.nipple_on_bottom .share_form.facebook .status .status_message:after,.popover_share_social.nipple_on_bottom .share_form.twitter .form_wrapper:after,.popover_share_social.nipple_on_bottom .share_form.twitter .status .status_message:after{border-bottom-color:transparent}.popover_share_social .share_form.facebook .input_group li:first-child,.popover_share_social .share_form.twitter .input_group li:first-child{border:0}.popover_share_social .share_form.embed .cancel,.popover_share_social .share_form.facebook .cancel,.popover_share_social .share_form.twitter .cancel{top:10px;left:10px;right:auto;font-size:12px}.popover_share_social .share_form.facebook .input_group li,.popover_share_social .share_form.twitter .input_group li{border-bottom:0}.popover_share_social .share_form .error_status{display:none}.popover_share_social .share_form .error_status.active{display:block;text-align:center;white-space:normal;line-height:normal;border-top:1px solid rgba(189,0,1,.23);padding:5px 10px;border-bottom:1px solid rgba(189,0,1,.23);color:#c64949;font-size:12px;font-weight:700;background-color:rgba(193,0,0,.1);margin:10px 0}.tumblelog_popover{background:transparent;margin-left:-140px;width:280px;padding:0;z-index:80}.tumblelog_popover:after,.tumblelog_popover:before{display:none}.tumblelog_popover.up{margin-top:-10px;opacity:0}.tumblelog_popover.up.is_open{opacity:1}.tumblelog_popover.up.is_empty{margin-top:90px}.tumblelog_popover.up.is_empty .recent_posts{transition-duration:.25s}.tumblelog_popover.up:after{border-top-color:#fff}.tumblelog_popover.down{margin-top:10px;opacity:0}.tumblelog_popover.down.is_open{opacity:1}.tumblelog_popover.left,.tumblelog_popover.right{margin-left:0}.tumblelog_popover.nav_menu_open .avatar,.tumblelog_popover.nav_menu_open .header_image_wrapper,.tumblelog_popover.nav_menu_open .info,.tumblelog_popover.nav_menu_open .navigation,.tumblelog_popover.nav_menu_open .recent_posts{pointer-events:none}.tumblelog_popover.is_closed,.tumblelog_popover.is_open{transition:height .25s,margin-top .25s,opacity .25s}.tumblelog_popover.is_empty .recent_posts{transition:height .1s,padding .1s;padding:0;height:0}.tumblelog_popover .popover_content_wrapper{background:transparent;height:100%;position:relative;border-radius:3px}.tumblelog_popover .recent_posts{background:#f2f2f2;position:relative;border-radius:0 0 3px 3px;padding:10px;height:80px}.tumblelog_popover .recent_posts .post{background-color:rgba(0,0,0,.0941176);vertical-align:bottom;margin:0 10px 0 0;position:relative;border-radius:2px;box-shadow:none;min-height:0;min-width:0;height:80px;width:80px;float:left}.tumblelog_popover .recent_posts .post:last-child{margin-right:0}.tumblelog_popover .recent_posts.has_2_posts .post{width:125px}.tumblelog_popover .recent_posts .Knight-Rider-bar{border-radius:3px;height:14px;margin:0 2px;width:14px}.tumblelog_popover.showing_recommendations .popover_content_wrapper{border-radius:3px;overflow:hidden}.tumblelog_popover.showing_recommendations .popover_inner{animation:recommended_blogs .4s;pointer-events:none;height:100%}.tumblelog_popover .recommended_blogs{box-sizing:border-box;padding-bottom:100px;border-radius:3px;position:relative;background:#fff;overflow:hidden}.tumblelog_popover .recommended_blogs .tumblelog_info_heading{border-bottom:1px solid #e7e7e7;text-overflow:ellipsis;white-space:nowrap;font-weight:400;background:#f2f2f2;line-height:29px;overflow:hidden;padding:0 10px;font-size:13px;color:#8f8f8f;color:rgba(0,0,0,.65);margin:0}.tumblelog_popover .recommended_blogs .tumblelog_info_heading .followed_blog{text-overflow:ellipsis;font-weight:700;margin-right:4px;overflow:hidden;max-width:140px;display:block;float:left}.tumblelog_popover .recommended_blogs .recent_posts{border-top:1px solid #e7e7e7;position:absolute;bottom:0;left:0}.tumblelog_popover .recommended_blogs .tumblelog_info{padding:10px 10px 10px 57px;position:relative;min-height:37px}.tumblelog_popover .recommended_blogs .avatar{background-position:50%;background-color:#e7e7e7;background-size:cover;position:absolute;border-radius:3px;overflow:hidden;display:block;height:37px;width:37px;left:10px;top:10px}.tumblelog_popover .recommended_blogs .name{width:140px;float:left}.tumblelog_popover .recommended_blogs .name h3,.tumblelog_popover .recommended_blogs .name h4{text-overflow:ellipsis;white-space:nowrap;font-weight:700;overflow:hidden;line-height:17px;padding-top:1px;font-size:14px;color:#444;padding:0;margin:0}.tumblelog_popover .recommended_blogs .name h3.solo{line-height:34px}.tumblelog_popover .recommended_blogs .name h3 a{text-decoration:none}.tumblelog_popover .recommended_blogs .name h4{font-weight:400;font-size:13px;color:#8f8f8f;color:rgba(0,0,0,.65)}.tumblelog_popover .recommended_blogs .follow_nav{margin-top:4px;float:right}.tumblelog_popover .recommended_blogs .follow_nav .follow,.tumblelog_popover .recommended_blogs .follow_nav .unfollow{line-height:15px;font-size:13px;height:15px;float:right}.tumblelog_popover .recommended_blogs .follow_nav.is_following .follow,.tumblelog_popover .recommended_blogs .follow_nav .unfollow{display:none}.tumblelog_popover .recommended_blogs .follow_nav.is_following .unfollow{display:block}.tumblelog_popover.popover--blog-card{margin-left:0;opacity:0;transition:opacity .25s}.tumblelog_popover.popover--blog-card .recent_posts{border-radius:0 0 3px 3px}.tumblelog_popover .poptica_header{width:280px}.tumblelog_popover .poptica_header .indash_header_wrapper{border-radius:3px 3px 0 0;background:#f2f2f2;margin:0}.tumblelog_popover .poptica_header .indash_header_wrapper .header_image,.tumblelog_popover .poptica_header .indash_header_wrapper .navigation .navigation_bg{border-radius:3px 3px 0 0}.tumblelog_popover .poptica_header .indash_header_wrapper:not(.no_header_image) .navigation:before{border-radius:5px 5px 0 0}.tumblelog_popover .poptica_header .header_image_wrapper{height:158px}.tumblelog_popover .poptica_header .navigation h3{margin-left:0}.tumblelog_popover .poptica_header .navigation .full_url,.tumblelog_popover .poptica_header .navigation .name{text-overflow:ellipsis;white-space:nowrap;overflow:hidden;max-width:130px}.tumblelog_popover .poptica_header .avatar{box-shadow:0 0 0 3px;margin:10px auto 0;height:64px;width:64px}.tumblelog_popover .poptica_header .avatar:last-child{margin-bottom:10px}.tumblelog_popover .poptica_header .header_image_wrapper+.avatar{margin-top:-48px}.tumblelog_popover .poptica_header .info_wrapper{padding-bottom:1px}.tumblelog_popover .poptica_header .avatar+.info,.tumblelog_popover .poptica_header .avatar+.info_wrapper .info,.tumblelog_popover .poptica_header .info{padding:12px 10px 0}.is_empty .tumblelog_popover .poptica_header .info{padding-bottom:10px}.tumblelog_popover .poptica_header .title{font-size:20px;margin:0 0 5px}.tumblelog_popover .poptica_header .description{position:relative;line-height:16px;font-size:12px}.tumblelog_popover .poptica_header .description .description_inner{max-height:48px}.tumblelog_popover .poptica_header .description .description_gradient{position:absolute;height:20px;width:100%;bottom:0;left:0}.info_popover{margin-left:-67px;position:absolute;right:31px;top:48px}.info_popover .popover_inner{min-width:150px;width:150px;padding:0}.info_popover .popover_inner ul{list-style:none;padding:4px 0;margin:0}.info_popover .popover_inner ul li{line-height:25px;font-weight:400;font-size:14px;display:block;border:0;padding:0}.info_popover .popover_inner ul li.label{background:#f2f2f2;color:#8f8f8f;color:rgba(0,0,0,.65);padding:0 10px;font-size:11px;font-weight:700;line-height:24px;text-transform:uppercase;border:0}.info_popover .popover_inner ul li.toggle-subscription{display:none;position:relative}.info_popover .popover_inner ul li.toggle-subscription a{padding-right:30px}.info_popover .popover_inner ul li.toggle-subscription.can-subscribe{display:block}.info_popover .popover_inner ul li.toggle-subscription.can-subscribe .unsubscribe{display:none}.info_popover .popover_inner ul li.toggle-subscription.is-subscribed .unsubscribe{display:block}.info_popover .popover_inner ul li.toggle-subscription.is-subscribed .subscribe{display:none}.info_popover .popover_inner ul li.toggle-subscription .help-slidedown{height:inherit;color:#444;font-size:15px;line-height:14px;right:10px;top:10px;position:absolute;cursor:pointer}.info_popover .popover_inner ul li.toggle-subscription .help-slidedown:before{content:"\EA4B"}.info_popover .popover_inner ul li.web-subscribe-how-to{font-size:10px;line-height:12px;background:rgba(0,0,0,.0509804);color:#8f8f8f;color:rgba(0,0,0,.65);display:none}.info_popover .popover_inner ul li.web-subscribe-how-to .copy-howto{margin:7px 10px 8px;display:inline-block}.info_popover .popover_inner ul li.web-subscribe-how-to .copy-howto .app-link{padding:0;display:inline;text-decoration:underline}.info_popover .popover_inner a{text-decoration:none;padding:5px 10px;display:block}.info_popover .popover_inner .toggle_nsfw .not_nsfw{display:none}.info_popover .popover_inner .toggle_nsfw.is_flagged .not_nsfw,.info_popover .popover_inner .toggle_nsfw .nsfw{display:block}.info_popover .popover_inner .toggle_nsfw.is_flagged .nsfw,.info_popover .popover_inner .toggle_spam .not_spam{display:none}.info_popover .popover_inner .toggle_spam.is_flagged .not_spam,.info_popover .popover_inner .toggle_spam .spam{display:block}.info_popover .popover_inner .toggle_spam.is_flagged .spam,.info_popover .popover_inner .toggle_suspended .not_suspended{display:none}.info_popover .popover_inner .toggle_suspended.is_flagged .not_suspended,.info_popover .popover_inner .toggle_suspended .suspended{display:block}.info_popover .popover_inner .toggle_suspended.is_flagged .suspended{display:none}.info_popover li:hover{background:#e6eff7}.tumblelog_popover.bottom .recent_posts,.tumblelog_popover.down .poptica_header:not(:empty)+.recent_posts{animation:popover_down .2s ease}.tumblelog_popover.top .indash_tumblelog_compact:not(:empty),.tumblelog_popover.up .poptica_header:not(:empty){animation:popover_up .2s ease}.poptica_header .avatar{animation:pop_in .2s ease .24s}.poptica_header .info{animation:slide_up .2s ease-out .2s}.tumblelog_popover .recent_posts .post{animation:slide_up .2s ease-out .26s}.tumblelog_popover .recommended_blogs .recent_posts .post{animation-name:fade_in}.tumblelog_popover .recent_posts .post:nth-child(2){animation-delay:.32s}.tumblelog_popover .recent_posts .post:nth-child(3){animation-delay:.38s}.poptica_header .avatar,.poptica_header .info,.tumblelog_popover .recent_posts .post,.tumblelog_popover .recommended_blogs .recent_posts .post{animation-fill-mode:backwards}@keyframes slide_up{0%{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}@keyframes slide_down{0%{opacity:0;transform:translateY(-15px)}to{opacity:1;transform:translateY(0)}}@keyframes pop_in{0%{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}@keyframes popover_up{0%{opacity:0;transform:translateY(80px)}to{opacity:1;transform:translateY(0)}}@keyframes popover_down{0%{opacity:0;transform:translateY(-80px)}to{opacity:1;transform:translateY(0)}}@keyframes recommended_blogs{0%{opacity:0;transform:translateY(0)}to{opacity:1;transform:translateY(-100%)}}.popover--dropdown{width:184px;background-color:#fff;border-radius:3px;border:1px solid rgba(0,0,0,.184314)}.popover--dropdown .dropdown{padding:4px 0}.popover--dropdown .dropdown .dropdown-item{color:#444;line-height:2.3;font-size:14px;padding:0 10px;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.popover--dropdown .dropdown .dropdown-item:hover{background:#e6eff7}.tour_guide .popover.appearance_step>.appearance{background-color:#f6f6f6;font-size:10px;height:100%;min-height:50px;padding:0;position:relative;width:100%;box-sizing:border-box}.tour_guide .popover.appearance_step>.no_header_image.appearance{padding-top:50px}.tour_guide .popover.appearance_step>.customize.appearance,.tour_guide .popover.appearance_step>.header_image_only.appearance{margin-bottom:20px}.tour_guide .popover.appearance_step>.appearance:after,.tour_guide .popover.appearance_step>.appearance:before{content:" ";display:table}.tour_guide .popover.appearance_step>.small.appearance{font-size:8px}.tour_guide .popover.appearance_step>.medium.appearance{font-size:10px}.tour_guide .popover.appearance_step>.large.appearance{font-size:16px}.tour_guide .popover.appearance_step>.appearance .navigation{height:50px;padding:10px;width:100%;z-index:3;background-image:linear-gradient(rgba(0,0,0,.3),transparent);box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;position:absolute;top:0;left:0}.tour_guide .popover.appearance_step>.appearance .navigation .tumblelog_name{color:#fff;font-size:14px;line-height:30px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;-ms-flex-positive:1;flex-grow:1}.tour_guide .popover.appearance_step>.appearance .navigation .tumblelog_name a{color:#fff;text-decoration:none}.tour_guide .popover.appearance_step>.appearance .navigation .chrome{background:#fff;border:none;color:#444;display:block;line-height:30px;margin:0 0 0 auto;padding:0 8px;-ms-flex-negative:0;flex-shrink:0}.tour_guide .popover.appearance_step>.appearance .avatar,.tour_guide .popover.appearance_step>.appearance .header_image{background-color:inherit;background-position:50%;background-repeat:no-repeat;background-size:cover}.tour_guide .popover.appearance_step>.appearance .header_image{height:0;padding-bottom:56.25%;position:relative;width:100%;z-index:1}.tour_guide .popover.appearance_step>.appearance .header_image.no_stretch{background-size:contain;margin:50px 0;padding-bottom:calc(56.25% - 100px)}.tour_guide .popover.appearance_step>.appearance .avatar{border-radius:6px;box-shadow:0 0 0 3px;margin:0 auto;position:relative;width:64px;z-index:2}.tour_guide .popover.appearance_step>.appearance .avatar.circle{border-radius:50%}.tour_guide .popover.appearance_step>.appearance .avatar img{display:block;height:auto;margin-top:-70%;opacity:0;pointer-events:none;width:100%}.tour_guide .popover.appearance_step>.large.appearance .avatar{box-shadow:0 0 0 4px;width:96px}.tour_guide .popover.appearance_step>.appearance .info{padding:1.25em 2.25em 2.25em;text-align:center}.tour_guide .popover.appearance_step>.appearance .info:empty{padding-bottom:1.125em}.tour_guide .popover.appearance_step>.appearance .info .title{color:inherit;font-size:2.625em;letter-spacing:0;line-height:1.1;margin:0 0 .2em}.tour_guide .popover.appearance_step>.appearance .info .title:last-child{margin-bottom:0}.tour_guide .popover.appearance_step>.appearance .info .description{font-size:14px;opacity:.7}.tour_guide .popover.appearance_step>.appearance .info .description blockquote,.tour_guide .popover.appearance_step>.appearance .info .description p,.tour_guide .popover.appearance_step>.appearance .info .description ul{margin:0!important;padding:0!important}.tour_guide .popover.appearance_step>.appearance .info .description br+br{display:none}.tour_guide .popover.appearance_step>.appearance .header_image+.info:empty{padding:0}.tour_guide .popover.appearance_step>.small.appearance .info .description{font-size:13px}.tour_guide.removing{opacity:0;transition:opacity .15s}.tour_guide.removing .popover{transform:scale(.5);transition:all .15s cubic-bezier(.6,-.28,.735,.045)}.tour_guide.dim .glass{display:block}.tour_guide .glass{bottom:0;display:none;left:0;position:fixed;right:0;top:0;z-index:90209;animation:fade_in .3s ease-out}.tour_guide .popover{margin:10px 0;position:absolute;width:240px;z-index:90210;animation:popover .35s cubic-bezier(.175,.885,.32,1.275)}.tour_guide .popover.centered{position:fixed}.tour_guide .popover .ok_button_link{display:inline-block}.tour_guide .popover .ok_button{margin-top:12px}.tour_guide .popover.appearance_step{background-color:transparent;padding:0}.tour_guide .popover.appearance_step>.popover_inner{border-top-left-radius:6px;border-top-right-radius:6px;background-color:#f2f2f2;padding:20px}.tour_guide .popover.appearance_step>.appearance{border-bottom-left-radius:6px;border-bottom-right-radius:6px;text-align:left}.tour_guide_element{z-index:90210}@keyframes fade_in{0%{opacity:0}to{opacity:1}}@keyframes popover{0%{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}.popover.tutorial{padding:15px;text-align:center;box-sizing:border-box;background:#fff}.popover.tutorial .content,.popover.tutorial .title{color:#444}.popover.tutorial .title{font-weight:700;font-size:14px;margin:0 0 6px}.popover.tutorial .content{font-size:14px;margin:0}.popover.tutorial .ok_button{margin:12px 0 0;padding:4px 15px 5px}.message-controls-popover{width:187px;margin:5px 0 0 -93px}.message-controls-popover .popover_menu_item_anchor{padding-left:0}.popover_vendor{transition:opacity .15s cubic-bezier(.455,.03,.515,.955),transform .15s cubic-bezier(.455,.03,.515,.955);position:absolute;text-align:center;width:225px;display:none;right:0;top:30px}.popover_vendor .popover_menu_item{white-space:normal}.popover_vendor .popover_menu_item:hover{color:#001935}.popover_vendor .popover_menu_item:hover .subtext,.popover_vendor .popover_menu_item:hover .subtext-email{color:#001935;opacity:.7}.popover_vendor .popover_menu_item_anchor{margin-bottom:5px;padding-left:0;display:block}.popover_vendor .subtext{font-size:13px;color:#8f8f8f}.popover_vendor .subtext-email{max-width:100%;display:block;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;margin-bottom:0}.popover_vendor .success-text{pointer-events:none;transform:scale(.8);position:absolute;opacity:0;top:20px}.popover_vendor .email-vendor-listing,.popover_vendor .success-text{transition:opacity .15s cubic-bezier(.455,.03,.515,.955),transform .15s cubic-bezier(.455,.03,.515,.955)}.popover_vendor.success .email-vendor-listing{pointer-events:none;transform:scale(.8);opacity:0}.popover_vendor.success .success-text{transform:scale(1);opacity:1}.popover_vendor.fade-out{transform:scale(.8);opacity:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-pano-lightbox-container .tmblr-iframe--pano-lightbox{z-index:8675309;position:fixed;top:0;left:0;right:0;bottom:0;width:100%;height:100%;display:none}.tmblr-pano-lightbox-container .tmblr-iframe-preloader-container{z-index:8675310;position:fixed;bottom:0;width:100%;height:100%;background:rgba(0,0,0,.92)}.tmblr-pano-lightbox-container .tmblr-pano-lightbox{display:block}.tmblr-pano-lightbox-container .tmblr-pano-lightbox--preloading{display:none}.tmblr-iframe--controls-phone-container{padding-top:43px}.tmblr-iframe--controls-phone-container .t-logo{display:none}.tmblr-iframe--controls,.tmblr-iframe--mobile-logged-in-controls{position:fixed}.tmblr-iframe--controls.iframe-controls--desktop,.tmblr-iframe--mobile-logged-in-controls.iframe-controls--desktop{top:0;right:0;width:40%;min-width:200px;height:36px;z-index:100}.tmblr-iframe--controls.iframe-controls--phone-mobile,.tmblr-iframe--mobile-logged-in-controls.iframe-controls--phone-mobile{top:0;left:0;width:100%;height:44px;padding-right:8px;z-index:10}.tmblr-iframe--controls.iframe-controls--tablet-mobile,.tmblr-iframe--mobile-logged-in-controls.iframe-controls--tablet-mobile{top:0;right:0;width:235px;height:36px;z-index:2147483646}.tmblr-iframe--desktop-logged-in-controls{position:fixed}.tmblr-iframe--desktop-logged-in-controls.iframe-controls--desktop{right:0;top:0;z-index:100}.tmblr-iframe--unified-controls{position:fixed;top:0;right:0;left:0;width:100%;height:0;z-index:100}.tmblr-iframe-compact .tmblr-iframe--unified-controls{left:auto}@media screen and (max-device-width:568px){.tmblr-iframe-overlay.tmblr-iframe-full-width .no-image:not(.avatar-hidden) #header{padding-top:140px}}.tmblr-iframe-overlay.tmblr-iframe-full-width:not(.tmblr-iframe-themed) .top-blog-header .header-image.cover.loaded:after{display:none}.tmblr-iframe-overlay.tmblr-iframe-full-width:not(.tmblr-iframe-themed) .tmblr-iframe--unified-controls{background-image:linear-gradient(180deg,rgba(0,0,0,.4) 0,transparent);padding-bottom:10px;transition:padding-bottom .1s linear}.tmblr-iframe-overlay.tmblr-iframe-full-width:not(.tmblr-iframe-themed) .tmblr-iframe--unified-controls.tmblr-iframe--below-header{padding-bottom:0}.tmblr-iframe--follow-teaser{position:fixed;bottom:0;right:0;z-index:100;display:none}.tmblr-iframe--follow-teaser.open{display:block}.tmblr-iframe--follow-teaser.sticky-ad-visible{bottom:310px}.tmblr-iframe--follow-teaser.center-middle{position:fixed;left:50%;top:50%;margin-top:-200px;margin-left:-225px}.tmblr-iframe--follow-teaser.center{position:fixed;left:50%;margin-left:-325px}@keyframes iframe-app-cta-transition{0%{opacity:0;bottom:-2em}to{opacity:1}}@keyframes iframe-app-cta-dismiss-transition{0%{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(2em)}}.tmblr-iframe--app-cta-button{position:fixed;bottom:0;left:0;width:100%;visibility:hidden;z-index:100}.tmblr-iframe--app-cta-button body,.tmblr-iframe--app-cta-button html{margin:0}.tmblr-iframe--app-cta-button.tmblr-iframe--loaded.open{visibility:visible;animation:iframe-app-cta-transition .2s ease-out}@keyframes iframe-gdpr-banner-transition{0%{opacity:0!important;bottom:-2em!important}to{opacity:1!important}}@keyframes iframe-gdpr-banner-dismiss-transition{0%{opacity:1!important;transform:translateY(0)!important}to{opacity:0!important;transform:translateY(2em)!important}}body.android,body.ios{padding-bottom:50px!important}iframe.tmblr-iframe--gdpr-banner{position:fixed!important;bottom:0!important;left:50%!important;width:100%!important;transform:translateX(-50%)!important;border-right:1px solid #001935;z-index:2147483647!important}iframe.tmblr-iframe--gdpr-banner.tmblr-iframe--loaded{animation:iframe-gdpr-banner-transition .2s ease-out!important}body.ios iframe.tmblr-iframe--gdpr-banner{bottom:30px!important}.tmblr-lightbox{position:fixed;top:0;bottom:0;left:0;right:0;z-index:8675309;overflow:hidden;background-color:hsla(0,0%,7%,.92)}.tmblr-lightbox .vignette{position:absolute;width:100%;height:100%;left:0;top:0;right:0;bottom:0;z-index:8675308;background-size:100% 100%}.tmblr-lightbox .lightbox-image-container{position:absolute;z-index:8675310;cursor:pointer}.tmblr-lightbox .lightbox-image-container.single-image{cursor:default}.tmblr-lightbox .lightbox-image{border-radius:3px;box-shadow:0 4px 30px #000;border-width:0;background-color:transparent}.tmblr-lightbox .lightbox-image.hide{display:none}.tmblr-lightbox .lightbox-image.placeholder{background-color:hsla(0,0%,100%,.05)}.tmblr-lightbox .lightbox-caption{position:absolute;text-align:center;font-family:Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;font-size:17px;font-weight:700;color:#fff;padding-top:20px;text-shadow:0 4px 30px #000;display:inline-block;text-rendering:optimizeLegibility}.tmblr-lightbox .lightbox-caption.hide{display:none}.hidden-body{position:relative;left:-99999px;overflow:hidden;background-color:#000}.hidden-body .show-mobile-lightbox{position:fixed;overflow:hidden;width:100%;top:0;left:0;right:0;bottom:0;z-index:8675309}.sticky-ad-wrapper{position:fixed;right:20px;bottom:-330px;border:1px solid #9da6af;border-radius:5px 0 0;background-color:#fff;z-index:100;transition:all .5s ease}.sticky-ad-wrapper .tmblr-iframe--sticky-ad{position:relative;margin-top:10px}.sticky-ad-wrapper.show{bottom:0}.sticky-ad-wrapper .ad-header{line-height:1;margin:5px;text-transform:uppercase;top:4px}.sticky-ad-wrapper .ad-footer,.sticky-ad-wrapper .ad-header{font-size:10px;text-align:center;color:#9da6af;position:relative}.sticky-ad-wrapper .ad-footer{bottom:12px;line-height:100%}.sticky-ad-wrapper .ad-footer a{color:#444;text-decoration:none;border-bottom:0}.sticky-darla-ad{position:fixed;bottom:-315px;right:20px;z-index:100;border-radius:5px 0 0;border:1px solid #9da6af;transition:all .5s ease;padding:10px}.sticky-darla-ad.show{bottom:0}.sticky-darla-ad .ad-close-btn{position:relative;font-weight:900;margin-left:auto;margin-right:-11px;margin-top:-26px;cursor:pointer;width:20px;height:15px;text-align:center;border-radius:5px 5px 0 0;font-size:12px;line-height:1.5;border-top:1px solid #9da6af;border-left:1px solid #9da6af;border-right:1px solid #9da6af}.sticky-darla-ad .ad-close-btn .icon-x{display:none;position:relative;font-size:12px;content:"\D7";color:#9da6af}.sticky-darla-ad .ad-footer{font-size:10px;line-height:1;text-align:center;color:#9da6af}.sticky-darla-ad .ad-footer a{color:#444;padding-left:5px;border-bottom:0;text-decoration:none}.sticky-darla-ad .ad-header{font-size:10px;line-height:1;text-align:center;margin:5px;text-transform:uppercase;color:#9da6af}.nu-optica-sticky-darla-ad{display:none;z-index:100;transition:all .5s ease}.nu-optica-sticky-darla-ad.show{display:block}.nu-optica-sticky-darla-ad.fixed{position:fixed;margin-top:0}.nu-optica-sticky-darla-ad.parked{position:absolute;margin-top:0}.nu-optica-sticky-darla-ad .ad-header{font-size:10px;text-align:center;margin:5px;text-transform:uppercase;color:#9da6af}.nu-optica-sticky-darla-ad .ad-footer,.nu-optica-sticky-darla-ad .ad-header{line-height:1;text-align:left;font-size:12px;font-weight:700}.nu-optica-sticky-darla-ad .ad-footer a{padding-left:5px;border-bottom:0;text-decoration:none}.nu-optica-sticky-darla-ad .ad-footer a:after{content:"\276F";padding-left:4px}span.tmblr-alt-text-helper{display:block;box-sizing:border-box;width:-webkit-min-content;width:-moz-min-content;width:min-content;padding:1px 4px;border-radius:4px;margin-top:4px;background-color:hsla(0,0%,7%,.7);color:#fff;cursor:pointer;font-weight:900;line-height:normal;opacity:.1}figure:focus-within span.tmblr-alt-text-helper,figure:hover span.tmblr-alt-text-helper{opacity:1}figure.tmblr-full{position:relative}figure.tmblr-full span.tmblr-alt-text-helper{position:absolute;left:15px;bottom:20px}.popover.alt-text-helper_step h3{text-align:left}.popover.alt-text-helper_step p{text-align:left;margin:0;padding:0;min-width:0}.tmblr-iframe--init{width:0;height:0;opacity:0;z-index:-1;pointer-events:none}</style><style type="text/css">.live-photo {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .live-photo video,
+  .live-photo img {
+    display: block;
+    max-width: 100%;
+    pointer-events: none;
+    -ms-touch-action: none;
+        touch-action: none; }
+  .live-photo video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .live-photo video::-webkit-media-controls-start-playback-button {
+      display: none; }
+  .live-photo .live-photo-icon {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg width='48' height='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg' fill='%23fff'%3E%3Ctitle%3ELive Photo%3C/title%3E%3Cg fill-rule='evenodd'%3E%3Cpath d='M24 36c6.627 0 12-5.373 12-12s-5.373-12-12-12-12 5.373-12 12 5.373 12 12 12zm0-2c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10z'/%3E%3Cpath d='M24 29a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-3a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0-19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.788.63a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.462 1.85a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm3.831 2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm2.94 3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm1.849 4.462a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm.63 4.788a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-.63 4.788a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1.85 4.461a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-2.94 3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-3.831 2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-4.462 1.849a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM24 44a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-4.788-.63a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-4.462-1.85a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-3.831-2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-2.94-3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM6.13 30.288a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 25.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm.63-4.788a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm1.85-4.462a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm2.94-3.831a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm3.831-2.94a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4.462-1.849a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/%3E%3C/g%3E%3C/svg%3E") center center;
+    background-size: contain;
+    -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+    pointer-events: none; }
+  .live-photo .live-photo-postroll,
+  .live-photo .live-photo-video {
+    opacity: 0; }
+  .live-photo .live-photo-video {
+    -webkit-filter: blur(7.5px);
+            filter: blur(7.5px); }
+  .live-photo .live-photo-keyframe,
+  .live-photo .live-photo-postroll,
+  .live-photo .live-photo-video {
+    will-change: transform, filter, opacity;
+    transition: opacity 0.5s linear, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s linear;
+    transition: transform 0.5s ease-out, filter 0.5s linear, opacity 0.5s linear;
+    transition: transform 0.5s ease-out, filter 0.5s linear, opacity 0.5s linear, -webkit-transform 0.5s ease-out, -webkit-filter 0.5s linear; }
+  .live-photo.loading .live-photo-icon {
+    -webkit-animation: live-photo-icon-loading 0.5s linear alternate infinite both;
+            animation: live-photo-icon-loading 0.5s linear alternate infinite both; }
+  .live-photo.preview .live-photo-postroll {
+    opacity: 1;
+    transition-duration: 0s; }
+  .live-photo.active video,
+  .live-photo.active img {
+    -webkit-transform: scale(1.075, 1.075);
+        -ms-transform: scale(1.075, 1.075);
+            transform: scale(1.075, 1.075); }
+  .live-photo.active .live-photo-postroll {
+    -webkit-animation: live-photo-post-roll 1s both;
+            animation: live-photo-post-roll 1s both; }
+  .live-photo.active .live-photo-video {
+    opacity: 1;
+    -webkit-filter: none;
+            filter: none;
+    transition-delay: 0.375s;
+    transition-duration: 0.625s; }
+
+@-webkit-keyframes live-photo-icon-loading {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0.75; } }
+
+@keyframes live-photo-icon-loading {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0.75; } }
+
+@-webkit-keyframes live-photo-post-roll {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0);
+            filter: blur(0); }
+  2% {
+    opacity: 1; }
+  37.5% {
+    opacity: 1;
+    -webkit-filter: blur(7.5px);
+            filter: blur(7.5px); }
+  100% {
+    opacity: 0; } }
+
+@keyframes live-photo-post-roll {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(0);
+            filter: blur(0); }
+  2% {
+    opacity: 1; }
+  37.5% {
+    opacity: 1;
+    -webkit-filter: blur(7.5px);
+            filter: blur(7.5px); }
+  100% {
+    opacity: 0; } }
+</style><style type="text/css">.tmblr-iframe--unified-controls{height:54px}.tmblr-iframe-compact .tmblr-iframe--unified-controls{width:383px}.tmblr-iframe-pushdown{padding-top:54px}</style></head>
+   <body class="index-page tmblr-iframe-overlay tmblr-iframe-themed tmblr-iframe-compact"><iframe src="./Inc on Science2_files/iframe.html" width="383" height="54" frameborder="0" scrolling="no" name="unified-controls" class="tmblr-iframe tmblr-iframe--unified-controls tmblr-iframe--loaded iframe-controls--desktop"></iframe><div class="ui_dialog_lock" style="display: none;"></div>
+      <main class="flex justify-content-center">
+         <aside class="sticky flex full-height align-center justify-center">
+            <div class="sidebar-container padding-md rounded-corners">
+          
+                <div class="milk-sidebar">
+                    <div class="milktop"></div>
+                    <div class="sidebar flex align-center justify-center">
+                        <div class="description flex align-center justify-center">
+                            Les laboratoires de recherche d’Inc on Science sont 🙂 de vous accueillir dans leurs locaux
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </aside>
+         <section class="margin-bottom-50">
+          
+                <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 rounded-corners">
+                <div class="searching">
+                <img src="./Inc on Science2_files/tumblr_edce45fa1bf98132f17f243ac9f7733e_cbfe00c8_128.png">
+                    <form action="../tumblr/Inc%20on%20Science.htmlsearch" method="get" id="search-form">
+                    <input type="text" name="q" class="query" value="" placeholder="Search">
+                </form>
+                </div>
+               <h2 class="title">Inc on Science</h2>
+               <div class="reblog-content menu-links">
+                <a href="../tumblr/Inc%20on%20Science.html"><i class="fa-solid fa-house-chimney"></i> Home</a>
+                
+                <a href="../tumblr/Inc%20on%20Science.htmlask"><i class="fa-solid fa-envelope-open-text"></i> Ask me anything</a>
+                
+                
+                
+
+                
+               </div>
+            </article>
+            
+              
+                    
+                    
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               
+               <div class="reblog-content   op">
+                  <p class="npf_quirky">Il y avait un Amadeus qui avait tout su. Ce Amadeus nous a ouvert les yeux et dans l'affaire il a pu sentir le vrai goût de la liberté. Nous avons encapsulé ce goût dans nos gélules de deus.x.Moz<span style="color: #ff4930">art</span>.<br><br>Retrouvez la saveur unique d'une dissociation accordée…<br>Retrouvez la sensation furtive de l'illumination infantile…<br>Gobez nos gélules de deus.x.Machin<span style="color: #ff4930">art</span> 🌌🍼 !<br><br>(ce produit contient du colostrum, ne pas soumettre aux personnes fragiles)</p>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+               <div class="tags rounded-corners">
+                  
+                  <a href="../tumblr/Inc%20on%20Science.htmltagged/dxm" class="box-shadow">#dxm</a>
+                  
+                  <a href="../tumblr/Inc%20on%20Science.htmltagged/milky%20way" class="box-shadow">#milky way</a>
+                  
+                  <a href="../tumblr/Inc%20on%20Science.htmltagged/delirious" class="box-shadow">#delirious</a>
+                  
+                  <a href="../tumblr/Inc%20on%20Science.htmltagged/incon.science" class="box-shadow">#incon.science</a>
+                  
+               </div>
+               
+            </article>
+            
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               <h2>Cherchez l’élu</h2>
+               
+               
+               <div class="reblog-content   op">
+                  <div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s1280x1920/af7102205f7e476e4a3a91667ed6474a452e8955.jpg" data-big-photo-height="700" data-big-photo-width="700"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_b18ad0e4444240d3138e8ce12d8d04a8_834fde62_500.jpg" srcset="https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s75x75_c1/1bae950b7dec83e7ae61c346fb5433486b28480b.jpg 75w, https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s100x200/7e3da6e25538d78dd6bc4a016c622a150dc49693.jpg 100w, https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s250x400/ad65d4c01a719d906818542df38a2af34749e0b8.jpg 250w, https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s400x600/c095081db621cdd29e570a8184f5b87282db5785.jpg 400w, https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s500x750/834fde626e3ed6990c05f74fae711152ad6d44a6.jpg 500w, https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s540x810/20e5ea11ac363cb9eb84cbec5291ec7079ba7ab5.jpg 540w, https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s640x960/810abc19055a74c35705d059d612e9c20a198f0d.jpg 640w, https://64.media.tumblr.com/b18ad0e4444240d3138e8ce12d8d04a8/fa602b16c1c085f0-7c/s1280x1920/af7102205f7e476e4a3a91667ed6474a452e8955.jpg 700w" sizes="(max-width: 700px) 100vw, 700px" alt="image"></a></figure></div></div>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+            </article>
+            
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               <h2>Dans la salle d'attente il y a</h2>
+               
+               
+               <div class="reblog-content   op">
+                  <div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/ab1606ae3a5f2ffb008b40f81a71d6eb/4c4ace676670c68d-ef/s1280x1920/4b1ca0935334910a2ff73d8acf530e7a033ab7cc.jpg" data-big-photo-height="500" data-big-photo-width="500"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_ab1606ae3a5f2ffb008b40f81a71d6eb_aeeb97d1_500.jpg" srcset="https://64.media.tumblr.com/ab1606ae3a5f2ffb008b40f81a71d6eb/4c4ace676670c68d-ef/s75x75_c1/90a7fadb99b0ed58c71e28be7d79b4609bcff897.jpg 75w, https://64.media.tumblr.com/ab1606ae3a5f2ffb008b40f81a71d6eb/4c4ace676670c68d-ef/s100x200/eeb3f8de4f9342c1665e771720dc58097b2a988f.jpg 100w, https://64.media.tumblr.com/ab1606ae3a5f2ffb008b40f81a71d6eb/4c4ace676670c68d-ef/s250x400/ee1487d68a018166ccb49c75d29e9d1a5f491051.jpg 250w, https://64.media.tumblr.com/ab1606ae3a5f2ffb008b40f81a71d6eb/4c4ace676670c68d-ef/s400x600/24fbc9d93d0f9cc1a99abc59cdb0fbeec8928505.jpg 400w, https://64.media.tumblr.com/ab1606ae3a5f2ffb008b40f81a71d6eb/4c4ace676670c68d-ef/s500x750/aeeb97d15c2967ccb8f0fd003673150026fbf9aa.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s1280x1920/3646c29ddf9a8cd930de74d119747ef2c36b3e01.jpg" data-big-photo-height="673" data-big-photo-width="679"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_4797efb5c3d98add32435626d0542792_7b5166e1_500.jpg" srcset="https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s75x75_c1/f0dc1ecc8629e8bdaf50988a73ae8b32ef88c6a3.jpg 75w, https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s100x200/d888360c47e43fd924f20385a9ead918d783eb55.jpg 100w, https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s250x400/48651eb6b343d726fb08eb2c3e098662d742317f.jpg 250w, https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s400x600/78a8a4ac28dc2aa56be29d309ae218d3edb899c9.jpg 400w, https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s500x750/7b5166e1fec32ed265023d97d366c202a2b43d7b.jpg 500w, https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s540x810/aa886e64119665936f50102445c2968af2adbe92.jpg 540w, https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s640x960/4f3da73a4e2e8d190fcc4597dd4d8911012e82d7.jpg 640w, https://64.media.tumblr.com/4797efb5c3d98add32435626d0542792/4c4ace676670c68d-57/s1280x1920/3646c29ddf9a8cd930de74d119747ef2c36b3e01.jpg 679w" sizes="(max-width: 679px) 100vw, 679px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s1280x1920/c784416e9c7a5ed688cb123bb0646506055d288d.png" data-big-photo-height="591" data-big-photo-width="594"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_8c96f2ff1acb958ab961ef94e42b2130_3a647137_500.png" srcset="https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s75x75_c1/ec589b62bf62f4373bf6890a1765ce35aa81d46f.png 75w, https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s100x200/5b2d60fd5a409ecdfa9bca15dab5fe8e8d002e89.png 100w, https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s250x400/b49585e0e2d864a20e312f2ae91bf04b394037b9.png 250w, https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s400x600/9ffc99843f2cbbbd9dd72185ee483a4f600181a1.png 400w, https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s500x750/3a647137c78d879143d6916f2b230718697439f7.png 500w, https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s540x810/ea25274b2884af31a865b4b93a5b47d3d589fca6.png 540w, https://64.media.tumblr.com/8c96f2ff1acb958ab961ef94e42b2130/4c4ace676670c68d-36/s640x960/46728fc9fea72eadac032a318a93583a721c6329.png 594w" sizes="(max-width: 594px) 100vw, 594px" alt="image"></a></figure></div></div><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s1280x1920/a5d53996d1c24b72d32936577c41b777300eae11.jpg" data-big-photo-height="750" data-big-photo-width="894"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_506b709019827ef27e648481c0570692_28d03a4d_500.jpg" srcset="https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s75x75_c1/03a153c3cd8b00e3e704693acbead1a61cf0ea46.jpg 75w, https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s100x200/94e9af04bdbb921210f75e173a6ca96f5ea05af9.jpg 100w, https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s250x400/43157ba702630d24c4fcaa160fd649887bdb4039.jpg 250w, https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s400x600/c92fc20f8d67e10702d7468ca68272fcd075e1dd.jpg 400w, https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s500x750/28d03a4d0f01210669a65818d2b3b014ff837e10.jpg 500w, https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s540x810/74cb135b76aea67b552cde5e70ad03e129cb24cc.jpg 540w, https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s640x960/b6f550a7adc322205e032829d9c924d4597eaf8a.jpg 640w, https://64.media.tumblr.com/506b709019827ef27e648481c0570692/4c4ace676670c68d-db/s1280x1920/a5d53996d1c24b72d32936577c41b777300eae11.jpg 894w" sizes="(max-width: 894px) 100vw, 894px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s1280x1920/b12b819b81a235919e2aabcd3cf40669c6f14400.jpg" data-big-photo-height="800" data-big-photo-width="800"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_25e0d7c8e8577bea8b15ae3a82cf6183_2d08471c_500.jpg" srcset="https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s75x75_c1/fad45bd255fec8b3c116de553b48efd944e3a69c.jpg 75w, https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s100x200/0840583df0db04de6688cc07c68eeb597170123e.jpg 100w, https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s250x400/a56fc02c994f351c6b3cab703636374a7dcf6290.jpg 250w, https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s400x600/6bb658b0a1ac9b39fe107664cd95d6795954e5ee.jpg 400w, https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s500x750/2d08471cb08bc6d3cab5f7abfed50e07d32396c9.jpg 500w, https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s540x810/8ee8ed004849ed0a2cf39be31861f484723a8186.jpg 540w, https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s640x960/f01b4e6990ba23e9e99460ce41cdacdf0b91dbe8.jpg 640w, https://64.media.tumblr.com/25e0d7c8e8577bea8b15ae3a82cf6183/4c4ace676670c68d-ee/s1280x1920/b12b819b81a235919e2aabcd3cf40669c6f14400.jpg 800w" sizes="(max-width: 800px) 100vw, 800px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s1280x1920/c2a61ca9d8c1267b1af2501c5d2d7d4bafe10874.jpg" data-big-photo-height="1600" data-big-photo-width="1200"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_a12ea775e834351d8a8a50f3e4006e71_bec0e4c8_500.jpg" srcset="https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s75x75_c1/89cc688e72340203c63567e330188513b0301dfe.jpg 75w, https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s100x200/6107f0cc77953ae93bba55655eadf69375f36771.jpg 100w, https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s250x400/84030f9a711471b405096144c22703f19345960c.jpg 250w, https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s400x600/bb96065ba5c3f28c5d94e77f7e036acfe96d687d.jpg 400w, https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s500x750/bec0e4c8ce976b00c6e6ea067a23021d3e0e14a9.jpg 500w, https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s540x810/7f099740e7b6c0bdf1cc56777aa4fcab103f6791.jpg 540w, https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s640x960/da8c2873c74f1f0a67a9d86e09d1591956818850.jpg 640w, https://64.media.tumblr.com/a12ea775e834351d8a8a50f3e4006e71/4c4ace676670c68d-03/s1280x1920/c2a61ca9d8c1267b1af2501c5d2d7d4bafe10874.jpg 1200w" sizes="(max-width: 1200px) 100vw, 1200px" alt="image"></a></figure></div></div>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+               <div class="tags rounded-corners">
+                  
+                  <a href="../tumblr/Inc%20on%20Science.htmltagged/jeux%20d%27enfants" class="box-shadow">#jeux d'enfants</a>
+                  
+               </div>
+               
+            </article>
+            
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               
+               <div class="reblog-content   op">
+                  <div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/5ea40962256f2b5beef2bbbd68f58a11/f481a52b62292cec-71/s1280x1920/ac278da9b228253ba161d08c0c26da65df639a24.png" data-big-photo-height="40" data-big-photo-width="270"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_5ea40962256f2b5beef2bbbd68f58a11_92283e2e_400.png" srcset="https://64.media.tumblr.com/5ea40962256f2b5beef2bbbd68f58a11/f481a52b62292cec-71/s75x75_c1/d4c5195caff474b44bbe00c8af348990bc96a546.png 75w, https://64.media.tumblr.com/5ea40962256f2b5beef2bbbd68f58a11/f481a52b62292cec-71/s100x200/2c2df1208293691ed851f256040f9dea92b922a0.png 100w, https://64.media.tumblr.com/5ea40962256f2b5beef2bbbd68f58a11/f481a52b62292cec-71/s250x400/486a0945191c6c9370ea6330dba1cffef8674fed.png 250w, https://64.media.tumblr.com/5ea40962256f2b5beef2bbbd68f58a11/f481a52b62292cec-71/s400x600/92283e2ef34ca96546fed77f1522badef3951e47.png 270w" sizes="(max-width: 270px) 100vw, 270px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/e722bca8cc6fd106a65ae447fb1f1cae/f481a52b62292cec-3a/s1280x1920/9dc5794bb1d0100afd91db6c7f63f25d415da703.png" data-big-photo-height="21" data-big-photo-width="340"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_e722bca8cc6fd106a65ae447fb1f1cae_771fc902_400.png" srcset="https://64.media.tumblr.com/e722bca8cc6fd106a65ae447fb1f1cae/f481a52b62292cec-3a/s75x75_c1/44f5d75ebdda45b194138d67737e4b18c2835444.png 75w, https://64.media.tumblr.com/e722bca8cc6fd106a65ae447fb1f1cae/f481a52b62292cec-3a/s100x200/7b725ca87d9d0ff511c878ee04400164ec90f1b4.png 100w, https://64.media.tumblr.com/e722bca8cc6fd106a65ae447fb1f1cae/f481a52b62292cec-3a/s250x400/1a2b7f497cb5b2502310c7c3fea3aadb1bd372d2.png 250w, https://64.media.tumblr.com/e722bca8cc6fd106a65ae447fb1f1cae/f481a52b62292cec-3a/s400x600/771fc902c660ba397fb22a24a090381fc710d109.png 340w" sizes="(max-width: 340px) 100vw, 340px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s1280x1920/01220cb3db310a499375bba3371c0a67c88cff96.png" data-big-photo-height="291" data-big-photo-width="1173"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_7c34087f3a2d8c09e954db28ef145ad3_e28c9aef_500.png" srcset="https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s75x75_c1/399817eb312c5a80ee54c23a8385cbe6f1da97ac.png 75w, https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s100x200/2939a36daedab2ffcd2792e582f5c3f30a56e288.png 100w, https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s250x400/dca5c3ca862082d4a10ba94d32d022f1ce0286dd.png 250w, https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s400x600/ce68dd5e490c5fffa25bda527b5b200b49fe9feb.png 400w, https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s500x750/e28c9aefc5be7aaddcf063252cd2d8436db7d675.png 500w, https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s540x810/037277cbb58bf5d546ea3ffdb0e24ced7ecc9348.png 540w, https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s640x960/3250c45175fe366a82be22e6943d19185df8a7e1.png 640w, https://64.media.tumblr.com/7c34087f3a2d8c09e954db28ef145ad3/f481a52b62292cec-cb/s1280x1920/01220cb3db310a499375bba3371c0a67c88cff96.png 1173w" sizes="(max-width: 1173px) 100vw, 1173px" alt="image"></a></figure></div></div><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s1280x1920/3e25d9a82da3880fac22283c85ceb5f698644043.png" data-big-photo-height="276" data-big-photo-width="1168"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_732b14236a367e74ae94019ee6835389_8fd97fb1_500.png" srcset="https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s75x75_c1/c74565c40ea5a6c83dda930ad8c2b526d0b1679b.png 75w, https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s100x200/e31beb5965c4f8e43b475ee0f3046ae7d5b1df91.png 100w, https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s250x400/202c5007e3bf2dacc42faacda19e10db80c10b4d.png 250w, https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s400x600/467fdd66565307d3303e8d1416589fe0bfb7ac21.png 400w, https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s500x750/8fd97fb1f23d06f6c00ab148dd21080a88f14940.png 500w, https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s540x810/ebbc1c05d81c5134ae32448e438ffbdc8148ace6.png 540w, https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s640x960/94c12b416180eb4f01b922fe9275191c7a85fe75.png 640w, https://64.media.tumblr.com/732b14236a367e74ae94019ee6835389/f481a52b62292cec-25/s1280x1920/3e25d9a82da3880fac22283c85ceb5f698644043.png 1168w" sizes="(max-width: 1168px) 100vw, 1168px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s1280x1920/9196983cc348a6614e093d8899a3bf0c5b4d3fea.png" data-big-photo-height="337" data-big-photo-width="628"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_69e767a70d749d3dd3539f1d16a362a9_f02b2ced_500.png" srcset="https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s75x75_c1/189b5be05f35d6729ac4300dd85328c2da691f95.png 75w, https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s100x200/0d417986b6b59afe5d457c154c9a8315ea4feb17.png 100w, https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s250x400/8bdbd2675bcb6c35ecbeb431902af396e0cb6ef3.png 250w, https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s400x600/22fd4b80cc8732f9d122501f9d0719772dab3830.png 400w, https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s500x750/f02b2cede263db35260d51249fdcb55e55938202.png 500w, https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s540x810/1a1d50532a51edd4a2baa3dc145123dbab0af465.png 540w, https://64.media.tumblr.com/69e767a70d749d3dd3539f1d16a362a9/f481a52b62292cec-a6/s640x960/9b1758df1454e4f4791efd17b0949a3c31cf5f56.png 628w" sizes="(max-width: 628px) 100vw, 628px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s1280x1920/4ec024cde74810441bb176eee24e79f8639e46d3.png" data-big-photo-height="272" data-big-photo-width="1014"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_15da3c6c056856537886786aa34fa34a_99d31ba6_500.png" srcset="https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s75x75_c1/b7fe7f45828fa949c0ae27824aa705f347e2c802.png 75w, https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s100x200/5e0e90eb424310ef748200adc5b2918d5ce29dc6.png 100w, https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s250x400/038ccd05a2797d23639f14e3ba8ef0df344fa9b4.png 250w, https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s400x600/e94b2182753522ed48eabf1582fb4a1bc6f6bcee.png 400w, https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s500x750/99d31ba60522c1b04766707a8a531d43e12a171c.png 500w, https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s540x810/600ec0cb296b29459edfaf7bdf7e9d5f48ff627d.png 540w, https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s640x960/63f99456540c6694fe2431d97dd7abdf2cfa4c20.png 640w, https://64.media.tumblr.com/15da3c6c056856537886786aa34fa34a/f481a52b62292cec-79/s1280x1920/4ec024cde74810441bb176eee24e79f8639e46d3.png 1014w" sizes="(max-width: 1014px) 100vw, 1014px" alt="image"></a></figure></div></div><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s1280x1920/3a87278980044e92ad4738405391cdd32a7cdad5.png" data-big-photo-height="195" data-big-photo-width="1263"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_6853b129b8d2422dbeab85ffba5efea8_a2e5be5f_500.png" srcset="https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s75x75_c1/ad779e2d625620f1ceb8fc76d69c8c8e4d4372f7.png 75w, https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s100x200/ec5688f0f78ec580d1171570b012ffd3c85f897f.png 100w, https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s250x400/f14da8d9c42692de3f9dea8ccc6e798b2201c59b.png 250w, https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s400x600/ffc7d1203227400d4036e7f84e1e9e811d5c70d1.png 400w, https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s500x750/a2e5be5f65f9cd1f67904ebfd46085a66df9e4d4.png 500w, https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s540x810/37e98215ddc2ec82d271cb7cc6655556a14e7805.png 540w, https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s640x960/e04aadac45b60e569fbc344acb454cf99edea0cb.png 640w, https://64.media.tumblr.com/6853b129b8d2422dbeab85ffba5efea8/f481a52b62292cec-46/s1280x1920/3a87278980044e92ad4738405391cdd32a7cdad5.png 1263w" sizes="(max-width: 1263px) 100vw, 1263px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s1280x1920/06dcdf0251fb704fb7396a055f50ccd3ad539365.png" data-big-photo-height="389" data-big-photo-width="1059"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_e1f02c546382ae1bd4407644f742a968_3741241a_500.png" srcset="https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s75x75_c1/6e22ea1c37b935d5753c3fdb99ba49d36e9461b0.png 75w, https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s100x200/0b2faccf0b6f76c5bdad2b4b834da1d45ca3f957.png 100w, https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s250x400/1df225d822c12cd234a62bb2d9c66690c715669d.png 250w, https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s400x600/bb2f14a3fe6be5ba62e731347d0c42083d62c5d5.png 400w, https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s500x750/3741241aa8f96077df5c61ed8534d777ceda1b26.png 500w, https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s540x810/3251384708a43f8302d6e1d3b81ec003af76f42c.png 540w, https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s640x960/57272ff35b86d43093cd0a4a92753879fdd2c024.png 640w, https://64.media.tumblr.com/e1f02c546382ae1bd4407644f742a968/f481a52b62292cec-ff/s1280x1920/06dcdf0251fb704fb7396a055f50ccd3ad539365.png 1059w" sizes="(max-width: 1059px) 100vw, 1059px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s1280x1920/2cb1537a8dbb1da2d243157146c3eef1e330bd77.png" data-big-photo-height="367" data-big-photo-width="1276"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_d44fb04d5b83abb35a03bc3c31101e3c_1773ad76_500.png" srcset="https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s75x75_c1/5c632e16d15550eed58579ade682b6ad108fcb9d.png 75w, https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s100x200/3773b301f3f029b0219a0603cbde8b1439a71e1c.png 100w, https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s250x400/f7b0e0921d9a5fe5739351edae1995fe155286dc.png 250w, https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s400x600/248fe31335a794f776e45271a854c64115008a70.png 400w, https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s500x750/1773ad769f2a748c1415e7bbcbe361c2297d83a4.png 500w, https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s540x810/fb0a77b307570f1457a731b2bf1da96f40c096ae.png 540w, https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s640x960/1ae486fa80ac3fb99622337e3de6f92e9dab7a0f.png 640w, https://64.media.tumblr.com/d44fb04d5b83abb35a03bc3c31101e3c/f481a52b62292cec-43/s1280x1920/2cb1537a8dbb1da2d243157146c3eef1e330bd77.png 1276w" sizes="(max-width: 1276px) 100vw, 1276px" alt="image"></a></figure></div></div><p>La rat de laboratoire - P2</p>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+            </article>
+            
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               
+               <div class="reblog-content   op">
+                  <p></p><figure class="tmblr-embed tmblr-full"><iframe id="embed-679cf21273bf0392352823" class="embed_iframe" src="./Inc on Science2_files/https___youtu.html" width="500" height="280" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="" webkitallowfullscreen=""></iframe></figure><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s1280x1920/9d73b413f5ba2e624c5f77e85ea2fa128cb9011d.png" data-big-photo-height="1223" data-big-photo-width="1252"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_b940c532551f35fadb6aafedcbaea232_07002433_500.png" srcset="https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s75x75_c1/3db6725f05e7d8b60d8b4525a4672ce44693cc43.png 75w, https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s100x200/9b7cc22cb6d60811229eda9f7188ec898f31a07c.png 100w, https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s250x400/0a3befd27175a7bc0855c748bb659b1a9e8b2f40.png 250w, https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s400x600/6210c16ee0043765fedf7a003606e6cbfba91f02.png 400w, https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s500x750/070024335b84fee335286a238a763aa2bc300550.png 500w, https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s540x810/48f6f1b1b75825cdf335e35f626063b55a207f91.png 540w, https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s640x960/78dd0dfdbf2588bb4f65e453e5cb027618712ae4.png 640w, https://64.media.tumblr.com/b940c532551f35fadb6aafedcbaea232/4c893675e1876dc9-2c/s1280x1920/9d73b413f5ba2e624c5f77e85ea2fa128cb9011d.png 1252w" sizes="(max-width: 1252px) 100vw, 1252px" alt="image"></a></figure></div></div><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s1280x1920/5f9b2eae18bc6776a483f1c671ace8d93dd0817c.jpg" data-big-photo-height="1024" data-big-photo-width="1024"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_1028210dbe3218b12229354d68d5bf69_13a70b54_500.jpg" srcset="https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s75x75_c1/4755e5d5611f5c7147e3afae39167900af08abfd.jpg 75w, https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s100x200/ac7ef3d6f86a98c5122336823b00e2c796b8f90a.jpg 100w, https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s250x400/51b3c4ef8f8b980cb2a4e74505452866d5215fcc.jpg 250w, https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s400x600/3c308c36802caa1e9ddfcfcd464972181d465a5d.jpg 400w, https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s500x750/13a70b5457c4f82f4994eb8b85c7fa3b877c8b85.jpg 500w, https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s540x810/973ddfd8cc258567ab56340efe37bba84777ca4e.jpg 540w, https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s640x960/e4670a1e36670786f1e5b14e272b10a2d9140e07.jpg 640w, https://64.media.tumblr.com/1028210dbe3218b12229354d68d5bf69/4c893675e1876dc9-55/s1280x1920/5f9b2eae18bc6776a483f1c671ace8d93dd0817c.jpg 1024w" sizes="(max-width: 1024px) 100vw, 1024px" alt="image"></a></figure></div></div><figure class="tmblr-embed tmblr-full"><iframe id="embed-679cf21273c2b578432797" class="embed_iframe" src="./Inc on Science2_files/https___youtu(1).html" width="500" height="280" scrolling="no" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="" webkitallowfullscreen=""></iframe></figure>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+            </article>
+            
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    <b>Pinned Post</b> <i class="far fa-heart"></i> 
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               
+               <div class="reblog-content   op">
+                  <div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s1280x1920/e0c3394250ac2f2519110e0087eb9a354a444cbf.png" data-big-photo-height="460" data-big-photo-width="870"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_60cc0f332e063cbe665170f1a6a0aefe_b65d9e51_500.png" srcset="https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s75x75_c1/4de2ca72a3b2fc7b23895f1de951e2e2545d7a80.png 75w, https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s100x200/a4dc5cf3e3beaa45879ea42f5e0578a5d7f3468b.png 100w, https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s250x400/ac0ca8552011df04b2e40bbba32e8e09e92ac73c.png 250w, https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s400x600/5d9db48504de313a7d6a9fe91d3c01e96a633c88.png 400w, https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s500x750/b65d9e51e059332e187c0594bf079c0fe31d6961.png 500w, https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s540x810/c5ee934cb506f9fcf9814f4798b0015d1f555d82.png 540w, https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s640x960/0be73fbd2849daea9bebd5009d0cf598aa03fa4b.png 640w, https://64.media.tumblr.com/60cc0f332e063cbe665170f1a6a0aefe/8dafe1d4aaa53ab5-01/s1280x1920/e0c3394250ac2f2519110e0087eb9a354a444cbf.png 870w" sizes="(max-width: 870px) 100vw, 870px" alt="image"></a></figure></div></div><p class="npf_chat"><b>Vous avez frappé à la bonne porte, je suis le Dr. H, directeur des ressources humaines chez Inc on Science. Dans le cadre de nos recherches sur la neurodivergence, nous avons besoin de sujet patient comme vous pour tester les différentes phases de notre nouveau Produit :</b> <b>le deus.x.Machinart.</b><br><br>Nous vous souhaitons une bonne expérience <b>ʚʃɞ</b></p>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+            </article>
+            
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               
+               <div class="reblog-content   op">
+                  <div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s1280x1920/0ae965fbe602589afa70035f2d243a9a130ff3b4.png" data-big-photo-height="28" data-big-photo-width="639"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_780e917d674381fb30ef2365ddde0c42_10ed72f2_500.png" srcset="https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s75x75_c1/0dee2600ffbf8e3f7e5c8ad89b540586ff21ee1c.png 75w, https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s100x200/738308b03a2db0c8e031579cac242f757dc6ddb3.png 100w, https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s250x400/af8c82891b6494cae49f2b420d28128fb09935ec.png 250w, https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s400x600/6de3f009c45d4dfad8d3245d218c5cd839bbee36.png 400w, https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s500x750/10ed72f2559cc473e898f5b288d6d04280d97d60.png 500w, https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s540x810/cd5200ebffd3d6f0cd8310180dcfb4852122810e.png 540w, https://64.media.tumblr.com/780e917d674381fb30ef2365ddde0c42/f78c844013228219-f5/s640x960/027c797f79038e782b0148584b70f96d2f2b02ed.png 639w" sizes="(max-width: 639px) 100vw, 639px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s1280x1920/e572237eaad3cb5e78ba687780823763da981335.png" data-big-photo-height="130" data-big-photo-width="1275"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_3504b1a97c4b8454f703d1e230e1ad45_c2219afa_500.png" srcset="https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s75x75_c1/322d3f5db102d0fb315b3978d2ee4cad1c1edcb1.png 75w, https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s100x200/5ebb8767e54ef98110e078d1fb0495edc1c69e90.png 100w, https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s250x400/a15a3cfde81811d8410fe79bbca92556365ec3b2.png 250w, https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s400x600/00169ef6e6072d4293e4d92d9a46596647289dbf.png 400w, https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s500x750/c2219afa3462709fe9f25c9b4f9df28c42b0b29c.png 500w, https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s540x810/e1f202a7d26ba7630c18fdb196e8a1be8b06f642.png 540w, https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s640x960/41ee745a11de311c8bda0c2707dde5a10d3a07d4.png 640w, https://64.media.tumblr.com/3504b1a97c4b8454f703d1e230e1ad45/f78c844013228219-09/s1280x1920/e572237eaad3cb5e78ba687780823763da981335.png 1275w" sizes="(max-width: 1275px) 100vw, 1275px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/1f720385d46c229aaf2d32a463a3dd80/f78c844013228219-39/s1280x1920/68f5dc61bed71c1553d884bcf4f7049eeb8b9871.png" data-big-photo-height="25" data-big-photo-width="520"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_1f720385d46c229aaf2d32a463a3dd80_a3136249_500.png" srcset="https://64.media.tumblr.com/1f720385d46c229aaf2d32a463a3dd80/f78c844013228219-39/s75x75_c1/0c0d34d4ae6dad3dfb1de4f56b2051a91edf9e84.png 75w, https://64.media.tumblr.com/1f720385d46c229aaf2d32a463a3dd80/f78c844013228219-39/s100x200/375260a5cd96e30902fb6ee7a914c3914da4bdc6.png 100w, https://64.media.tumblr.com/1f720385d46c229aaf2d32a463a3dd80/f78c844013228219-39/s250x400/82b13ebd062ed85c0cdf9cd8a2b2c92612188086.png 250w, https://64.media.tumblr.com/1f720385d46c229aaf2d32a463a3dd80/f78c844013228219-39/s400x600/dc1111f18196d87918cec94655d6829ddf8d52ab.png 400w, https://64.media.tumblr.com/1f720385d46c229aaf2d32a463a3dd80/f78c844013228219-39/s500x750/a3136249255723aa208655f5ab9a1d37f7064e47.png 500w, https://64.media.tumblr.com/1f720385d46c229aaf2d32a463a3dd80/f78c844013228219-39/s540x810/bd6176f992f90898d27240c3a0d45c68a3d5bc35.png 520w" sizes="(max-width: 520px) 100vw, 520px" alt="image"></a></figure></div></div><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s1280x1920/1a0a62d82c2ef6d377205c2ad47834072591b442.png" data-big-photo-height="80" data-big-photo-width="1274"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_6be7f4125c65d7fa86ac5dbfb514ea4b_80aae0a3_500.png" srcset="https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s75x75_c1/c8d5b1565fa74b7828c29b721fac2dddcfce1134.png 75w, https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s100x200/665eba02a0ed2ea6671273ac7997c36e345deef9.png 100w, https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s250x400/f406a9c1cd752ecfd934000864f5679d17337e1e.png 250w, https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s400x600/473a9e2a3efe40205711286805040729ba14fc97.png 400w, https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s500x750/80aae0a3fe8a34d89b15702bbb9804a2ee2b6f72.png 500w, https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s540x810/6aaeaae8813d177c63a13e9279de8e181a9d02ef.png 540w, https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s640x960/514bf7a06988805fc4c0cfef5a80210e68cf2930.png 640w, https://64.media.tumblr.com/6be7f4125c65d7fa86ac5dbfb514ea4b/f78c844013228219-ae/s1280x1920/1a0a62d82c2ef6d377205c2ad47834072591b442.png 1274w" sizes="(max-width: 1274px) 100vw, 1274px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/2e39f474b4a210073bffc52cc9db3051/f78c844013228219-dd/s1280x1920/4d17d682bcbdfd7be7cb57dd46716f7f82a7a33d.png" data-big-photo-height="22" data-big-photo-width="362"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_2e39f474b4a210073bffc52cc9db3051_78231e84_400.png" srcset="https://64.media.tumblr.com/2e39f474b4a210073bffc52cc9db3051/f78c844013228219-dd/s75x75_c1/aacd28e52fff9719a01addf534214b7551dfa672.png 75w, https://64.media.tumblr.com/2e39f474b4a210073bffc52cc9db3051/f78c844013228219-dd/s100x200/c1b703e19ef1e9108805a1a7a7666f55e5df6f9a.png 100w, https://64.media.tumblr.com/2e39f474b4a210073bffc52cc9db3051/f78c844013228219-dd/s250x400/da69ec0cbad5716f13129d10018adf34d3e42f17.png 250w, https://64.media.tumblr.com/2e39f474b4a210073bffc52cc9db3051/f78c844013228219-dd/s400x600/78231e847ad28db1f1822acc83f7862007f0877e.png 362w" sizes="(max-width: 362px) 100vw, 362px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s1280x1920/05c9b629bdce61f4d30de6567ec319f44b56b379.png" data-big-photo-height="56" data-big-photo-width="1240"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_901d6c1cdf6fd8153755476cdfa7da3c_eda45def_500.png" srcset="https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s75x75_c1/d59ed004d42b2575109dd257e41cdaa5dbc04615.png 75w, https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s100x200/8557c87ef6eac05400115b15808709a7f38a5f37.png 100w, https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s250x400/e7f3ca58c29248799c0c138ce1d026472eabbe49.png 250w, https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s400x600/72e326e2ab3df4556e56aac0198a564cf3c53563.png 400w, https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s500x750/eda45defe07c4b7eef6b30040196d91802a6aaf0.png 500w, https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s540x810/bc48ddeea74d41eeb897ac2be6058234df71f4df.png 540w, https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s640x960/483e4b6bda3297d30fc7ffda8712f33a7c9fa9d4.png 640w, https://64.media.tumblr.com/901d6c1cdf6fd8153755476cdfa7da3c/f78c844013228219-ec/s1280x1920/05c9b629bdce61f4d30de6567ec319f44b56b379.png 1240w" sizes="(max-width: 1240px) 100vw, 1240px" alt="image"></a></figure></div></div><div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/af7c72c743f44675ce7ef024b9e0c90a/f78c844013228219-4d/s1280x1920/34e79568d63bc366c777d535fa5a8dcd14c38936.png" data-big-photo-height="24" data-big-photo-width="127"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_af7c72c743f44675ce7ef024b9e0c90a_7c0d4f89_250.png" srcset="https://64.media.tumblr.com/af7c72c743f44675ce7ef024b9e0c90a/f78c844013228219-4d/s75x75_c1/1262f7a5e60b209d3c37792541b0623eda95f030.png 75w, https://64.media.tumblr.com/af7c72c743f44675ce7ef024b9e0c90a/f78c844013228219-4d/s100x200/88485ca4ccc569f007d2b67614edde2638badc53.png 100w, https://64.media.tumblr.com/af7c72c743f44675ce7ef024b9e0c90a/f78c844013228219-4d/s250x400/7c0d4f89d316865d546ebdfaf6898e53bf9cb952.png 127w" sizes="(max-width: 127px) 100vw, 127px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s1280x1920/28c6608524a7853f6b173a098892dee9bb36e0e5.png" data-big-photo-height="74" data-big-photo-width="1265"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_ba8d3378be460bd468397f99c889b158_29c96484_500.png" srcset="https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s75x75_c1/716df107ee6d0f43164a2f4830c67e52bc572393.png 75w, https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s100x200/09a899851a5e483ec75366d2123eacba525aba0c.png 100w, https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s250x400/c3282f2343b0d2ffc4b4fff7495f7200b7cd01e3.png 250w, https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s400x600/0ada347d855d926e2576e065563cf39fd6cc78cf.png 400w, https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s500x750/29c964846e0bfefa38a0dcdda6da5fa5a0cba608.png 500w, https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s540x810/5131524bc45fd4722eb80fb8d240ebd4ad375ca8.png 540w, https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s640x960/3c38bc17e16ffaa174ab32446c4ba4d4395e4cfa.png 640w, https://64.media.tumblr.com/ba8d3378be460bd468397f99c889b158/f78c844013228219-a8/s1280x1920/28c6608524a7853f6b173a098892dee9bb36e0e5.png 1265w" sizes="(max-width: 1265px) 100vw, 1265px" alt="image"></a></figure></div><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s1280x1920/884a9e9c70c07c2260dacc36ca251b4653779ac8.png" data-big-photo-height="91" data-big-photo-width="1283"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_54daecd66a9caad40a8b608d0ed0c76d_5bd165de_500.png" srcset="https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s75x75_c1/e1f0c803cf640b31141203444c97ffbd4c9adac4.png 75w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s100x200/74bd24a8709b531d50b33d60b2ce2a1fc608bf73.png 100w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s250x400/1ed684c3ccdfc215ad538306466f404ee7e4f850.png 250w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s400x600/22845f6b56371d2295e764cb8885446b645a4429.png 400w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s500x750/5bd165dede9c8920ddc97844ba28cca2cd901c16.png 500w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s540x810/be6b7b58646c86577e233b977427c696f1fe690a.png 540w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s640x960/ddece6d3b91d33b2e8e1c650085319b605f5852b.png 640w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s1280x1920/884a9e9c70c07c2260dacc36ca251b4653779ac8.png 1280w, https://64.media.tumblr.com/54daecd66a9caad40a8b608d0ed0c76d/f78c844013228219-b6/s2048x3072/861f87d94aca455b998283b43d1223ed996675be.png 1283w" sizes="(max-width: 1280px) 100vw, 1280px" alt="image"></a></figure></div></div><p>La rat de laboratoire - P1</p>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+            </article>
+            
+            
+            <!--  -->
+            
+            <article class="relative margin-top-100 margin-bottom-100 margin-left-10 post-500 text_post rounded-corners">
+                
+                <div class="date">
+                    
+                    Jan 15, 2024
+                </div>
+                
+               
+               
+               
+               <div class="reblog-content   op">
+                  <div class="npf_row"><div class="npf_col"><figure class="tmblr-full"><a class="post_media_photo_anchor" data-big-photo="https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s1280x1920/1d40e1608cd358fa309fe5b843124e4588c8aef9.png" data-big-photo-height="463" data-big-photo-width="729"><img class="post_media_photo image" src="./Inc on Science2_files/tumblr_0a65b6bf305ba64ad376c55c20e7e1bd_d920fbb1_500.png" srcset="https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s75x75_c1/6ce7ebed0b14d2c590ab7e75ed71a71abf9293ad.png 75w, https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s100x200/b3455b750fa7c17325b075295b9e0b0029acd6b3.png 100w, https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s250x400/d86613f8e207d2917b884c119ca8596808644485.png 250w, https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s400x600/900f5904406a2c2ec352d0aa2b5935c64821b651.png 400w, https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s500x750/d920fbb111fbd408b3e26fb5f0f5e1c5500eadc2.png 500w, https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s540x810/97768c4ed011970ba5a538ff9ee965743be139ec.png 540w, https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s640x960/b136deb34f9bd53e2d54229c05c222d8fdac35e5.png 640w, https://64.media.tumblr.com/0a65b6bf305ba64ad376c55c20e7e1bd/66aa4551e605b44b-c2/s1280x1920/1d40e1608cd358fa309fe5b843124e4588c8aef9.png 729w" sizes="(max-width: 729px) 100vw, 729px" alt="image"></a></figure></div></div>
+               </div>
+               
+               
+               
+               <!-- photo posts -->
+               
+               <!-- photoset --> 
+               
+               <!-- panorama -->
+               
+               
+               
+               
+                
+                
+              
+               
+               
+           
+
+               
+                   
+            </article>
+            
+            
+            
+              <div class="pagination flex align-center">
+            
+            <a href="../tumblr/Inc%20on%20Science.htmlpage/1" class=" box-shadow rounded-corners padding-sm">Previous</a>
+            
+            <a class="box-shadow rounded-corners padding-sm" href="../tumblr/Inc%20on%20Science.htmlpage/1">1</a>
+            
+            <span class="current_page box-shadow rounded-corners padding-sm">2</span>
+            
+            </div>
+              <p class="flex align-center description  credit padding-sm rounded box-shadow" style="padding-top:1rem;">
+            <a href="https://eggdesign.tumblr.com/" style="text-decoration:none; color:red">Milky theme by egg.design</a>
+         </p>
+         
+         </section>
+      </main>
+   
+<iframe scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0; z-index:9999;" id="ga_target" src="./Inc on Science2_files/analytics.html"></iframe><script type="text/javascript">
+    (function(){
+        var analytics_frame = document.getElementById('ga_target');
+        var analytics_iframe_loaded;
+        var user_logged_in;
+        var blog_is_nsfw = 'No';
+
+        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+        eventer(messageEvent,function(e) {
+            var message = (e.data && e.data.split) ? e.data.split(';') : '';
+            switch (message[0]) {
+                case 'analytics_iframe_loaded':
+                    analytics_iframe_loaded = true;
+                    postCSMessage();
+                    postGAMessage();
+                    break;
+                case 'user_logged_in':
+                    user_logged_in = message[1];
+                    postGAMessage();
+                    break;
+            }
+        }, false);
+
+        analytics_frame.src = "https://assets.tumblr.com/analytics.html?_v=9f5febfd57a8a649c598d888f2d9e062#" +
+                              "https://inc-on-science.tumblr.com";
+        function postGAMessage() {
+            if (analytics_iframe_loaded && user_logged_in) {
+                var is_ajax = false;
+                analytics_frame.contentWindow.postMessage(['tick_google_analytics', is_ajax, user_logged_in, blog_is_nsfw, '/page/2?route=%2Fpage%2F%3Apage'].join(';'), analytics_frame.src.split('/analytics.html')[0]);
+            }
+        }
+        function postCSMessage() {
+            COMSCORE = true;
+            analytics_frame.contentWindow.postMessage('enable_comscore;' + window.location, analytics_frame.src.split('/analytics.html')[0]);
+        }
+    })();
+</script><script type="text/javascript" nonce="">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1738338834&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDovL2luYy1vbi1zY2llbmNlLnR1bWJsci5jb20vcGFnZS8yIiwicmVxdHlwZSI6MCwicm91dGUiOiIvcGFnZS86cGFnZSJ9&U=EAGFFDDGMG&K=2514348f7624b1f2bd27c7f894798c24442bb71efcfbed66f464a83ec924ba71&R=https%3A%2F%2Finc-on-science.tumblr.com%2F'.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1738338834&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDovL2luYy1vbi1zY2llbmNlLnR1bWJsci5jb20vcGFnZS8yIiwicmVxdHlwZSI6MCwicm91dGUiOiIvcGFnZS86cGFnZSIsIm5vc2NyaXB0IjoxfQ==&U=EAGFFDDGMG&K=a67fdf7b0cce48a77473b17bc1e7d255a07d882e3e8d6bec46bf10f05d228b14&R=https%3A%2F%2Finc-on-science.tumblr.com%2F"></noscript><script type="text/javascript" nonce="">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1738338834&J=eyJ0eXBlIjoicG9zdCIsInVybCI6Imh0dHA6Ly9pbmMtb24tc2NpZW5jZS50dW1ibHIuY29tL3BhZ2UvMiIsInJlcXR5cGUiOjAsInJvdXRlIjoiL3BhZ2UvOnBhZ2UiLCJwb3N0cyI6W3sicG9zdGlkIjoiNzM5NjExMzMzMDk4NjM1MjY0IiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg1OTc1MTA2MjczMjgwIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg1ODI1OTYxMDMzNzI4IiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg1MzAwNjI2NjM2ODAwIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg0MjEyNTA2NjczMTUyIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTgzMjUxOTc5NjMyNjQwIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTgxMjY3MDkxMzQxMzEyIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTc4NzE3NTYwNTIwNzA0IiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9XX0=&U=ODBMNAONBG&K=417ef2eb0b07822569e6793beb702bc5f19fe73ddf51eaaec4c9ea006ebd9b40&R=https%3A%2F%2Finc-on-science.tumblr.com%2F'.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1738338834&J=eyJ0eXBlIjoicG9zdCIsInVybCI6Imh0dHA6Ly9pbmMtb24tc2NpZW5jZS50dW1ibHIuY29tL3BhZ2UvMiIsInJlcXR5cGUiOjAsInJvdXRlIjoiL3BhZ2UvOnBhZ2UiLCJwb3N0cyI6W3sicG9zdGlkIjoiNzM5NjExMzMzMDk4NjM1MjY0IiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg1OTc1MTA2MjczMjgwIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg1ODI1OTYxMDMzNzI4IiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg1MzAwNjI2NjM2ODAwIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTg0MjEyNTA2NjczMTUyIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTgzMjUxOTc5NjMyNjQwIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTgxMjY3MDkxMzQxMzEyIiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9LHsicG9zdGlkIjoiNzM5NTc4NzE3NTYwNTIwNzA0IiwiYmxvZ2lkIjo1OTE2MTg2MDAsInNvdXJjZSI6MzN9XSwibm9zY3JpcHQiOjF9&U=ODBMNAONBG&K=2cb76f17e2e20fd3ca4721b9913a5c94bf6c98792ad7d1910850910990cfcb40&R=https%3A%2F%2Finc-on-science.tumblr.com%2F"></noscript><script src="./Inc on Science2_files/index.build.js.download"></script>
+</body></html>

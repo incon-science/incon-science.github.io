@@ -1,0 +1,102 @@
+.assigned-label-t-friendly:before {
+    font-family:"Font Awesome 5 free";
+    content:'\f164';
+    background:#28a745!important;
+    color:white;
+     height:30px;
+    top:0px;
+    font-size:16px!important;
+    width:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
+    font-weight:bold;
+    right:0px;
+    margin-right:-10px;
+    margin-top:-20px;
+    border-radius:4px;
+    position:absolute;
+}
+.assigned-label-t-friendly:hover:after {
+    content:'trans friendly link';
+    background:#28a745!important;
+    color:white;
+    font-size:16px!important;
+    padding:0 10px;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
+    font-weight:bold;
+    right:0px;
+    margin-right:-180px;
+    margin-top:-18px;
+    border-radius:4px;
+    position:absolute;
+}
+
+.assigned-label-t-friendly, a.assigned-label-t-friendly {
+        display:inline-block;
+        padding:8px;
+        position:relative;
+        color:#28a745!important;
+        background:white;
+        border-radius:4px;
+        border:1px solid #ddd;
+        outline:0px solid transparent!important;
+        border-left:6px solid #28a745!important;
+}
+
+
+.assigned-label-transphobic, a.assigned-label-transphobic {
+      display:inline-block;
+        padding:8px;
+        background:white;
+        position:relative;
+        color:#dc3545!important;
+        border-radius:4px;
+        border:1px solid #ddd!important;
+        outline:0px solid transparent!important;
+        border-left:6px solid #dc3545!important;
+}
+
+.assigned-label-transphobic:before {
+    font-family:"Font Awesome 5 free";
+    content:'\f165';
+    background:#dc3545!important;
+    color:white;
+     height:30px;
+    top:0px;
+    width:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
+    font-weight:bold;
+    right:0px;
+    margin-right:-10px;
+    margin-top:-20px;
+    border-radius:4px;
+    font-size:16px!important;
+    position:absolute;
+}
+.assigned-label-transphobic:hover:after {
+    content:'transphobic link';
+    background:#dc3545!important;
+    color:white;
+    font-size:16px!important;
+    padding:0 10px;
+    top:0px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
+    font-weight:bold;
+    right:0px;
+    margin-right:-180px;
+    margin-top:-18px;
+    border-radius:4px;
+    position:absolute;
+}

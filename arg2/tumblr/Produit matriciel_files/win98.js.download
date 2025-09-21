@@ -1,0 +1,142 @@
+$(document).ready(function(){
+    $('.ok_button').click(function(){
+        $(this).parent().parent().fadeOut();
+    })
+    $('.start_button').click(function(){
+        $(this).toggleClass('sb_click')
+        $('.start_menu').slideToggle();
+    })
+    function updateClock(){
+        var date = new Date();
+        var mins = date.getMinutes();
+        var hrs = date.getHours();
+        var ext = "AM";
+        if(hrs > 12){ 
+            var ext = "PM";
+            var hrs = hrs - parseInt(12);
+        }
+        if(hrs < 10){
+            var hrs = "0"+hrs;
+        }
+        if(mins < 10){
+            var mins = "0"+mins;
+        }
+        var currentTime = hrs + ":" + mins + " " + ext;
+        $('#showClock').html(currentTime);
+    }
+    window.setInterval(updateClock, 6000);
+    updateClock();
+    appended_update();
+
+/* -- */
+
+                var infScr = $('body').hasClass('infinite_scrolling');
+                var twoCol = $('body').hasClass('two_column');
+                var $container = $('#desktop');
+                
+                if( infScr && twoCol ){
+                    
+$container.imagesLoaded(function(){
+  $container.masonry({
+    itemSelector: '.window',
+    columnWidth: 500
+  });
+});
+
+$container.infinitescroll({
+  navSelector: '#i_nav', 
+  nextSelector: '#i_next',
+  itemSelector: '.window',
+  extraScrollPx: 500,
+  bufferPx: 500,
+  loading: {
+      finishedMsg: '<span></span>',
+      img: 'http://static.tumblr.com/fpdiq1j/cZWn0wdr8/x.gif'
+    }
+  },
+  function( newElements ) {
+    var $newElems = $( newElements ).css({ opacity: 0 });
+    $newElems.imagesLoaded(function(){
+      $newElems.animate({ opacity: 1 });
+      $container.masonry( 'appended', $newElems, true ); 
+    });
+    appended_update();
+  }
+);
+                    
+                }else if( infScr && !twoCol ){
+                    
+$container.infinitescroll({
+  navSelector: '#i_nav', 
+  nextSelector: '#i_next',
+  itemSelector: '.window',
+  extraScrollPx: 500,
+  bufferPx: 500,
+  loading: {
+      finishedMsg: '<span></span>',
+      img: 'http://static.tumblr.com/fpdiq1j/cZWn0wdr8/x.gif'
+    }
+  },function(){
+    appended_update();
+  }
+);
+                    
+                }else if( !infScr && twoCol){
+                    
+$container.imagesLoaded(function(){
+  $container.masonry({
+    itemSelector: '.window',
+    columnWidth: 500
+  });
+});
+                    
+                }
+
+/* -- */
+
+});
+
+function appended_update(){
+    $('.make_lightbox').each(function(e){
+        $(this).on('click',function(v){
+            var lbArray = [];
+            var pWidth = $(this).data('width');
+            var pHeight = $(this).data('height');
+            var pHighRes = $(this).data('highres');
+            var pLowRes = $(this).data('lowres');
+            var arrayContents = {"width":pWidth, "height":pHeight, "low_res":pLowRes, "high_res":pHighRes};
+            lbArray.push(arrayContents);
+            Tumblr.Lightbox.init(lbArray,1);
+            $('body').toggleClass('tumblr_lightbox_active');
+        });
+    });
+    
+    $('.photoset-grid').photosetGrid({
+        gutter: '10px',
+        rel: 'photoset-item',
+        onComplete: function(){
+            $('.photoset-grid').attr('style','');
+            $('#desktop').masonry();
+        }
+    });
+
+    $('.photoset-grid').each(function(){
+        var photosetImages = $(this).find('img');
+        var photosetPackage = [];
+        for(i = 0; i < photosetImages.length; i++) {
+            photosetImages.eq(i).attr('data-count',i+1);
+        } 
+        $(this).find('img').each(function(){
+            var packagePart = {
+                width: $(this).data('width'),
+                height: $(this).data('height'),
+                low_res: $(this).attr('src'),
+                high_res: $(this).data('highres')
+            }
+            photosetPackage.push(packagePart);
+            $(this).on('click',function(){
+                Tumblr.Lightbox.init(photosetPackage,$(this).data('count'));
+            });
+        });
+    });
+}
