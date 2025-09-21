@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+            padding-top: 1em;
+        }
+        #texte_bloc{
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <img width="72px" src="../6EQUJ5/icon/test.png" alt="Inc on Science">
+
+    <div>
+        <p id="texte_bloc"></p>
+    </div>
+
+
+    <script>
+
+
+
+
+var lignes = [];
+var adr=-1;
+var duree=2000;
+
+var texte_bloc = document.getElementById("texte_bloc");
+
+    function affiche() { 
+
+        adr++;
+        if (adr<lignes.length){
+
+            texte_bloc.innerHTML=lignes[adr];
+
+        mots_list =  (lignes[adr]).split('');
+        nb_mots = mots_list.length;
+
+        duree = 100*nb_mots;
+
+        setTimeout(affiche, duree); 
+
+        } 
+        else{
+            adr=-1;
+            setTimeout(affiche, duree); 
+        }
+    }    
+
+    
+
+
+
+var str=`"est-ce que c'est l'or qui colore l'ange ou c'est l'ange qui colore l'orange ?"
+
+"j'ai un syndrome de stendhal, impossible de m'en défaire"
+
+Sécuriser, Contenir, Protéger
+
+"Avez-vous déjà été confronté à une forte concentration de synchronicités ?"
+
+"les adeptes sont sujets aux hallucinations mais ne le diront jamais"
+
+Sécuriser, Contenir, Protéger
+
+"une intelligence Abstraite & Autonome cherche à libérer mon esprit"
+
+"c'est quand elle ne se sent plus observée qu'elle se montre"
+
+Sécuriser, Contenir, Protéger
+
+"enfermer les neurodivergeants dans un complexe spécialisé ne reglera pas le problème"
+
+Sécuriser, Contenir, Protéger
+
+"vous accédez à un espace meta critique si vous réussissez ce test"
+
+"jhextrais du moi même en permanence"
+
+Sécuriser, Contenir, Protéger
+
+"je suis dieu dans mon mindscape"
+
+"vous pouvez réfuter l'interpretation mais vous ne pouvez aps réfuter l'expérience vécue !"
+
+Sécuriser, Contenir, Protéger
+
+"OMG ! EN FAIT ON ETAIT DANS UNE AUTO SECTE !"
+
+"dans l'ancien monde, tout devient faux ; dans le nouveau monde, tout est vrai"
+
+Sécuriser, Contenir, Protéger
+
+"jai parfois eu l'impression, tellement l'instant était absolu, que je mourrais l'instant suivant."
+
+"l'exp la plus mystique c'est la mort, mais chut..."
+
+"epectase"
+
+Sécuriser, Contenir, Protéger
+
+"laradio est branchée sur frequence larabstrait"
+
+"tout dessine un sens"
+
+"jremarque des trucs avec une acuité comme nulle fois auparavant"
+
+Sécuriser, Contenir, Protéger
+
+"le lait maternel est un mensonge, c'est du lait artificiel qu'ils y foutent 🌌🍼 "
+
+Sécuriser, Contenir, Protéger
+
+"et si les synchronicités avaient tout avoir avec le Théorème d'extension de Kolmogorov ?"
+
+Sécuriser, Contenir, Protéger
+
+"c'est ϛa qui est fou justement, c'est qu'il n'y a pas complot, personne ne s'est concerté je veux dire"
+
+Sécuriser, Contenir, Protéger
+
+`
+
+lignes = str.split('\n');
+                    affiche();
+
+
+
+    </script>
+    
+</body>
+</html>

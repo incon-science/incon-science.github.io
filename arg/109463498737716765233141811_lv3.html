@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>ʚʃɞ</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+        img{
+            margin-top:-400px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <a href="109463498737716765233141811_lv4.html"><img src="tunnel_lv3.png" alt="tunnel"></a>
+
+
+
+    <div id="mosaique" style="position:absolute;top:105px;left:600px;width: 700px;height: 300px;"></div>
+
+
+    <script>
+  
+  const mosaique = document.getElementById("mosaique");
+  
+  
+  function myFunction(){
+    window.location.href = "109463498737716765233141811_lv2.html";
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  function getStr(){
+    let index_etoile = Math.floor(Math.random() * 3);
+  
+    let index_alphabet = Math.floor(Math.random() * 26);
+  
+    var chr = String.fromCharCode(65 + index_alphabet);
+  
+    let str = '';
+  
+    for (let i = 0; i < 3; i++) {
+      if(i == index_etoile){
+        str = str + chr;
+      }
+      else{
+        str = str + '*';
+      }
+    }
+    return str;
+  }
+  
+  
+  
+  
+  function getInt(){
+    return Math.floor(Math.random() * 10);
+  }
+  
+  
+  
+  
+  function reload(){
+  
+    let delay = 100;
+  
+  
+  
+                  let list_top_str = ["67px", "0px","190px"];
+                  let list_left_str = ["0px", "300px","450px"];
+  
+                  list_top_str.forEach(function (item, index, array) {
+  
+  
+                      let str = getStr();
+  
+                      if(str == "D**" || str == "*X*" || str == "**M"){
+                        delay = 400;
+                        mosaique.innerHTML+=`<div style="position:absolute;font-size: 2em;color:cyan;margin-top:`+item+`;margin-left:`+list_left_str[index]+`;">
+                        <p style="background-color:black;">
+                          `+str+`
+                        </p>
+                      </div>`;
+                      }
+                      else{
+                        mosaique.innerHTML+=`<div style="position:absolute;font-size: 2em;color:white;margin-top:`+item+`;margin-left:`+list_left_str[index]+`;">
+                          <p style="background-color:black;">
+                          `+str+`
+                        </p>
+                      </div>`;
+                      }
+  
+  
+                  });
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+                  let list_top_int = ["10px", "110px"];
+                  let list_left_int = ["605px", "665px"];
+  
+  
+                  list_top_int.forEach(function (item, index, array) {
+  
+  
+                  let int = getInt();
+  
+                  if(int == 2 || int == 7){
+                        delay = 400;
+                        mosaique.innerHTML+=`<div style="position:absolute;font-size: 1em;color:cyan;margin-top:`+item+`;margin-left:`+list_left_int[index]+`;">
+                      <p style="background-color:black;">
+                      `+int+`
+                    </p>
+                  </div>`;
+                  }
+                  else{
+                    mosaique.innerHTML+=`<div style="position:absolute;font-size: 1em;color:white;margin-top:`+item+`;margin-left:`+list_left_int[index]+`;">
+                      <p style="background-color:black;">
+                      `+int+`
+                    </p>
+                  </div>`;
+                  }
+  
+  
+                  });
+  
+  
+  
+    setTimeout(reload, delay);
+  }
+  
+  
+  
+  reload();
+  
+  
+  
+  
+  
+  
+    </script>
+
+</body>
+</html>

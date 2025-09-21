@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>EXP</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+        canvas{
+            background-color:black;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        h1.loading{
+  font-size: 3em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+span[class^="dot-"]{
+  opacity: 0;
+}
+.dot-one{
+  animation: dot-one 2s infinite linear
+}
+.dot-two{
+  animation: dot-two 2s infinite linear
+}
+.dot-three{
+  animation: dot-three 2s infinite linear
+}
+@keyframes dot-one{
+  0%{
+    opacity: 0;
+  }
+  15%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-two{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes dot-three{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
+    </style>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+    <canvas width="300" height="300"></canvas>
+
+
+
+    <div class="wrapper">
+        <div class="loading-text"> <!--Loading-text-->
+          <h1>89%
+            <span class="dot-one"> .</span>
+            <span class="dot-two"> .</span>
+            <span class="dot-three"> .</span>
+          </h1>
+        </div> <!--/Loading-text-->
+      </div> <!-- /Wrapper -->
+
+
+      <div>
+        <p >
+          (Tu peux être fier de toi...)
+        </p>
+      </div>
+
+
+    <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="module">
+
+      const canvas = document.querySelector('canvas');
+      const rc = rough.canvas(canvas, {
+        options: {
+          disableMultiStroke: true
+        }
+      });
+  
+      rc.circle(150, 150, 100, { fill: 'white' }); 
+
+      canvas.addEventListener("click", (event) => {
+        //alert('♯ Ping Ping Ping Pong');
+        debut = false;
+        setTimeout(Tout_effacer, 333); 
+      });
+
+
+    function Tout_effacer() { 
+      document.location.href="amas_globulaire.html"; 
+    }
+
+    
+
+        
+
+
+    var debut = true;
+    
+    function matrix_reload() { 
+
+        rc.rectangle(0, 0, 300,300, {
+        fill: 'black',
+        fillStyle: 'solid' // solid fill
+        });
+
+
+        rc.circle(150, 150, 100, { fill: 'white' }); 
+
+        if(debut)setTimeout(matrix_reload, 125);
+    }
+    setTimeout(matrix_reload, 125);
+
+  
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

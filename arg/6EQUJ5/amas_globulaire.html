@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>EXP</title>
+    <style>
+        body{
+            background-image: url("fond.png");
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+
+
+        #fenetre{
+          width:50%;
+          height:50%;
+          position:absolute;
+          top:0;
+          left:0;
+          z-index: 1;
+        }
+
+        canvas{
+          z-index: 7;
+        }
+
+
+    </style>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+    <canvas width="300" height="300"></canvas>
+
+    <div><img src="Draags.png" alt="Draags"></div>
+
+
+    <div id="fenetre"></div>
+
+    <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="module">
+
+      const canvas = document.querySelector('canvas');
+      const rc = rough.canvas(canvas, {
+        options: {
+          disableMultiStroke: true
+        }
+      });
+
+
+
+
+
+
+
+
+  
+rc.circle(150, 150, 100, {
+  fill: 'black',
+  fillStyle: 'cross-hatch' // solid fill
+});
+
+
+
+
+var debut = true;
+    
+function matrix_reload() { 
+
+  rc.circle(150, 150, 100, {
+  fill: 'black',
+  fillStyle: 'cross-hatch' // solid fill
+  });
+  if(debut)setTimeout(matrix_reload, 100);
+
+}
+
+setTimeout(matrix_reload, 150);
+
+
+
+
+
+
+
+
+
+
+      canvas.addEventListener("click", (event) => {
+        //alert('♯ Ping Ping Ping Pong');
+        //debut = false;
+        setTimeout(ping, 150); 
+      });
+
+
+var nb_ping=0;
+      
+function ping(){
+
+  nb_ping++;
+
+  console.log(nb_ping);
+
+  rc.circle(150, 150, 100, {
+    fill: 'white',
+    fillStyle: 'solid' // solid fill
+  });
+
+
+  var x = Math.floor(Math.random() * 80);
+  var y = Math.floor(Math.random() * 80);
+  var size = Math.floor(Math.random() * 9);
+
+  x++;y++;size++;
+
+  var fenetre = document.querySelector('#fenetre');
+
+  fenetre.innerHTML+='<h1 style="font-size:'+size+'em;position:fixed;top:'+x+'%;left:'+y+'%;color:black;margin-top:200px;">Ping ♪</h1>';
+
+
+
+
+  if(nb_ping==27){
+    fenetre.innerHTML+='<a style="text-decoration: none;font-size:2em;position:fixed;top:7%;left:2%;color:cyan;font-weight: bold;" href="Autostéréogramme.html">Pong ♫</a>';
+
+
+  }
+
+
+
+
+
+
+  
+
+
+}
+
+
+
+
+  
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

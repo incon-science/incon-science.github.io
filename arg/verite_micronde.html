@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>EXP - Follow the Blue Butterfly ʚʃɞ...</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+        #exe{
+            padding-top:10%;
+        }
+        canvas{
+            background-color:black;
+        }
+    </style>
+    <script src="https://unpkg.com/roughjs@latest/bundled/rough.js"></script>
+</head>
+<body>
+    <div id="exe">
+        <a href="https://lechemindetraverse.tumblr.com/">
+          <img width="50px" src="exe_icon.jpg" alt="exe_icon">
+          <br>g_tout_su?.exe
+        </a>
+    </div>
+
+
+
+
+
+
+
+    <a href="#"><canvas width="400" height="400"></canvas></a>
+
+    
+
+    
+
+    <script src="https://unpkg.com/roughjs@4.6.6/bundled/rough.js" crossorigin="anonymous"></script>
+
+
+
+    <script type="module">
+      const canvas = document.querySelector('canvas');
+      const rc = rough.canvas(canvas, {
+        options: {
+          disableMultiStroke: true
+        }
+      });
+  
+
+
+
+
+    // draw sine curve
+    let points = [];
+    for (let i = 0; i < 20; i++) {
+      // 4pi - 400px
+      let x = (100 / 5) * i ;
+      let xdeg = (Math.PI / 25) * x;
+      let y = Math.round(Math.sin(xdeg) * 90) + 125;
+      points.push([x, y]);
+    }
+    rc.curve(points, {
+      roughness: 1.2, stroke: 'red', strokeWidth: 3
+    });
+
+
+
+        // draw sine curve
+        let points_bis = [];
+    for (let i = 0; i < 20; i++) {
+      // 4pi - 400px
+      let x = (100 / 5) * i ;
+      let xdeg = (Math.PI / 25) * x;
+      let y = Math.round(Math.sin(xdeg) * 90) + 125;
+      points_bis.push([x, y]);
+    }
+    rc.curve(points_bis, {
+      roughness: 1.2, stroke: 'blue', strokeWidth: 3
+    });
+
+    
+
+      canvas.addEventListener("click", (event) => {
+        //alert('♯ Ping Ping Ping Pong');
+        debut = false;
+        setTimeout(Tout_effacer, 333); 
+      });
+
+
+    function Tout_effacer() { 
+        document.body.innerHTML = ""; 
+      echo_test();
+    }
+
+    
+    
+    var str = "Je vais te révéler un secret, je sais que tu adores les secrets...";
+
+    var lignes = str.split('');//si jmets un espace ca separe par espace donc mot par mot, sans espace lettre par lettre
+    var adr=-1;
+
+    var contenu="";
+
+    var duree=144;
+
+    function echo_test() { 
+
+        affiche();
+
+    }
+
+    function affiche() { 
+
+        adr++;
+        if (adr<lignes.length){
+            
+            contenu+=lignes[adr];
+            document.body.innerHTML=contenu+"|";
+            setTimeout(affiche, duree); 
+
+        } 
+        else{
+            next();    
+
+        }
+
+    }    
+    
+    function affiche_bis() { 
+        document.body.innerHTML="";
+
+        if (!cle1 || !cle2){
+
+
+            duree=Math.floor(Math.random() * 1000);
+
+
+
+
+            let newColor = "hsla("+Math.floor(Math.random() * 360)+", 100%, 50%, 1)";
+
+            /*var testR = Math.floor(Math.random() * 255);
+            var testG = Math.floor(Math.random() * 255);
+            var testB = Math.floor(Math.random() * 255);
+
+            document.body.style.color = "rgb("+testR+","+testG+","+testB+")";*/
+
+            document.body.style.color = newColor;
+
+
+
+
+
+            var taille = Math.floor(Math.random() * 10)
+            taille++;
+            document.body.style.fontSize = taille+"em";
+            
+            var num_index = Math.floor(Math.random() * lignes.length);
+            contenu=lignes[num_index];
+            document.body.innerHTML=contenu;
+
+
+
+
+
+            setTimeout(affiche_bis, duree); 
+
+        } 
+        else{
+          document.body.style.fontSize = "1em";
+          document.body.style.color = "red";
+            document.body.innerHTML="Extraire plus d'informations <a href='verite_fractal.html'>└→</a>";
+            
+        }
+
+    }
+
+    function next() { 
+        document.body.innerHTML="";
+
+        // triangle rond carré
+        // mind monade machina
+        // exit exploit experience
+        // deus daemon diaphane
+        str = "DÉCLIC DEUS DAEMON EXIT EXPLOIT EXPÉRIMENTE MIND MONADE MACHINA DXM";
+
+      //existence ex nihilo experience
+
+        lignes = str.split(' ');
+        adr=-1;
+
+        contenu="";
+
+
+
+        affiche_bis();
+    }
+
+
+
+
+
+
+
+
+var cle1=false;
+var cle2=false;
+
+    document.body.addEventListener("keydown",(event) => {
+        if (event.keyCode == 27) {
+          document.body.style.color = "cyan";
+          document.body.innerHTML="Laracine cubique de 27 est égale à trois.";
+        }
+        if (event.keyCode == 50) {
+          cle1=true;
+        }
+        if (event.keyCode == 55) {
+          cle2=true;
+        }
+    },true, );
+
+
+
+    var debut = true;
+    
+    function matrix_reload() { 
+
+        rc.rectangle(0, 0, 300,300, {
+        fill: 'black',
+        fillStyle: 'solid' // solid fill
+        });
+
+
+
+    // draw sine curve
+    let points = [];
+    for (let i = 0; i < 20; i++) {
+      // 4pi - 400px
+      let x = (100 / 5) * i ;
+      let xdeg = (Math.PI / 25) * x;
+      let y = Math.round(Math.sin(xdeg) * 90) + 125;
+      points.push([x, y]);
+    }
+    rc.curve(points, {
+      roughness: 1.2, stroke: 'red', strokeWidth: 3
+    });
+
+
+
+        // draw sine curve
+        let points_bis = [];
+    for (let i = 0; i < 20; i++) {
+      // 4pi - 400px
+      let x = (100 / 5) * i ;
+      let xdeg = (Math.PI / 25) * x;
+      let y = Math.round(Math.sin(xdeg) * 90) + 125;
+      points_bis.push([x, y]);
+    }
+    rc.curve(points_bis, {
+      roughness: 1.2, stroke: 'blue', strokeWidth: 3
+    });
+
+    
+
+        if(debut)setTimeout(matrix_reload, 125);
+    }
+    setTimeout(matrix_reload, 125);
+
+        
+  
+    </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>Autostéréogramme</title>
+    <style>
+        body{
+            background-color:black;
+            color: white;
+            text-align: center;
+            font-family: monospace, 'Courier New', Courier;
+            font-size: 1em;
+        }
+        #texte_bloc{
+            width:90%;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+
+   
+
+    <input type="file" name="inputfile" id="inputfile" accept=".txt" > 
+
+    <div id="texte_bloc">
+    </div>
+
+
+
+    <script>
+
+
+
+
+var texte_bloc = document.getElementById("texte_bloc");
+
+var liste_mots = [];
+
+document.getElementById('inputfile')
+.addEventListener('change', function () {
+
+    let fr = new FileReader();
+    fr.onload = function () {
+
+        (document.getElementById("inputfile")).style.display="none";
+        var str = fr.result;
+        liste_mots = str.split(' ');
+        traiter();
+
+    }
+
+    fr.readAsText(this.files[0]);
+
+})
+
+
+
+
+function traiter(){
+
+    var map = new Map();
+
+    for (let i = 0; i < liste_mots.length; i++) {
+
+
+        let word = liste_mots[i];
+
+        if(word.length>4){
+
+        
+            //si le dernier caractere du mot est une virgule
+            //alors on retire le dernier caractere
+            if(word[word.length-1]==',' || word[word.length-1]=='s' || word[word.length-1]=='.'){
+                word = word.substring(0, word.length - 1);
+            }
+
+
+            if(map.has(word)){
+                let nb_occur = map.get(word);
+                nb_occur++;
+                map.set(word, nb_occur);
+            }
+            else{
+                map.set(word, 1);
+            }
+
+
+        }
+
+    }
+
+    texte_bloc.innerHTML+="<h1>Je sais tout</h1>";
+
+
+    var mapAsc = new Map([...map.entries()].sort((a,b) => b[1] - a[1]));
+
+    for (let [key, value] of mapAsc) {
+
+
+
+        let zizi = key.search(/monade/gi);
+        let nenette = key.search(/daemon/gi);
+        let kekette = key.search(/anagramme/gi);
+
+        
+        if(zizi==-1 && nenette==-1 && kekette==-1){
+            texte_bloc.innerHTML+=key+" ";
+        }
+        else{
+            if(kekette==-1){
+                texte_bloc.innerHTML+="<span style='color:cyan;'>"+key+"</span> ";
+            }
+            else{
+                texte_bloc.innerHTML+="<span style='color:greenyellow;'><a style='text-decoration:none;color:greenyellow;' href='https://1conscience.github.io/6EQUJ5/analogique.html'>"+key+"</a></span> ";
+            }
+        }
+
+    }
+
+
+}
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

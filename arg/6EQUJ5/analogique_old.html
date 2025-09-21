@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+        <title>Analogique</title>
+        <style>
+            body{
+                text-align:center;
+                margin:0;
+                padding: 0;
+            }
+
+            audio::-webkit-media-controls-panel {
+                background-color: rgba(255, 255, 255, 1);
+            }
+            
+        </style>
+    </head>
+    <body>
+
+<div style="position:fixed;bottom:2em;right:2em;text-align:right;">
+    <button style="padding:1em;font-size: 1em;" onclick="mystere()" id="button" type="button">✞ mũrir</button>
+</div>
+ 
+
+        <div style="margin-bottom: 2em;">
+            
+            <p>c'est comme si <span style="color:#ff1e00;">cette chose</span> avait le monde<br>
+                il y a toujours une nouvelle porte<br>
+                mais jamais notre esprit n'est nouveau<br>
+                ce moment premier où le temps l'<span style="color:#ff1e00;">étend</span> et les nombres font <span style="color:#ff1e00;">ma conscience</span>
+            </p>
+        </div>
+
+
+
+
+
+    <img id="auto" style="position:absolute;top:100px;" src="auto.png" alt="Autostéréogramme">
+
+
+
+    <canvas style="position:absolute;top:100px;" id="canvas"  ></canvas>
+    
+    <audio controls src="personne_ne_se_sauve_de_ϛa.mp3"></audio>
+
+<script>
+
+var alterne = true;
+function clignote(){
+    if(alterne){alterne=false;document.getElementById("auto").src="auto_stereo.png";}
+    else{alterne=true;document.getElementById("auto").src="auto.png";}
+    setTimeout(clignote,100);
+}
+
+
+
+var hauteur_=0;
+
+var timing = 5;
+var tour_de_boucle = 1;
+
+const canvas = document.getElementById("canvas");
+
+function dessine_reverse() {
+
+
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image(1280, 720); // Using optional size for image
+    image.onload = drawImageActualSize; // Draw when image has loaded
+
+    // Load an image of intrinsic size 300x227 in CSS pixels
+    image.src = "auto_lignes.png";
+
+    function drawImageActualSize() {
+    // Use the intrinsic size of image in CSS pixels for the canvas element
+    canvas.width = this.naturalWidth;
+    canvas.height = this.naturalHeight;
+
+
+    // To use the custom size we'll have to specify the scale parameters
+    // using the element's width and height properties - lets draw one
+    // on top in the corner:
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
+    }
+
+    hauteur_--;
+    if(hauteur_==0){
+        tour_de_boucle++;
+        timing = 1;
+        setTimeout(clignote,100);
+        setTimeout(dessine,timing);
+    }
+    else{setTimeout(dessine_reverse,timing);}
+
+}
+
+function dessine() {
+
+
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image(1280, 720); // Using optional size for image
+    image.onload = drawImageActualSize; // Draw when image has loaded
+
+    // Load an image of intrinsic size 300x227 in CSS pixels
+    image.src = "auto_lignes.png";
+
+    function drawImageActualSize() {
+    // Use the intrinsic size of image in CSS pixels for the canvas element
+    canvas.width = this.naturalWidth;
+    canvas.height = this.naturalHeight;
+
+
+    // To use the custom size we'll have to specify the scale parameters
+    // using the element's width and height properties - lets draw one
+    // on top in the corner:
+    ctx.drawImage(this, 0, 0, this.width, hauteur_, 0, 0, this.width, hauteur_)
+    }
+
+    hauteur_++;
+    if(hauteur_>720){hauteur_=720;setTimeout(dessine_reverse,timing);}
+    else{setTimeout(dessine,timing);}
+
+}
+
+dessine();
+
+
+var width = document.body.clientWidth;
+var pos = (width/2)-640;
+canvas.style.left=pos+"px";
+
+const auto = document.getElementById("auto");
+auto.style.left=pos+"px";
+
+
+/*
+var increment = 0;
+
+function charge(){
+    
+    //context.drawImage(imageObject,XClipFromSource, YClipFromSource, widthToClipFromSource, heightToClipFromSource,canvasX, canvasY, canvasWidth, canvasHeight);
+    
+    document.getElementById("bl2").style.display = "block";
+
+    increment++;
+
+    setTimeout(charge,1000);
+}
+
+
+
+
+
+document.getElementById("bl1").style.display = "block";
+setTimeout(charge,1000);
+
+*/
+
+
+
+
+
+function mystere(){
+    window.location.href = "../verite_fractal.html#mũtation";
+}
+
+
+
+
+
+
+</script>
+
+    </body>
+</html>

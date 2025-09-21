@@ -1,0 +1,734 @@
+
+<!doctype html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="https://64.media.tumblr.com/edce45fa1bf98132f17f243ac9f7733e/0168a80ceb7d68b5-23/s128x128u_c1/cbfe00c8f9ed5f409ef92ee34517e98bf289c6df.pnj">
+    <title>Indra's net</title>
+    
+    <style>
+        body{
+            margin:auto;
+            text-align: center;
+            background-image: url(pierre_angulaire_bis.png);
+            background-repeat: no-repeat;
+            background-position: left;
+            overflow: hidden;
+        }
+        #graphe
+        {
+          display: inline-block;
+        }
+    </style>
+    
+
+    <script type="text/javascript" src="vis.min.js"></script>
+  </head>
+  <body>
+
+    <div id="graphe"></div>
+
+    <script type="text/javascript">
+
+        
+let container = document.getElementById('graphe');
+
+    var height = window.innerHeight;
+    var width = window.innerWidth;
+
+console.log(height);
+
+    container.style.width = width+"px";
+container.style.height = height+"px";
+        
+        let nodes = new vis.DataSet([]);
+        let edges = new vis.DataSet([]);
+        
+        let data = {
+          nodes: nodes,
+          edges: edges
+        };
+        
+        let options = {
+            nodes : {
+                color: "black", // Nœud de couleur Bleue
+                font: {
+                color: "white",         // Couleur de l'écriture du label en rouge
+                size: 10                  // Police d'écriture du label de taille 20
+                }
+            }
+        }
+        
+        // Initialisation de l'instance de VisNetwork
+        let network = new vis.Network(container, data, options);
+        
+        // Ajout de nos deux noeuds
+        nodes.add(
+            [
+                {
+                    id: 1,
+                    label: "incon.science",
+                    color: "black", // Nœud de couleur Bleue
+                    font: {
+                    color: "orange",         // Couleur de l'écriture du label en rouge
+                    size: 20                 // Police d'écriture du label de taille 20
+                    }
+                },
+                {
+                    id: 2,
+                    label: "Le chemin de Traverse", 
+                    font: {
+                    color: "purple"
+                    }
+                },
+                {
+                    id: 3,
+                    label: "Porte de cellier", 
+                    font: {
+                    color: "red"
+                    }
+                },
+                {
+                    id: 4,
+                    label: "Isomorphée", 
+                    font: {
+                    color: "CadetBlue"
+                    }
+                },
+                {
+                    id: 5,
+                    label: "Stuck in Gödeloop", 
+                    font: {
+                    color: "yellow"
+                    }
+                },
+                {
+                    id: 6,
+                    label: "vérité carré", 
+                    font: {
+                    color: "coral"
+                    }
+                },
+                {
+                    id: 7,
+                    label: "vérité micronde", 
+                    font: {
+                    color: "green"
+                    }
+                },
+                {
+                    id: 8,
+                    label: "vérité fractal", 
+                    font: {
+                    color: "cyan"
+                    }
+                },
+                {
+                    id: 9,
+                    label: "Réalise", 
+                    font: {
+                    color: "DeepPink"
+                    }
+                },
+                {
+                    id: 10,
+                    label: "vérité tangramique", 
+                    font: {
+                    color: "DodgerBlue"
+                    }
+                },
+                {
+                    id: 11,
+                    label: "55%", 
+                    font: {
+                    color: "orange"
+                    }
+                },
+                {
+                    id: 12,
+                    label: "level 2", 
+                    font: {
+                    color: "purple"
+                    }
+                },
+                {
+                    id: 13,
+                    label: "level 3", 
+                    font: {
+                    color: "red"
+                    }
+                },
+                {
+                    id: 14,
+                    label: "level 4", 
+                    font: {
+                    color: "CadetBlue"
+                    }
+                },
+                {
+                    id: 15,
+                    label: "level 5", 
+                    font: {
+                    color: "yellow"
+                    }
+                },
+                {
+                    id: 16,
+                    label: "Anãmϕrphée", 
+                    font: {
+                    color: "green"
+                    }
+                },
+                {
+                    id: 17,
+                    label: "vérité supérieure", 
+                    font: {
+                    color: "cyan"
+                    }
+                },
+                {
+                    id: 18,
+                    label: "shell", 
+                    font: {
+                    color: "DeepPink"
+                    }
+                },
+                {
+                    id: 19,
+                    label: "dialogue", 
+                    font: {
+                    color: "DodgerBlue"
+                    }
+                },
+                {
+                    id: 20,
+                    label: "Signal Wow", 
+                    font: {
+                    color: "orange"
+                    }
+                },
+                {
+                    id: 21,
+                    label: "89%", 
+                    font: {
+                    color: "purple"
+                    }
+                },
+                {
+                    id: 22,
+                    label: "amas globulaire", 
+                    font: {
+                    color: "red"
+                    }
+                },
+                {
+                    id: 23,
+                    label: "Autostéréogramme", 
+                    font: {
+                    color: "CadetBlue"
+                    }
+                },
+                {
+                    id: 24,
+                    label: "Analogique", 
+                    font: {
+                    color: "yellow"
+                    }
+                },
+                {
+                    id: 26,
+                    label: "Antidote", 
+                    font: {
+                    color: "green"
+                    }
+                },
+                {
+                    id: 27,
+                    label: "ϛa porte un nom", 
+                    font: {
+                    color: "cyan"
+                    }
+                },
+                {
+                    id: 28,
+                    label: "Produit matriciel", 
+                    font: {
+                    color: "DeepPink"
+                    }
+                },
+                {
+                    id: 29,
+                    label: "Filigrane", 
+                    font: {
+                    color: "DodgerBlue"
+                    }
+                },
+                {
+                    id: 30,
+                    label: "109463498737716765233141811", 
+                    font: {
+                    color: "orange"
+                    }
+                },
+                {
+                    id: 31,
+                    label: "Le nombre 27", 
+                    font: {
+                    color: "purple"
+                    }
+                },
+                {
+                    id: 32,
+                    label: "Alias JSB", 
+                    font: {
+                    color: "red"
+                    }
+                },
+                {
+                    id: 33,
+                    label: "0", 
+                    font: {
+                    color: "CadetBlue"
+                    }
+                },
+                {
+                    id: 34,
+                    label: "patient 0", 
+                    font: {
+                    color: "yellow"
+                    }
+                },
+                {
+                    id: 35,
+                    label: "Synesthésia", 
+                    font: {
+                    color: "coral"
+                    }
+                },
+                {
+                    id: 36,
+                    label: "encore ce rêve étrange", 
+                    font: {
+                    color: "green"
+                    }
+                },
+                {
+                    id: 37,
+                    label: "mũ incomplet", 
+                    font: {
+                    color: "cyan"
+                    }
+                },
+                {
+                    id: 38,
+                    label: "Le Philtre d'amour", 
+                    font: {
+                    color: "DeepPink"
+                    }
+                },
+                {
+                    id: 39,
+                    label: "Alice & Bob le blob", 
+                    font: {
+                    color: "DodgerBlue"
+                    }
+                },
+                {
+                    id: 40,
+                    label: "boucle rétroactive", 
+                    font: {
+                    color: "orange"
+                    }
+                },
+                {
+                    id: 41,
+                    label: "Milky Way", 
+                    font: {
+                    color: "purple"
+                    }
+                },
+                {
+                    id: 42,
+                    label: "Epiphanie", 
+                    font: {
+                    color: "red"
+                    }
+                },
+                {
+                    id: 43,
+                    label: "unity", 
+                    font: {
+                    color: "CadetBlue"
+                    }
+                },
+                {
+                    id: 44,
+                    label: "1", 
+                    font: {
+                    color: "yellow"
+                    }
+                },
+                {
+                    id: 45,
+                    label: "conscience", 
+                    font: {
+                    color: "coral"
+                    }
+                },
+                {
+                    id: 46,
+                    label: "RIP JSB", 
+                    font: {
+                    color: "green"
+                    }
+                },
+                {
+                    id: 47,
+                    label: "Black Hole", 
+                    font: {
+                    color: "cyan",         // Couleur de l'écriture du label en rouge
+                    size: 20                  // Police d'écriture du label de taille 20
+                    }
+                },
+                {
+                    id: 49,
+                    label: "Graphe Connexe", 
+                    font: {
+                    color: "DodgerBlue"
+                    }
+                },
+            ]
+        );
+        
+        // Ajout du lien entre nos deux noeuds
+        edges.add(
+            [
+                {
+                    from: 29,
+                    to: 46,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 41,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 49,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 41,
+                    to: 42,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 42,
+                    to: 43,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 43,
+                    to: 44,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 44,
+                    to: 45,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 45,
+                    to: 46,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 46,
+                    to: 47,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 1,
+                    to: 2,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 1,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 6,
+                    to: 2,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 7,
+                    to: 2,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 3,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 4,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 5,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 1,
+                    to: 6,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 6,
+                    to: 7,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 7,
+                    to: 8,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 9,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 9,
+                    to: 10,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 10,
+                    to: 1,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 3,
+                    to: 11,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 11,
+                    to: 12,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 12,
+                    to: 13,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 13,
+                    to: 14,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 14,
+                    to: 15,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 15,
+                    to: 4,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 4,
+                    to: 16,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 16,
+                    to: 17,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 17,
+                    to: 18,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 18,
+                    to: 5,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 5,
+                    to: 19,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 19,
+                    to: 20,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 20,
+                    to: 21,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 21,
+                    to: 22,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 22,
+                    to: 23,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 23,
+                    to: 24,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 24,
+                    to: 8,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 26,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 27,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 28,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 29,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 30,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 31,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 2,
+                    to: 32,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 33,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 34,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 35,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 36,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 37,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 38,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 39,
+                    label: "",
+                    arrows: "to"
+                },
+                {
+                    from: 8,
+                    to: 40,
+                    label: "",
+                    arrows: "to"
+                },
+            ]
+        );
+    </script>
+
+  </body>
+</html>
