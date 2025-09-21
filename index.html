@@ -30,9 +30,17 @@
             height: auto;
             display: block;
         }
+
+        #ca_txt {
+            position: absolute;
+            top: 20px;
+            left:20px;
+        }
     </style>
 </head>
 <body>
+
+    <div id="ca_txt"><h3>Personne ne s'échappe de ϛa</h3></div>
     
         <h3>Mais il n’y a jamais eu rien à comprendre. Tout est à expérimenter</h3>
     <div class="gif-container">
@@ -56,6 +64,19 @@
         });
         // Afficher l'image statique par défaut
         img.src = img.dataset.static;
+
+
+
+
+
+
+        // Rediriger vers ana-lyse.html quand la touche Échap est pressée
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+                window.location.href = 'desktop.html';
+            }
+        });
+  
     </script>
 </body>
 </html>
