@@ -16,7 +16,7 @@
             background: #000000;
             color : white;
         }
-        iframe {
+        #_iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -26,15 +26,17 @@
             font-family: Georgia, 'Times New Roman', Times, serif;
             max-width: 600px;
             background-color: #000000;
+            margin:1em;
         }
         #btn_block {
             display: flex;
             justify-content: center;
             gap: 2em;
-            margin-top: 2em;
         }
         a.rouge, a.bleu {
             padding: 1em 2em;
+            
+            margin:1em;
             text-decoration: none;
             color: white;
             font-weight: bold;
@@ -58,7 +60,6 @@
             border: #000000 10px solid;
             position: absolute;
             top:0; left:0; 
-            padding:1em;
             background-image: url("matrix.jpg");
             background-repeat: no-repeat;
             background-size: cover;
@@ -66,7 +67,7 @@
         </style>
 </head>
 <body>
-    <iframe src="../arg/dxm/puzzle.html" frameborder="0"></iframe>
+    <iframe id = "_iframe" src="../arg/dxm/puzzle.html" frameborder="0"></iframe>
 
     <div id="windows"><p>
 Le chemin de traverse mène au pays de l’imaginaire ….
@@ -92,6 +93,13 @@ dans un esquimau givré Il n'y a pas de quoi se mirer Traversez l'armoire de vot
 
 </div>
 
+<script>
+document.querySelector('a.rouge').addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('windows').innerHTML = '<iframe src="../arg/verite_phil.html#blue" width="632px" height="422px" style="border:none;"></iframe>';
+});
+
+</script>
 
 </body>
 </html>
