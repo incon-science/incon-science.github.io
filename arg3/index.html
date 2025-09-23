@@ -115,21 +115,6 @@ document.querySelector('a.bleu').addEventListener('click', function(event) {
     document.getElementById('windows').innerHTML = '<iframe id="game_iframe" src="../arg/verite_phil.html#red" width="632px" height="457px" style="border:none;"></iframe>';
 });
 
-// Dézoomer si l'iframe charge ../arg3/index.html
-document.getElementById('_iframe').addEventListener('load', function() {
-    try {
-        const iframe = document.getElementById('_iframe');
-        const src = iframe.getAttribute('src');
-        if (src && src.replace(/\\/g, '/').endsWith('../arg3/index.html')) {
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
-            if (doc && doc.documentElement) {
-                doc.documentElement.style.zoom = "0.2";
-            }
-        }
-    } catch (e) {
-        // Cross-origin, ignore
-    }
-});
 
 </script>
 
