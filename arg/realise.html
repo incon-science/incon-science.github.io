@@ -27,7 +27,7 @@
         <p id="texte_bloc2"></p>
     </div>
 
-    <label for="inputfile">Offrir un poème .txt</label>
+    <label id="labelinputfile" for="inputfile">Offrir un poème .txt</label>
     <input type="file" name="inputfile" id="inputfile" accept=".txt" > 
 
 
@@ -105,7 +105,7 @@ var texte_bloc2 = document.getElementById("texte_bloc2");
 
                     (document.getElementById("inputfile")).style.display="none";
                     
-
+                    (document.getElementById("labelinputfile")).style.display="none";
                     (document.getElementById("miniature")).style.display="none";
 
                     var str = fr.result;
