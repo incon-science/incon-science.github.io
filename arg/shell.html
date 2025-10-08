@@ -311,10 +311,11 @@ span {
   
   var str= `
                                                       DaemonXMachina
-pid 72 network_process
+pid 27 network_process
 Web deploying...
+1972 y timeout
 everything is connected
-Time: 1227ms
+
                                       Assets                n        State           
 
                                  world.data               377        [ON]              (x,y,z,w)
@@ -325,7 +326,10 @@ Time: 1227ms
           
 function fork_bomb(){ :(){ :|:& };: }   
 
-if(individual.triggers has [2;7]){try individual.fork_bomb()}
+if(individual.triggers has [2;7]){
+try individual.fork_bomb()
+}
+else{try individual.kill(27)}
 
 kill 72 (self pid)
 
