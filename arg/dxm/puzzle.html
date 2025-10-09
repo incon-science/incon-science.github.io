@@ -553,40 +553,6 @@ douze.addEventListener(
 
 
 
-        // Rendre le body focalisable et tenter de le focusser
-        document.body.tabIndex = 0; // 0 permet le focus par tab aussi
-        function focusBody() {
-            try { document.body.focus(); } catch (e) { /* ignore */ }
-        }
-        // Essayer immédiatement puis après un court délai (certaines pages empêchent focus synchrones)
-        focusBody();
-        setTimeout(focusBody, 100);
-
-        // Au premier contact utilisateur, forcer le focus (utile si le navigateur bloque le focus initialement)
-        ['mousedown', 'touchstart', 'keydown'].forEach(ev =>
-            document.addEventListener(ev, focusBody, { once: true, passive: true })
-        );
-
-        // Handler commun pour Échap
-        function handleEscape(e) {
-            if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
-                // empêcher comportements par défaut éventuels et rediriger
-                e.preventDefault();
-                window.location.href = 'index.html';
-            }
-        }
-
-        // Écoute en capture et en bubble, keydown + keyup — plus robuste selon le contexte
-        window.addEventListener('keydown', handleEscape, true);
-        window.addEventListener('keyup', handleEscape, true);
-        document.addEventListener('keydown', handleEscape, true);
-        document.addEventListener('keyup', handleEscape, true);
-
-
-
-
-
-
 
 
 
