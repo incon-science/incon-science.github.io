@@ -599,6 +599,69 @@ douze.addEventListener(
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    (function(){
+      const pressed = new Set();
+      const last = { '2': 0, '7': 0 };
+      const SEQ_WINDOW = 400; // ms
+
+      function showAllDivs(){
+        window.location.replace("index.html");
+      }
+
+      function keyIs2(e){
+        return e.code === 'Digit2' || e.code === 'Numpad2' || e.key === '2' || e.key === 'é';
+      }
+      function keyIs7(e){
+        return e.code === 'Digit7' || e.code === 'Numpad7' || e.key === '7' || e.key === 'è';
+      }
+
+      window.addEventListener('keydown', e => {
+        if (keyIs2(e)) {
+          pressed.add('2');
+          last['2'] = Date.now();
+        }
+        if (keyIs7(e)) {
+          pressed.add('7');
+          last['7'] = Date.now();
+        }
+
+        // simultaneous (held) or quick sequence
+        if (pressed.has('2') && pressed.has('7')) {
+          showAllDivs();
+          return;
+        }
+        if (Date.now() - last['2'] <= SEQ_WINDOW && Date.now() - last['7'] <= SEQ_WINDOW) {
+          showAllDivs();
+        }
+      });
+
+      window.addEventListener('keyup', e => {
+        if (keyIs2(e)) pressed.delete('2');
+        if (keyIs7(e)) pressed.delete('7');
+      });
+    })();
+    </script>
+
+
+
 </body> 
 
 
