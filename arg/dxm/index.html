@@ -56,6 +56,19 @@
         height:120px;
     }
 
+    /* Animation: slow fade in / fade out loop for hover */
+    #defragmentation.fade-loop{
+      animation: fadePulse 3.5s ease-in-out infinite;
+    }
+
+    @keyframes fadePulse{
+      0%{ opacity: 0; }
+      10%{ opacity: 0.85; }
+      50%{ opacity: 1; }
+      90%{ opacity: 0.85; }
+      100%{ opacity: 0; }
+    }
+
 </style> 
   
 <body> 
@@ -99,7 +112,9 @@ const red_zone = document.getElementById("red_zone");
 red_zone.addEventListener(
   "mouseover",
   (event) => {
-    document.getElementById("defragmentation").src="red_hover_new.png";
+    const defrag = document.getElementById("defragmentation");
+    defrag.src = "red_hover_new.png";
+    defrag.classList.add("fade-loop");
   },
   false,
 );
@@ -107,7 +122,9 @@ red_zone.addEventListener(
 red_zone.addEventListener(
   "mouseout",
   (event) => {
-    document.getElementById("defragmentation").src="defragmentation_new_calque_vide.png";
+    const defrag = document.getElementById("defragmentation");
+    defrag.classList.remove("fade-loop");
+    defrag.src = "defragmentation_new_calque_vide.png";
   },
   false,
 );
