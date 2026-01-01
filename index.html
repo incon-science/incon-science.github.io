@@ -1,103 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>incon.science:~$ Une histoire fausse</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-
         body {
-            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: black;
             display: flex;
-            align-items: center; /* centre verticalement */
-            justify-content: center; /* centre horizontalement */
-            background: #000000; /* optionnel : changez si besoin */
-            color : white;
-
-            
-            background-image: url("img/tumblr_c0812679479e7039cd8b1a9b5a940d18_cb8a64c7_500.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-
-        .gif-container {
-            display: inline-block;
+        
+        img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        
+        a {
             cursor: pointer;
-            text-align: center;
-        }
-
-        .gif-img {
-            max-width: 90vw; /* reste responsive sur petits écrans */
-            width: 300px; /* Ajustez la taille si besoin */
-            height: auto;
-            display: block;
-        }
-
-        #ca_txt {
-            position: absolute;
-            top: 2em;
-            left:3em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-
-    <div id="ca_txt"><h5>Personne<br>n'échappe<br>à ϛa</h5></div>
-    
-        <h3>Mais il n’y a jamais eu rien à comprendre. Tout est à expérimenter&nbsp;&nbsp;&nbsp;</h3>
-    <div class="gif-container">
-        <a href="analyse.html"><img
-            src="img/butterdoor.gif"
-            data-static="img/butterdoor.png"
-            data-animated="img/butterdoor.gif"
-            class="gif-img"
-            alt="GIF animé au survol"
-        ></a>
-    </div>
-    
-
-    <script>
-        const img = document.querySelector('.gif-img');
-        img.addEventListener('mouseenter', () => {
-            img.src = img.dataset.animated;
-        });
-        img.addEventListener('mouseleave', () => {
-            img.src = img.dataset.static;
-        });
-        // Afficher l'image statique par défaut
-        img.src = img.dataset.static;
-
-        // Rendre le body focalisable et tenter de le focusser
-        document.body.tabIndex = 0; // 0 permet le focus par tab aussi
-        function focusBody() {
-            try { document.body.focus(); } catch (e) { /* ignore */ }
-        }
-        // Essayer immédiatement puis après un court délai (certaines pages empêchent focus synchrones)
-        focusBody();
-        setTimeout(focusBody, 100);
-
-        // Au premier contact utilisateur, forcer le focus (utile si le navigateur bloque le focus initialement)
-        ['mousedown', 'touchstart', 'keydown'].forEach(ev =>
-            document.addEventListener(ev, focusBody, { once: true, passive: true })
-        );
-
-        // Handler commun pour Échap
-        function handleEscape(e) {
-            if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
-                // empêcher comportements par défaut éventuels et rediriger
-                e.preventDefault();
-                window.location.href = 'desktop.html';
-            }
-        }
-
-        // Écoute en capture et en bubble, keydown + keyup — plus robuste selon le contexte
-        window.addEventListener('keydown', handleEscape, true);
-        window.addEventListener('keyup', handleEscape, true);
-        document.addEventListener('keydown', handleEscape, true);
-        document.addEventListener('keyup', handleEscape, true);
-    </script>
+    <a href="index2.html">
+        <img src="flash.gif" alt="Image">
+    </a>
 </body>
 </html>
