@@ -54,7 +54,7 @@
                     clearInterval(timer);
                     return;
                 }
-                el.innerHTML = ''+days + ' j ' + pad(hours) + ':' + pad(minutes) + ':' + pad(seconds) + "";
+                el.innerHTML = ''+days + ' d ' + pad(hours) + ':' + pad(minutes) + ':' + pad(seconds) + "";
             }
             update();
             const timer = setInterval(update,1000);
