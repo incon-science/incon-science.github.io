@@ -30,6 +30,8 @@
         #countdown { position: relative; z-index: 2; color: #fff; text-align: center; background: rgba(0,0,0,0.45); padding: 20px; border-radius: 12px; font-family: system-ui, Arial, sans-serif; }
         #countdown-text { font-size: clamp(18px, 6vw, 64px); font-weight: 700; letter-spacing: 0.02em; }
         #countdown-text small { display: block; font-size: clamp(12px, 2.2vw, 18px); opacity: 0.9; margin-top: 8px; }
+        /* overlay utilisé pour clignoter entre les images */
+        #bg-flash { position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url(dxm_fin2bis.jpg); background-size: contain; background-position: center; opacity: 0; transition: opacity 180ms ease-in-out; }
     </style>
 
     <script>
@@ -56,6 +58,31 @@
             }
             update();
             const timer = setInterval(update,1000);
+
+
+
+            
+                        // --- flash background overlay aléatoire ---
+                        const overlay = document.createElement('div');
+                        overlay.id = 'bg-flash';
+                        document.body.appendChild(overlay);
+                        // précharger image
+                        const img = new Image(); img.src = 'dxm_fin2bis.jpg';
+
+                        function rand(min, max){ return Math.random()*(max-min)+min; }
+                        function scheduleNext(){
+                            // interval between flashes: 300ms .. 2000ms
+                            const t = rand(300, 2000);
+                            setTimeout(()=>{ flash(); scheduleNext(); }, t);
+                        }
+                        function flash(){
+                            const dur = rand(80, 300); // durée du flash en ms
+                            overlay.style.transition = `opacity ${dur}ms ease-in-out`;
+                            overlay.style.opacity = '1';
+                            setTimeout(()=>{ overlay.style.opacity = '0'; }, dur);
+                        }
+                        // démarrer
+                        scheduleNext();
         })();
     </script>
 
