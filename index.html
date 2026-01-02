@@ -27,8 +27,8 @@
     </div>
 
     <style>
-        #countdown { position: relative; z-index: 2; color: #fff; text-align: center; background: rgba(0,0,0,0.45); padding: 20px; border-radius: 0px; font-family: system-ui, Arial, sans-serif; }
-        #countdown-text { font-size: clamp(18px, 6vw, 64px); font-weight: 700; letter-spacing: 0.02em; }
+        #countdown { position: relative; z-index: 2; color: #fff; text-align: center; background: rgba(0,0,0,0.0); padding: 0px; border-radius: 0px; font-family: system-ui, Arial, sans-serif; }
+        #countdown-text { font-size: clamp(18px, 6vw, 64px); font-weight: 700; letter-spacing: 0.02em;text-shadow: 0 0 4px rgba(0,0,0,1); }
         #countdown-text small { display: block; font-size: clamp(12px, 2.2vw, 18px); opacity: 0.9; margin-top: 8px; }
         /* overlay utilisé pour clignoter entre les images */
         #bg-flash { position: fixed; inset: 0; z-index: 1; pointer-events: none; background-image: url(dxm_fin2bis.jpg); background-size: contain; background-position: center; opacity: 0; transition: opacity 180ms ease-in-out; }
@@ -50,11 +50,11 @@
                 diff -= minutes * (1000*60);
                 const seconds = Math.floor(diff / 1000);
                 if (target - now <= 0){
-                    el.innerHTML = 'Bonne année 2027!';
+                    el.innerHTML = '2027!';
                     clearInterval(timer);
                     return;
                 }
-                el.innerHTML = days + ' j ' + pad(hours) + ':' + pad(minutes) + ':' + pad(seconds) + "";
+                el.innerHTML = ''+days + ' j ' + pad(hours) + ':' + pad(minutes) + ':' + pad(seconds) + "";
             }
             update();
             const timer = setInterval(update,1000);
