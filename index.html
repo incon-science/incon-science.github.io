@@ -22,5 +22,42 @@
     </style>
 </head>
 <body>
+    <div id="countdown" aria-live="polite">
+        <div id="countdown-text"></div>
+    </div>
+
+    <style>
+        #countdown { position: relative; z-index: 2; color: #fff; text-align: center; background: rgba(0,0,0,0.45); padding: 20px; border-radius: 12px; font-family: system-ui, Arial, sans-serif; }
+        #countdown-text { font-size: clamp(18px, 6vw, 64px); font-weight: 700; letter-spacing: 0.02em; }
+        #countdown-text small { display: block; font-size: clamp(12px, 2.2vw, 18px); opacity: 0.9; margin-top: 8px; }
+    </style>
+
+    <script>
+        (function(){
+            const target = new Date(2027,0,1,0,0,0); // 1er janvier 2027 (heure locale)
+            const el = document.getElementById('countdown-text');
+            function pad(n){ return n.toString().padStart(2,'0'); }
+            function update(){
+                const now = new Date();
+                let diff = Math.max(0, target - now);
+                const days = Math.floor(diff / (1000*60*60*24));
+                diff -= days * (1000*60*60*24);
+                const hours = Math.floor(diff / (1000*60*60));
+                diff -= hours * (1000*60*60);
+                const minutes = Math.floor(diff / (1000*60));
+                diff -= minutes * (1000*60);
+                const seconds = Math.floor(diff / 1000);
+                if (target - now <= 0){
+                    el.innerHTML = 'Bonne année 2027!';
+                    clearInterval(timer);
+                    return;
+                }
+                el.innerHTML = days + ' j ' + pad(hours) + ':' + pad(minutes) + ':' + pad(seconds) + "";
+            }
+            update();
+            const timer = setInterval(update,1000);
+        })();
+    </script>
+
 </body>
 </html>
