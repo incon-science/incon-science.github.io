@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1768213807|3740936760';
+const CACHE_VERSION = '1768214973|56069833';
 /** @type {string} */
 const CACHE_PREFIX = 'deus x medicine-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
