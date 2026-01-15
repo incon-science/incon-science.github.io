@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bqw4rqlaq2fkn"]
+[gd_scene load_steps=14 format=3 uid="uid://bqw4rqlaq2fkn"]
 
 [ext_resource type="Script" uid="uid://ctxuoxlxf1oka" path="res://lvl_3.gd" id="1_rlmum"]
 [ext_resource type="Texture2D" uid="uid://43s8tnhh1303" path="res://Sprites/rooms/8SAVE.jpg" id="2_rlmum"]
 [ext_resource type="PackedScene" uid="uid://c2dnk4rudvof8" path="res://littletransit.tscn" id="3_oj8a2"]
 [ext_resource type="PackedScene" uid="uid://j3gcywxflkf1" path="res://tentacle/scenes/arm.tscn" id="4_dnxd7"]
 [ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player_v_2.tscn" id="5_dnxd7"]
-[ext_resource type="PackedScene" uid="uid://dlybui5ekohhg" path="res://platform_3.tscn" id="5_urlp7"]
 [ext_resource type="PackedScene" uid="uid://bouga50fmso2m" path="res://apple.tscn" id="7_rno80"]
 [ext_resource type="PackedScene" uid="uid://bpb7glyeakns4" path="res://lvl_succeed_timer.tscn" id="8_31vo8"]
 
@@ -185,10 +184,7 @@ polygon = PackedVector2Array(-20, -130, -33, -133, -33, -94, -20, -86)
 
 [node name="apple" parent="." instance=ExtResource("7_rno80")]
 unique_name_in_owner = true
-position = Vector2(-434, -101)
-
-[node name="platform3" parent="." instance=ExtResource("5_urlp7")]
-position = Vector2(-434, -96)
+position = Vector2(-434, -125)
 
 [node name="Arm" parent="." instance=ExtResource("4_dnxd7")]
 unique_name_in_owner = true

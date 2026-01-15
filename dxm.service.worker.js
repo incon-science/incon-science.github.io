@@ -4,9 +4,9 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1768402586|1670777837';
+const CACHE_VERSION = '1768489153|22177644583';
 /** @type {string} */
-const CACHE_PREFIX = 'deus x medicine-sw-cache-';
+const CACHE_PREFIX = 'Deus X Medicine-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 /** @type {string} */
 const OFFLINE_URL = 'dxm.offline.html';

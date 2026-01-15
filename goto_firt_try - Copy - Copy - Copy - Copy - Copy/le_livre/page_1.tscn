@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cudqqq5phyxhq"]
+
+[ext_resource type="Script" uid="uid://134fe28oh6vu" path="res://le_livre/page_1.gd" id="1_yx8d6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_50i6w"]
+content_margin_left = 50.0
+content_margin_right = 50.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yx8d6"]
+content_margin_left = 50.0
+content_margin_right = 50.0
+
+[node name="page1" type="CanvasLayer"]
+script = ExtResource("1_yx8d6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1922.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 223.0
+offset_right = 1920.0
+offset_bottom = 530.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_50i6w")
+text = "“Au début, le cerveau nous dit qu'on va mourir.
+Quand on flotte dans l'espace et qu'on n'est plus attaché à la station,
+le cerveau ne ressent plus aucune sensation physique du poids, ni du vide sous les pieds.
+Donc il nous envoie le signal : t'es en chute libre, tu vas mourir.”
+
+Thomas P"
+horizontal_alignment = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_top = 725.0
+offset_right = 1920.0
+offset_bottom = 1079.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yx8d6")
+bbcode_enabled = true
+text = "	3 15 13 13 5 0 3 5 19 20 0 3 5 20 20 5 [url=lvl1][color=blue]test_room0[/color][/url] 0 1 22 1 9 20 0 3 8 15 19 5 0 17 21 9 12 0 13 15 14 4 5 0 20 15 21 20 5 0 20 15 21 10 15 21 18 0 17 21 5 12 17 21 5 0 4 21 passerelle secrète 14 5 0 6 1 9 18 5 0 3 5 19 20 0 5 20 1 9 20 0 3 5 19 20 0 17 21 9 12 0 16 15 18 20 5 0 1 12 15 18 0 10 1 13 1 9 0 5 14 20 18 5 0 5 19 16 18 9 20 0 14 5 19 20 0 14 15 21 22 5 1 21 0 5 14 3 15 18 5 0 13 15 13 5 14 20 0 16 18 5 13 9 5 18 5 0 1 21 19 19 9 0 20 5 13 16 0 4 21 14 5 0 14 "
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1920.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 32
+text = "Deus X Medicine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 599.0
+offset_right = 1920.0
+offset_bottom = 692.0
+theme_override_font_sizes/font_size = 28
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="meta_clicked" from="RichTextLabel2" to="." method="_on_rich_text_label_2_meta_clicked"]

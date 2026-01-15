@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj8fwiqkc5air"]
+[gd_scene load_steps=10 format=3 uid="uid://cj8fwiqkc5air"]
 
 [ext_resource type="Texture2D" uid="uid://dwbs4v2d2mdpe" path="res://Sprites/BookPack/books_byBatuhan.png" id="1_kh36y"]
 [ext_resource type="Script" uid="uid://d2ny2vxbi5c3k" path="res://book.gd" id="1_y0hms"]
+[ext_resource type="FontFile" uid="uid://bi8imxppqri4s" path="res://fonts/PixelOperator8.ttf" id="3_fijbg"]
+[ext_resource type="PackedScene" uid="uid://cudqqq5phyxhq" path="res://le_livre/page_1.tscn" id="4_f0xhj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kh36y"]
 atlas = ExtResource("1_kh36y")
@@ -32,6 +34,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kh36y"]
 
+[sub_resource type="SystemFont" id="SystemFont_fijbg"]
+
 [node name="book" type="Node2D"]
 z_index = 1
 script = ExtResource("1_y0hms")
@@ -44,3 +48,36 @@ sprite_frames = SubResource("SpriteFrames_fijbg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_kh36y")
+
+[node name="txt" type="Node2D" parent="."]
+position = Vector2(-1, 17)
+
+[node name="ColorRect" type="ColorRect" parent="txt"]
+offset_left = -18.0
+offset_top = -49.0
+offset_right = 19.0
+offset_bottom = -35.0
+color = Color(0, 0, 0, 0.8745098)
+
+[node name="Label" type="Label" parent="txt"]
+offset_left = -18.0
+offset_top = -45.0
+offset_right = 31.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("3_fijbg")
+theme_override_font_sizes/font_size = 8
+text = "READ"
+
+[node name="Label2" type="Label" parent="txt"]
+offset_left = 11.0
+offset_top = -56.0
+offset_right = 28.0
+offset_bottom = -22.0
+theme_override_fonts/font = SubResource("SystemFont_fijbg")
+theme_override_font_sizes/font_size = 18
+text = "↑"
+
+[node name="page1" parent="." instance=ExtResource("4_f0xhj")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
