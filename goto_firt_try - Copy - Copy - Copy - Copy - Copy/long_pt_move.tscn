@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg1yc11f54gtf"]
+
+[ext_resource type="Texture2D" uid="uid://dfq8dux4abtuh" path="res://Sprites/rooms/longpt_smart.png" id="1_gpqio"]
+[ext_resource type="Script" uid="uid://brhax5qxs2ho6" path="res://long_pt_move.gd" id="1_mv2w8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv2w8"]
+size = Vector2(76, 7)
+
+[sub_resource type="Animation" id="Animation_mv2w8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gpqio"]
+resource_name = "anim_long_pt_move_"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(200, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nquoy"]
+_data = {
+&"RESET": SubResource("Animation_mv2w8"),
+&"anim_long_pt_move_": SubResource("Animation_gpqio")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpqio"]
+size = Vector2(76, 15)
+
+[node name="long_pt_move" type="Node2D"]
+script = ExtResource("1_mv2w8")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(0, 9)
+texture = ExtResource("1_gpqio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_mv2w8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_nquoy")
+}
+speed_scale = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_gpqio")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

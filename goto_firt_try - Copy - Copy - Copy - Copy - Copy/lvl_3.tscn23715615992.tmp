@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqw4rqlaq2fkn"]
+
+[ext_resource type="Script" uid="uid://ctxuoxlxf1oka" path="res://lvl_3.gd" id="1_rlmum"]
+[ext_resource type="Texture2D" uid="uid://bmgk2ou5gelhr" path="res://Sprites/rooms/8.jpg" id="3_dnxd7"]
+[ext_resource type="PackedScene" uid="uid://j3gcywxflkf1" path="res://tentacle/scenes/arm.tscn" id="3_oj8a2"]
+[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player_v_2.tscn" id="5_dnxd7"]
+[ext_resource type="PackedScene" uid="uid://dlybui5ekohhg" path="res://platform_3.tscn" id="5_urlp7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31vo8"]
+size = Vector2(438, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc44f"]
+size = Vector2(109.5, 149.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlmum"]
+size = Vector2(112, 149.75)
+
+[node name="lvl3" type="Node2D"]
+script = ExtResource("1_rlmum")
+
+[node name="room1" type="Node2D" parent="."]
+
+[node name="decorncollision" type="Node2D" parent="room1"]
+position = Vector2(-78, 57)
+
+[node name="Sprite2D" type="Sprite2D" parent="room1/decorncollision"]
+position = Vector2(78, -57)
+texture = ExtResource("3_dnxd7")
+region_rect = Rect2(0, 0, 438, 292)
+region_filter_clip_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="room1/decorncollision"]
+position = Vector2(-662, 14)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="room1/decorncollision/StaticBody2D"]
+position = Vector2(740, 12)
+shape = SubResource("RectangleShape2D_31vo8")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="room1/decorncollision/StaticBody2D"]
+position = Vector2(575.75, -71.125)
+shape = SubResource("RectangleShape2D_dc44f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room1/decorncollision/StaticBody2D"]
+position = Vector2(903, -71.125)
+shape = SubResource("RectangleShape2D_rlmum")
+
+[node name="platform3" parent="room1" instance=ExtResource("5_urlp7")]
+visible = false
+position = Vector2(-40, -35)
+rotation = -0.45029494
+
+[node name="platform4" parent="room1" instance=ExtResource("5_urlp7")]
+visible = false
+position = Vector2(-99.00001, -85.00001)
+rotation = 0.429351
+
+[node name="platform5" parent="room1" instance=ExtResource("5_urlp7")]
+visible = false
+position = Vector2(-14, -107)
+
+[node name="platform6" parent="room1" instance=ExtResource("5_urlp7")]
+visible = false
+position = Vector2(64.00001, -101.000015)
+rotation = 0.429351
+
+[node name="Arm" parent="." instance=ExtResource("3_oj8a2")]
+z_index = 1
+position = Vector2(-256, -254)
+
+[node name="player_v2" parent="." instance=ExtResource("5_dnxd7")]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2dnk4rudvof8"]
+
+[ext_resource type="Script" uid="uid://cuex7nj17d68v" path="res://littletransit.gd" id="1_r44kd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38c6s"]
+size = Vector2(212, 40)
+
+[node name="littletransit" type="Area2D"]
+script = ExtResource("1_r44kd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 0)
+shape = SubResource("RectangleShape2D_38c6s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

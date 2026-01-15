@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=3 uid="uid://bll8b6ufnsw0u"]
+
+[ext_resource type="FontFile" uid="uid://e4jq22rajmsj" path="res://fonts/PixelOperator8-Bold.ttf" id="1_bq48c"]
+[ext_resource type="Texture2D" uid="uid://5b8bob1f2ixo" path="res://Sprites/rooms/1.jpg" id="2_yutty"]
+[ext_resource type="PackedScene" uid="uid://8b5ohyvmxsbu" path="res://platform.tscn" id="3_e6hjw"]
+[ext_resource type="Texture2D" uid="uid://c4xtjot3uwuqq" path="res://Sprites/rooms/2.jpg" id="4_hrfef"]
+
+[sub_resource type="Animation" id="Animation_hve3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(895.00006, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_vef74"]
+resource_name = "move"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(895.00006, 5), Vector2(1174, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hve3p"]
+_data = {
+&"RESET": SubResource("Animation_hve3p"),
+&"move": SubResource("Animation_vef74")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg573"]
+size = Vector2(454, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nb8s"]
+size = Vector2(453.5, 47)
+
+[node name="room1" type="Node2D"]
+
+[node name="left" type="Node2D" parent="."]
+
+[node name="find me" type="Label" parent="left"]
+z_index = 1
+offset_left = 832.0
+offset_top = -78.0
+offset_right = 890.0
+offset_bottom = -49.0
+theme_override_fonts/font = ExtResource("1_bq48c")
+theme_override_font_sizes/font_size = 8
+text = "test_room0"
+
+[node name="Sprite2D" type="Sprite2D" parent="left"]
+position = Vector2(758.00006, -70)
+texture = ExtResource("2_yutty")
+
+[node name="platform" parent="left" instance=ExtResource("3_e6hjw")]
+z_index = 1
+position = Vector2(895.00006, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="left/platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_hve3p")
+}
+autoplay = "move"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="left"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="left/StaticBody2D"]
+position = Vector2(599, 15)
+shape = SubResource("RectangleShape2D_gg573")
+
+[node name="right" type="Node2D" parent="."]
+position = Vector2(566, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="right"]
+position = Vector2(758.00006, -70)
+texture = ExtResource("4_hrfef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="right"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="right/StaticBody2D"]
+position = Vector2(917.75, 15)
+shape = SubResource("RectangleShape2D_2nb8s")
+
+[node name="right2" type="Node2D" parent="."]
+position = Vector2(566, -291)
+
+[node name="Sprite2D" type="Sprite2D" parent="right2"]
+position = Vector2(758.00006, -70)
+texture = ExtResource("4_hrfef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="right2"]
