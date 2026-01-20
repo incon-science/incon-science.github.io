@@ -14,6 +14,6 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player2 :
+	if body is Player :
 		if not $AnimatableBody2D/AnimationPlayer.is_playing():
 			$AnimatableBody2D/AnimationPlayer.play("anim_long_pt_move_")

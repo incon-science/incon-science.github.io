@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6uqxyg5vlhar"]
+[gd_scene load_steps=3 format=3 uid="uid://6uqxyg5vlhar"]
 
 [ext_resource type="Script" uid="uid://uaq3hlaem8pe" path="res://intro.gd" id="1_s2ta7"]
+[ext_resource type="FontFile" uid="uid://bi8imxppqri4s" path="res://fonts/PixelOperator8.ttf" id="2_ayt76"]
 
 [node name="intro" type="Node2D"]
 script = ExtResource("1_s2ta7")
@@ -11,7 +12,16 @@ offset_top = 467.0
 offset_right = 1594.0
 offset_bottom = 774.0
 text = "“Au début, le cerveau nous dit qu'on va mourir.
-Quand on flotte dans l'espace et qu'on n'est plus attaché à la station, le cerveau ne ressent plus aucune sensation physique du poids, ni du vide sous les pieds. Donc il nous envoie le signal : t'es en chute libre, tu vas mourir.”
-
-Thomas P"
+Quand on flotte dans l'espace et qu'on n'est plus attaché à la station, le cerveau ne ressent plus aucune sensation physique du poids, ni du vide sous les pieds. Donc il nous envoie le signal : t'es en chute libre, tu vas mourir.”"
 horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="."]
+z_index = 2
+offset_top = 1032.0
+offset_right = 1920.0
+offset_bottom = 1060.0
+theme_override_colors/font_color = Color(0.42443514, 0.43647903, 0.4545309, 1)
+theme_override_fonts/font = ExtResource("2_ayt76")
+theme_override_font_sizes/font_size = 16
+text = "PRESS JUMP TO SKIP"
+horizontal_alignment = 1

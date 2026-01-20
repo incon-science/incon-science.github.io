@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://drjs7ovpemabt" path="res://Sprites/rooms/platform.png" id="1_mi635"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mi635"]
-size = Vector2(278.35052, 41.23712)
+size = Vector2(247.42267, 41.23712)
 
 [node name="platform" type="AnimatableBody2D"]
 
@@ -11,7 +11,7 @@ size = Vector2(278.35052, 41.23712)
 texture = ExtResource("1_mi635")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.7683716e-07, -9)
+position = Vector2(4.8923494e-07, -9)
 scale = Vector2(0.097, 0.097)
 shape = SubResource("RectangleShape2D_mi635")
 one_way_collision = true

@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://bll8b6ufnsw0u"]
+
+[ext_resource type="Texture2D" uid="uid://5b8bob1f2ixo" path="res://Sprites/rooms/1.jpg" id="2_yutty"]
+[ext_resource type="PackedScene" uid="uid://8b5ohyvmxsbu" path="res://platform.tscn" id="3_e6hjw"]
+[ext_resource type="Texture2D" uid="uid://c4xtjot3uwuqq" path="res://Sprites/rooms/2.jpg" id="4_hrfef"]
+
+[sub_resource type="Animation" id="Animation_yutty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(832, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_bq48c"]
+resource_name = "move_pt_room1"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1249, 2.5), Vector2(832, 2.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6hjw"]
+_data = {
+&"RESET": SubResource("Animation_yutty"),
+&"move_pt_room1": SubResource("Animation_bq48c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg573"]
+size = Vector2(454, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nb8s"]
+size = Vector2(453.5, 17.5)
+
+[node name="room1" type="Node2D"]
+
+[node name="left" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="left"]
+position = Vector2(758.00006, -70)
+texture = ExtResource("2_yutty")
+
+[node name="platform" parent="left" instance=ExtResource("3_e6hjw")]
+z_index = 1
+position = Vector2(832, 3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="left/platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_e6hjw")
+}
+autoplay = "move_pt_room1"
+speed_scale = 0.2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="left"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="left/StaticBody2D"]
+position = Vector2(599, 0.25)
+shape = SubResource("RectangleShape2D_gg573")
+
+[node name="right" type="Node2D" parent="."]
+position = Vector2(566, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="right"]
+position = Vector2(758.00006, -70)
+texture = ExtResource("4_hrfef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="right"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="right/StaticBody2D"]
+position = Vector2(917.75, 0.25)
+shape = SubResource("RectangleShape2D_2nb8s")
+
+[node name="right2" type="Node2D" parent="."]
+position = Vector2(566, -291)
+
+[node name="Sprite2D" type="Sprite2D" parent="right2"]
+position = Vector2(758.00006, -70)
+texture = ExtResource("4_hrfef")

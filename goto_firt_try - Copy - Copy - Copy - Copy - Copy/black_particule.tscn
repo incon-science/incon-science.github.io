@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://vw31d2odlcv6"]
+
+[sub_resource type="Gradient" id="Gradient_ogf4b"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ogf4b"]
+gradient = SubResource("Gradient_ogf4b")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_scxpf"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 0.9)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_scxpf"]
+gradient = SubResource("Gradient_scxpf")
+
+[sub_resource type="Curve" id="Curve_aspbp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1590909, 1), 0.0, 0.0, 0, 0, Vector2(0.8484848, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_aspbp"]
+curve = SubResource("Curve_aspbp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uxuas"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(250, 200, 1)
+spread = 180.0
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.01
+scale_max = 0.099999994
+scale_curve = SubResource("CurveTexture_aspbp")
+color_ramp = SubResource("GradientTexture1D_scxpf")
+
+[node name="black particule" type="Node2D"]
+z_index = 33
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer"]
+z_index = 11
+position = Vector2(380, -186)
+amount = 25
+texture = SubResource("GradientTexture2D_ogf4b")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_uxuas")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.4
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer2"]
+z_index = 11
+position = Vector2(380, -186)
+amount = 25
+texture = SubResource("GradientTexture2D_ogf4b")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_uxuas")
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+follow_viewport_scale = 1.8
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer3"]
+z_index = 11
+position = Vector2(380, -186)
+amount = 25
+texture = SubResource("GradientTexture2D_ogf4b")
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_uxuas")

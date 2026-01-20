@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cj8fwiqkc5air"]
+[gd_scene load_steps=11 format=3 uid="uid://cj8fwiqkc5air"]
 
 [ext_resource type="Texture2D" uid="uid://dwbs4v2d2mdpe" path="res://Sprites/BookPack/books_byBatuhan.png" id="1_kh36y"]
 [ext_resource type="Script" uid="uid://d2ny2vxbi5c3k" path="res://book.gd" id="1_y0hms"]
 [ext_resource type="FontFile" uid="uid://bi8imxppqri4s" path="res://fonts/PixelOperator8.ttf" id="3_fijbg"]
+[ext_resource type="Texture2D" uid="uid://cms0forvobo41" path="res://Sprites/up.png" id="4_3r6c0"]
 [ext_resource type="PackedScene" uid="uid://cudqqq5phyxhq" path="res://le_livre/page_1.tscn" id="4_f0xhj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kh36y"]
@@ -35,6 +36,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kh36y"]
 
 [sub_resource type="SystemFont" id="SystemFont_fijbg"]
+subpixel_positioning = 0
 
 [node name="book" type="Node2D"]
 z_index = 1
@@ -69,6 +71,7 @@ theme_override_font_sizes/font_size = 8
 text = "READ"
 
 [node name="Label2" type="Label" parent="txt"]
+visible = false
 offset_left = 11.0
 offset_top = -56.0
 offset_right = 28.0
@@ -76,6 +79,11 @@ offset_bottom = -22.0
 theme_override_fonts/font = SubResource("SystemFont_fijbg")
 theme_override_font_sizes/font_size = 18
 text = "↑"
+
+[node name="Sprite2D" type="Sprite2D" parent="txt"]
+position = Vector2(14.5, -42.5)
+scale = Vector2(0.10784312, 0.10784312)
+texture = ExtResource("4_3r6c0")
 
 [node name="page1" parent="." instance=ExtResource("4_f0xhj")]
 

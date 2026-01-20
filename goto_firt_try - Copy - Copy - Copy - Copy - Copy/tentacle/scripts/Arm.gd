@@ -1,7 +1,7 @@
 @tool
 class_name Arm extends Node2D
 
-@onready var player = %player
+var player = null
 ## Procedural tentacle arm showcasing FABRIK IK with a wave (hello)
 ##
 ## This script shows a multi-pass approach to believable procedural animation:
@@ -121,12 +121,23 @@ var _direction_target= null
 var _direction_target_in_progress = null
 #endregion
 
+@export_group("perso param")
+@export var tentacle_border:bool=false
+
 ## Runs on scene load and sets up segments.
 ## Separate from _initialize_segments() so setters can rebuild segments during editing.
 func _ready() -> void:
+	player = get_node_or_null("%player")
+	
 	if base_node:
 		_base_position = base_node.position
 	_initialize_segments()
+	
+	
+	if tentacle_border :
+		$OutlinedSubViewportContainer/SubViewport/ShadowCanvasGroup.hide()
+		slowly_add_direction_target(Vector2(42,-34))
+	
 	
 
 

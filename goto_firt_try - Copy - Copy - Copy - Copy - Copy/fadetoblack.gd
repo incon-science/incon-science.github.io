@@ -18,8 +18,10 @@ func _on_animation_finished(anim_name):
 	elif anim_name == "fade_to_normal":
 		color_rect.visible = false
 
-func transition():
+func transition(ratio_speed_animation=1):
 	color_rect.visible = true
+	
+	animation_player.speed_scale = ratio_speed_animation
 	animation_player.play("fade_to_black")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
