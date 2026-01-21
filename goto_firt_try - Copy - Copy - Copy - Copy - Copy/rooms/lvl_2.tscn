@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dcetaag67xxn2" path="res://platform_2.tscn" id="9_beans"]
 [ext_resource type="Texture2D" uid="uid://dahwdii6jbly2" path="res://Sprites/rooms/72.png" id="10_tmnqu"]
 [ext_resource type="PackedScene" uid="uid://j3gcywxflkf1" path="res://tentacle/scenes/arm.tscn" id="11_vbeg1"]
-[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player_v_2.tscn" id="14_0a5a2"]
+[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player.tscn" id="14_0a5a2"]
 [ext_resource type="PackedScene" uid="uid://bg74b8dxq1rdr" path="res://cube.tscn" id="14_q11op"]
 [ext_resource type="PackedScene" uid="uid://cyag4hhktuoyn" path="res://text_entity.tscn" id="15_0a5a2"]
 
@@ -23,7 +23,7 @@ size = Vector2(419, 89)
 size = Vector2(1294, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7f4c"]
-size = Vector2(558, 89)
+size = Vector2(212, 89)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r6xkg"]
 size = Vector2(1546, 79)
@@ -173,7 +173,7 @@ position = Vector2(315, 30)
 shape = SubResource("RectangleShape2D_bmf8x")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="room1/decorncollision/StaticBody2D"]
-position = Vector2(285, -93.5)
+position = Vector2(458, -93.5)
 shape = SubResource("RectangleShape2D_f7f4c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room1/decorncollision/StaticBody2D"]
@@ -329,13 +329,11 @@ shape = SubResource("RectangleShape2D_vbeg1")
 unique_name_in_owner = true
 visible = false
 position = Vector2(1999, -453)
-black_tentacule = false
 
 [node name="Arm2" parent="." instance=ExtResource("11_vbeg1")]
 unique_name_in_owner = true
 visible = false
 position = Vector2(1883, -524)
-black_tentacule = false
 
 [node name="room4" type="Node2D" parent="."]
 position = Vector2(2510, -278)

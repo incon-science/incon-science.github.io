@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://ub7mv6ehtf72"]
+[gd_scene load_steps=31 format=3 uid="uid://ub7mv6ehtf72"]
 
 [ext_resource type="Script" uid="uid://smkh4u8n1uhl" path="res://rooms/lvl_4.gd" id="1_niheu"]
 [ext_resource type="Texture2D" uid="uid://b11vdq23et6wg" path="res://Sprites/eye_big.png" id="1_tgxlv"]
 [ext_resource type="Texture2D" uid="uid://b2pbupgqaab07" path="res://Sprites/rooms/10.png" id="2_t533b"]
-[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player_v_2.tscn" id="2_tgxlv"]
+[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player.tscn" id="2_tgxlv"]
+[ext_resource type="PackedScene" uid="uid://3t2f2pn81x60" path="res://univers.tscn" id="4_3nk6n"]
 [ext_resource type="Texture2D" uid="uid://l8re3yjvt22h" path="res://Sprites/rooms/viergesalope.png" id="4_t533b"]
 [ext_resource type="PackedScene" uid="uid://8b5ohyvmxsbu" path="res://platform.tscn" id="7_emw0k"]
 [ext_resource type="PackedScene" uid="uid://bg1yc11f54gtf" path="res://long_pt_move.tscn" id="7_o7vtu"]
@@ -98,6 +99,10 @@ position = Vector2(778, -23)
 position = Vector2(72, -8.000007)
 scale = Vector2(0.71907216, 0.7319688)
 texture = ExtResource("1_tgxlv")
+
+[node name="univers" parent="room1" instance=ExtResource("4_3nk6n")]
+position = Vector2(79.500015, 0.26759833)
+scale = Vector2(0.026250018, 0.026446952)
 
 [node name="Sprite2D" type="Sprite2D" parent="room1"]
 texture = ExtResource("2_t533b")

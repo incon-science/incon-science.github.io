@@ -16,12 +16,13 @@ var cpt_lvl = { "lvl_1": 0, "lvl_2": 0, "lvl_3": 0, "lvl_4": 0 }
 var dict_txt_entity = { "lvl_2": "fee2d me ", "lvl_4": "pl7ease feed me " }
 var cpt_feed = 0
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+			
 		

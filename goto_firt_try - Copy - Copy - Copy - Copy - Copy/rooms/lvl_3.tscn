@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://43s8tnhh1303" path="res://Sprites/rooms/8SAVE.jpg" id="2_rlmum"]
 [ext_resource type="PackedScene" uid="uid://c2dnk4rudvof8" path="res://littletransit.tscn" id="3_oj8a2"]
 [ext_resource type="PackedScene" uid="uid://j3gcywxflkf1" path="res://tentacle/scenes/arm.tscn" id="4_dnxd7"]
-[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player_v_2.tscn" id="5_dnxd7"]
+[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player.tscn" id="5_dnxd7"]
 [ext_resource type="PackedScene" uid="uid://bg74b8dxq1rdr" path="res://cube.tscn" id="7_rno80"]
 [ext_resource type="PackedScene" uid="uid://cj8fwiqkc5air" path="res://book.tscn" id="8_dc44f"]
 

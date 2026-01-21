@@ -22,33 +22,42 @@ texture = ExtResource("3_n1dgp")
 visible = false
 
 [node name="Arm" parent="list_arms" instance=ExtResource("1_i4r57")]
-position = Vector2(-242, 809)
+position = Vector2(-265, 824)
+wave_frequency = 2.3
+line_width = 29.5
 tentacle_border = true
 
 [node name="Arm2" parent="list_arms" instance=ExtResource("1_i4r57")]
+visible = false
 position = Vector2(1645, 805)
 tentacle_border = true
 
 [node name="Arm3" parent="list_arms" instance=ExtResource("1_i4r57")]
+visible = false
 position = Vector2(-236, -235)
 tentacle_border = true
 
 [node name="Arm4" parent="list_arms" instance=ExtResource("1_i4r57")]
+visible = false
 position = Vector2(1653, -239)
 tentacle_border = true
 
 [node name="Arm5" parent="list_arms" instance=ExtResource("1_i4r57")]
-position = Vector2(193, 816)
+position = Vector2(307, 854)
 tentacle_border = true
 
 [node name="Arm6" parent="list_arms" instance=ExtResource("1_i4r57")]
+visible = false
 position = Vector2(455, -254)
 tentacle_border = true
 
 [node name="Arm7" parent="list_arms" instance=ExtResource("1_i4r57")]
-position = Vector2(-246, 266)
+position = Vector2(-277, 267)
+wave_speed = 2.6
+line_width = 20.0
 tentacle_border = true
 
 [node name="Arm8" parent="list_arms" instance=ExtResource("1_i4r57")]
+visible = false
 position = Vector2(1658, 585)
 tentacle_border = true

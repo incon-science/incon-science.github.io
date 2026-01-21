@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://vc6jlfxapu8i"]
 
 [ext_resource type="Script" uid="uid://dhv7pm8n42a8q" path="res://rooms/lvl_1.gd" id="1_ju7kl"]
-[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player_v_2.tscn" id="2_qkdrd"]
+[ext_resource type="PackedScene" uid="uid://cgpm0ob1l2fk" path="res://player.tscn" id="2_qkdrd"]
 [ext_resource type="Texture2D" uid="uid://c7jpmhoegfs7n" path="res://Sprites/rooms/0.jpg" id="3_dfe2r"]
 [ext_resource type="PackedScene" uid="uid://dgwp8d273xqw6" path="res://transit.tscn" id="4_3da4y"]
 [ext_resource type="FontFile" uid="uid://e4jq22rajmsj" path="res://fonts/PixelOperator8-Bold.ttf" id="5_oxqgw"]
@@ -107,7 +107,7 @@ limit_right = 4025
 limit_bottom = 75
 limit_smoothed = true
 position_smoothing_enabled = true
-position_smoothing_speed = 4.0
+position_smoothing_speed = 2.0
 
 [node name="room0" type="Node2D" parent="."]
 position = Vector2(-662, 14)
@@ -264,7 +264,6 @@ position = Vector2(1052, -192)
 unique_name_in_owner = true
 visible = false
 position = Vector2(1214, -566)
-black_tentacule = false
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0, 0, 0, 1)
