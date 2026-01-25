@@ -1,0 +1,10 @@
+AnimationPlayer
+GPUParticles2D
+PointLight2D
+AudioStreamPlayer
+AudioStreamPlayer      - Matches the "sound" keyword.
+Sprite2D
+PhantomCamera2D
+PhantomCameraHost
+Camera2D
+AnimatedSprite2D
