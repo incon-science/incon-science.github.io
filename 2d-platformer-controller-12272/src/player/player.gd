@@ -172,7 +172,7 @@ func try_jump() -> void:
 		jump()
 		try_play_new_anim("jumpup")
 		$jump_sound.play()
-		$dust.restart()
+		$jump_particle.restart()
 
 func try_coyote_jump() -> void:
 	if not jump_coyote_timer.is_stopped():
@@ -230,7 +230,7 @@ func try_wall_jump(ignore_wall: bool = false) -> void:
 		var wall_jump_dir: float = -get_last_wall_dir()
 		try_play_new_anim("jumpup",0.33* wall_jump_dir)
 		$walljump_sound.play()
-		$dust.restart()
+		$jump_particle.restart()
 
 func try_coyote_wall_jump() -> void:
 	if not wall_jump_coyote_timer.is_stopped():
@@ -380,4 +380,5 @@ func sound_animation() -> void:
 		if saut_en_cours_for_sound :
 			$land_sound.play()
 			saut_en_cours_for_sound = false
+			$ground_particle.restart()
 	#pour les SONS jump, le wall jump et le dash VOIR PLUS HAUT dans les fonctions eponymes

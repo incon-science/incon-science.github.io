@@ -1,0 +1,129 @@
+[gd_scene load_steps=14 format=3 uid="uid://bl14lcvp4g2nh"]
+
+[ext_resource type="Script" uid="uid://1hq0t5jf220t" path="res://src/levels/room_1.gd" id="1_3hsou"]
+[ext_resource type="Texture2D" uid="uid://di3ncqwc1ekuj" path="res://sprites/rooms/room1.png" id="1_4xuog"]
+[ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="2_4xuog"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_3hsou"]
+[ext_resource type="Texture2D" uid="uid://c1wej4spxfbcp" path="res://sprites/rooms/room1_front.png" id="3_6cks4"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_6cks4"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_cjupx"]
+[ext_resource type="AudioStream" uid="uid://6jqqsftfvae" path="res://sounds/musics/Limagination au pouvoir.mp3" id="8_cjupx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2aff"]
+size = Vector2(248, 235.37494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xuog"]
+size = Vector2(61, 235.37494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hsou"]
+size = Vector2(123, 235.37494)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cks4"]
+size = Vector2(184.5, 237.37494)
+
+[sub_resource type="Resource" id="Resource_w13ng"]
+script = ExtResource("4_6cks4")
+
+[node name="room_1" type="Node2D"]
+script = ExtResource("1_3hsou")
+metadata/_edit_horizontal_guides_ = [66.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64.74745, -109.37495)
+scale = Vector2(0.27368686, 0.27368686)
+texture = ExtResource("1_4xuog")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(64.74745, -109.37495)
+scale = Vector2(0.27368686, 0.27368686)
+texture = ExtResource("3_6cks4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-161.25256, -0.37493896)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-54, 183.68747)
+shape = SubResource("RectangleShape2D_j2aff")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(163.5, 183.68747)
+shape = SubResource("RectangleShape2D_4xuog")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(319.5, 183.68747)
+shape = SubResource("RectangleShape2D_3hsou")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(599.75, 184.68747)
+shape = SubResource("RectangleShape2D_6cks4")
+
+[node name="Player" parent="." instance=ExtResource("2_4xuog")]
+position = Vector2(-0.25256348, 67.62506)
+
+[node name="PhantomCamera2D" type="Node2D" parent="Player" node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(-0.25256348, -60)
+script = ExtResource("3_3hsou")
+follow_mode = 5
+follow_target = NodePath("..")
+tween_resource = SubResource("Resource_w13ng")
+follow_damping = true
+follow_damping_value = Vector2(5, 5)
+dead_zone_width = 0.5
+dead_zone_height = 0.5
+draw_limits = true
+limit_left = -1027
+limit_right = 1027
+limit_bottom = 300
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+top_level = true
+position = Vector2(-0.25256348, -60)
+process_callback = 0
+limit_enabled = false
+limit_left = -1027
+limit_right = 1027
+limit_bottom = 300
+editor_draw_limits = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("5_cjupx")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-161.25256, -0.37493896)
+gravity_space_override = 3
+gravity = 100.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-270.74744, 72.37494, -227.74744, 55.37494, -227.74744, -119.62506, -270.74744, -120.62506)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-270.74744, 73.37494, -227.74744, 56.37494, -227.74744, -167.62506, -272.74744, -172.62506)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(290, 1)
+scale = Vector2(-1, 1)
+gravity_space_override = 3
+gravity = 100.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D2"]
+polygon = PackedVector2Array(-274, 75, -227.74744, 55.37494, -228, -121, -274, -122)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+polygon = PackedVector2Array(-274, 75, -227.74744, 56.37494, -228, -166, -275, -172)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, 0)
+stream = ExtResource("8_cjupx")
+autoplay = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

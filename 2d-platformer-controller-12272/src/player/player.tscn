@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://ducp7rsjpf40n"]
+[gd_scene load_steps=58 format=3 uid="uid://ducp7rsjpf40n"]
 
 [ext_resource type="Script" uid="uid://spewh8xv7lts" path="res://src/player/player.gd" id="1_4anbu"]
 [ext_resource type="Script" uid="uid://bwbxypkqm7bgl" path="res://src/state_machine/state_machine.gd" id="2_rxibo"]
@@ -18,7 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://bdcg2t8w75wa8" path="res://sounds/hero_dash.wav" id="16_vwsmr"]
 [ext_resource type="AudioStream" uid="uid://bpabs1jo2k3i7" path="res://sounds/hero_wall_slide.wav" id="17_hrerp"]
 [ext_resource type="AudioStream" uid="uid://bk1u2t0pf6uu3" path="res://sounds/hero_run_footsteps_stone.wav" id="18_oyld2"]
-[ext_resource type="PackedScene" uid="uid://bf78142na1p7k" path="res://src/particles/dust.tscn" id="19_vwsmr"]
+[ext_resource type="PackedScene" uid="uid://bf78142na1p7k" path="res://src/particles/jump_particle.tscn" id="19_vwsmr"]
+[ext_resource type="PackedScene" uid="uid://kur8cpiyrv8b" path="res://src/particles/ground_particle.tscn" id="20_jcdrv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qnmj6"]
 size = Vector3(48, 64, 1)
@@ -277,43 +278,8 @@ gradient = SubResource("Gradient_oyld2")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="Animation" id="Animation_vwsmr"]
-resource_name = "jump_anim_particles"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("dust:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_jcdrv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("dust:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hja65"]
-_data = {
-&"RESET": SubResource("Animation_jcdrv"),
-&"jump_anim_particles": SubResource("Animation_vwsmr")
-}
-
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_4anbu")
 max_speed = 450.0
 max_h_velocity_ratio = 3.0
@@ -497,12 +463,9 @@ color = Color(1, 0.6745098, 1, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_vwsmr")
 
-[node name="dust" parent="." instance=ExtResource("19_vwsmr")]
+[node name="jump_particle" parent="." instance=ExtResource("19_vwsmr")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_hja65")
-}
+[node name="ground_particle" parent="." instance=ExtResource("20_jcdrv")]
 
 [connection signal="wall_entered" from="." to="." method="_on_wall_entered"]
 [connection signal="wall_exited" from="." to="." method="_on_wall_exited"]
