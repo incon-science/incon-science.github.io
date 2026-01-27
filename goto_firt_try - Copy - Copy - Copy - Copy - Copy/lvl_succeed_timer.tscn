@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://bpb7glyeakns4"]
-
-[node name="lvl_succeed_timer" type="Timer"]
-wait_time = 4.0
-one_shot = true
