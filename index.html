@@ -1,103 +1,220 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>incon.science:~$ Une histoire fausse</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+		<title>find_me</title>
+		<style>
+html, body, #canvas {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center; /* centre verticalement */
-            justify-content: center; /* centre horizontalement */
-            background: #000000; /* optionnel : changez si besoin */
-            color : white;
+body {
+	color: white;
+	background-color: black;
+	overflow: hidden;
+	touch-action: none;
+}
 
-            
-            background-image: url("img/tumblr_c0812679479e7039cd8b1a9b5a940d18_cb8a64c7_500.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+#canvas {
+	display: block;
+}
 
-        .gif-container {
-            display: inline-block;
-            cursor: pointer;
-            text-align: center;
-        }
+#canvas:focus {
+	outline: none;
+}
 
-        .gif-img {
-            max-width: 90vw; /* reste responsive sur petits écrans */
-            width: 300px; /* Ajustez la taille si besoin */
-            height: auto;
-            display: block;
-        }
+#status, #status-splash, #status-progress {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
 
-        #ca_txt {
-            position: absolute;
-            top: 2em;
-            left:3em;
-        }
-    </style>
-</head>
-<body>
+#status, #status-splash {
+	top: 0;
+	bottom: 0;
+}
 
-    <div id="ca_txt"><h5>Personne<br>n'échappe<br>à ϛa</h5></div>
-    
-        <h3>Mais il n’y a jamais eu rien à comprendre. Tout est à expérimenter&nbsp;&nbsp;&nbsp;</h3>
-    <div class="gif-container">
-        <a href="analyse.html"><img
-            src="img/butterdoor.gif"
-            data-static="img/butterdoor.png"
-            data-animated="img/butterdoor.gif"
-            class="gif-img"
-            alt="GIF animé au survol"
-        ></a>
-    </div>
-    
+#status {
+	background-color: #242424;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+}
 
-    <script>
-        const img = document.querySelector('.gif-img');
-        img.addEventListener('mouseenter', () => {
-            img.src = img.dataset.animated;
-        });
-        img.addEventListener('mouseleave', () => {
-            img.src = img.dataset.static;
-        });
-        // Afficher l'image statique par défaut
-        img.src = img.dataset.static;
+#status-splash {
+	max-height: 100%;
+	max-width: 100%;
+	margin: auto;
+}
 
-        // Rendre le body focalisable et tenter de le focusser
-        document.body.tabIndex = 0; // 0 permet le focus par tab aussi
-        function focusBody() {
-            try { document.body.focus(); } catch (e) { /* ignore */ }
-        }
-        // Essayer immédiatement puis après un court délai (certaines pages empêchent focus synchrones)
-        focusBody();
-        setTimeout(focusBody, 100);
+#status-splash.show-image--false {
+	display: none;
+}
 
-        // Au premier contact utilisateur, forcer le focus (utile si le navigateur bloque le focus initialement)
-        ['mousedown', 'touchstart', 'keydown'].forEach(ev =>
-            document.addEventListener(ev, focusBody, { once: true, passive: true })
-        );
+#status-splash.fullsize--true {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
 
-        // Handler commun pour Échap
-        function handleEscape(e) {
-            if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
-                // empêcher comportements par défaut éventuels et rediriger
-                e.preventDefault();
-                window.location.href = 'desktop.html';
-            }
-        }
+#status-splash.use-filter--false {
+	image-rendering: pixelated;
+}
 
-        // Écoute en capture et en bubble, keydown + keyup — plus robuste selon le contexte
-        window.addEventListener('keydown', handleEscape, true);
-        window.addEventListener('keyup', handleEscape, true);
-        document.addEventListener('keydown', handleEscape, true);
-        document.addEventListener('keyup', handleEscape, true);
-    </script>
-</body>
+#status-progress, #status-notice {
+	display: none;
+}
+
+#status-progress {
+	bottom: 10%;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#status-notice {
+	background-color: #5b3943;
+	border-radius: 0.5rem;
+	border: 1px solid #9b3943;
+	color: #e0e0e0;
+	font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+	line-height: 1.3;
+	margin: 0 2rem;
+	overflow: hidden;
+	padding: 1rem;
+	text-align: center;
+	z-index: 1;
+}
+		</style>
+		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+	</head>
+	<body>
+		<canvas id="canvas">
+			Your browser does not support the canvas tag.
+		</canvas>
+
+		<noscript>
+			Your browser does not support JavaScript.
+		</noscript>
+
+		<div id="status">
+			<img id="status-splash" class="show-image--false fullsize--true use-filter--true" src="index.png" alt="">
+			<progress id="status-progress"></progress>
+			<div id="status-notice"></div>
+		</div>
+
+		<script src="index.js"></script>
+		<script>
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":52776548,"index.wasm":36022222},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+const GODOT_THREADS_ENABLED = true;
+const engine = new Engine(GODOT_CONFIG);
+
+(function () {
+	const statusOverlay = document.getElementById('status');
+	const statusProgress = document.getElementById('status-progress');
+	const statusNotice = document.getElementById('status-notice');
+
+	let initializing = true;
+	let statusMode = '';
+
+	function setStatusMode(mode) {
+		if (statusMode === mode || !initializing) {
+			return;
+		}
+		if (mode === 'hidden') {
+			statusOverlay.remove();
+			initializing = false;
+			return;
+		}
+		statusOverlay.style.visibility = 'visible';
+		statusProgress.style.display = mode === 'progress' ? 'block' : 'none';
+		statusNotice.style.display = mode === 'notice' ? 'block' : 'none';
+		statusMode = mode;
+	}
+
+	function setStatusNotice(text) {
+		while (statusNotice.lastChild) {
+			statusNotice.removeChild(statusNotice.lastChild);
+		}
+		const lines = text.split('\n');
+		lines.forEach((line) => {
+			statusNotice.appendChild(document.createTextNode(line));
+			statusNotice.appendChild(document.createElement('br'));
+		});
+	}
+
+	function displayFailureNotice(err) {
+		console.error(err);
+		if (err instanceof Error) {
+			setStatusNotice(err.message);
+		} else if (typeof err === 'string') {
+			setStatusNotice(err);
+		} else {
+			setStatusNotice('An unknown error occurred.');
+		}
+		setStatusMode('notice');
+		initializing = false;
+	}
+
+	const missing = Engine.getMissingFeatures({
+		threads: GODOT_THREADS_ENABLED,
+	});
+
+	if (missing.length !== 0) {
+		if (GODOT_CONFIG['serviceWorker'] && GODOT_CONFIG['ensureCrossOriginIsolationHeaders'] && 'serviceWorker' in navigator) {
+			let serviceWorkerRegistrationPromise;
+			try {
+				serviceWorkerRegistrationPromise = navigator.serviceWorker.getRegistration();
+			} catch (err) {
+				serviceWorkerRegistrationPromise = Promise.reject(new Error('Service worker registration failed.'));
+			}
+			// There's a chance that installing the service worker would fix the issue
+			Promise.race([
+				serviceWorkerRegistrationPromise.then((registration) => {
+					if (registration != null) {
+						return Promise.reject(new Error('Service worker already exists.'));
+					}
+					return registration;
+				}).then(() => engine.installServiceWorker()),
+				// For some reason, `getRegistration()` can stall
+				new Promise((resolve) => {
+					setTimeout(() => resolve(), 2000);
+				}),
+			]).then(() => {
+				// Reload if there was no error.
+				window.location.reload();
+			}).catch((err) => {
+				console.error('Error while registering service worker:', err);
+			});
+		} else {
+			// Display the message as usual
+			const missingMsg = 'Error\nThe following features required to run Godot projects on the Web are missing:\n';
+			displayFailureNotice(missingMsg + missing.join('\n'));
+		}
+	} else {
+		setStatusMode('progress');
+		engine.startGame({
+			'onProgress': function (current, total) {
+				if (current > 0 && total > 0) {
+					statusProgress.value = current;
+					statusProgress.max = total;
+				} else {
+					statusProgress.removeAttribute('value');
+					statusProgress.removeAttribute('max');
+				}
+			},
+		}).then(() => {
+			setStatusMode('hidden');
+		}, displayFailureNotice);
+	}
+}());
+		</script>
+	</body>
 </html>
+
