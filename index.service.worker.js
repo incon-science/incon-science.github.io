@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1773404865|1650596428';
+const CACHE_VERSION = '1773439024|9243303256';
 /** @type {string} */
 const CACHE_PREFIX = 'Voice of the Voi-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
