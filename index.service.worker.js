@@ -4,9 +4,9 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1774704238|12428009752';
+const CACHE_VERSION = '1774711098|66022921';
 /** @type {string} */
-const CACHE_PREFIX = 'Press start to r-sw-cache-';
+const CACHE_PREFIX = 'PRESS START TO R-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 /** @type {string} */
 const OFFLINE_URL = 'index.offline.html';
