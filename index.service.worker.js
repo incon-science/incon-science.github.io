@@ -4,9 +4,9 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1774871526|9985839484';
+const CACHE_VERSION = '1774906023|1535186936';
 /** @type {string} */
-const CACHE_PREFIX = 'Antichambre-sw-cache-';
+const CACHE_PREFIX = 'Only the void-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 /** @type {string} */
 const OFFLINE_URL = 'index.offline.html';
